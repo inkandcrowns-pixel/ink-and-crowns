@@ -6,3 +6,6 @@ preview/
 *.mp4
 music/
 runs/
+DRYRUN_*
+STATUS.html
+script_parts.json
