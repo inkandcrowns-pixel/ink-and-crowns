@@ -20,10 +20,6 @@ on:
         options: [make, publish]
         default: make
 
-concurrency:
-  group: video
-  cancel-in-progress: false
-
 permissions:
   contents: write
 
@@ -31,6 +27,8 @@ jobs:
   video:
     runs-on: ubuntu-latest
     timeout-minutes: 300
+    # one maker at a time; publishing has its own lane so it never waits behind a long render
+    concurrency: { group: make, cancel-in-progress: false }
     # schedule runs only when the repo variable AUTO_POST is "on" (pause switch)
     if: (github.event_name == 'workflow_dispatch' && inputs.mode != 'publish') || (github.event_name == 'schedule' && github.event.schedule != '0 18 * * *' && vars.AUTO_POST == 'on')
     steps:
@@ -99,6 +97,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     timeout-minutes: 120
+    concurrency: { group: publish, cancel-in-progress: false }
     if: (github.event_name == 'workflow_dispatch' && inputs.mode == 'publish') || (github.event_name == 'schedule' && github.event.schedule == '0 18 * * *' && vars.AUTO_POST == 'on')
     steps:
       - uses: actions/checkout@v4
