@@ -88,11 +88,7 @@ jobs:
       - name: Commit state
         if: always()
         run: |
-          rm -f .env
-          git config user.name "inkandcrowns-pixel"
-          git config user.email "inkandcrowns@gmail.com"
-          git add state
-          git diff --cached --quiet || (git commit -m "state: video run ${{ github.run_id }}" && git pull --rebase && git push)
+          bash scripts/commit_state.sh "state: video run ${{ github.run_id }}"
 
   publish:
     runs-on: ubuntu-latest
@@ -116,11 +112,7 @@ jobs:
       - name: Commit state
         if: always()
         run: |
-          rm -f .env
-          git config user.name "inkandcrowns-pixel"
-          git config user.email "inkandcrowns@gmail.com"
-          git add state
-          git diff --cached --quiet || (git commit -m "state: publish run ${{ github.run_id }}" && git pull --rebase && git push)
+          bash scripts/commit_state.sh "state: publish run ${{ github.run_id }}"
 
   tune:
     runs-on: ubuntu-latest
@@ -137,8 +129,4 @@ jobs:
           if [ "$(date -u +%u)" != "7" ]; then echo "not Sunday"; exit 0; fi
           printf '%s\n' "$ENV_FILE" | tr -d '\r' > .env
           node scripts/tune.js
-          rm -f .env
-          git config user.name "inkandcrowns-pixel"
-          git config user.email "inkandcrowns@gmail.com"
-          git add state
-          git diff --cached --quiet || (git commit -m "state: weekly analysis" && git pull --rebase && git push)
+          bash scripts/commit_state.sh "state: weekly analysis"

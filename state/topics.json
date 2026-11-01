@@ -3,5 +3,11 @@
     "topic": "Operation Cowboy, Hostau, Czechoslovakia, 1945",
     "run": "2026-11-01-operation-cowboy-hostau-czechoslovakia-1",
     "at": "2026-11-01T07:36:58.296Z"
+  },
+  {
+    "topic": "The Lost Dutchman's Gold Mine in the Superstition Mountains, 1891",
+    "format": "legacy",
+    "run": "github-41295768497",
+    "at": "2026-11-01T10:04:25Z"
   }
 ]
