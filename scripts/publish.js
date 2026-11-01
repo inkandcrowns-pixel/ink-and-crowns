@@ -26,8 +26,18 @@ for (const [run, files] of Object.entries(byRun)) {
   let ok = false;
   try { const v = await api(`videos?part=status&id=${vid}`); ok = v.items?.[0]?.status?.uploadStatus === 'processed'; } catch { /* keep files */ }
   if (!ok) { log('cleanup: keeping', run, '(YouTube video not confirmed processed)'); continue; }
-  for (const f of files) await remove(f.id);
-  log('cleanup: deleted from Drive', run);
+  // the long video's files go after 1 day; its Shorts stay until posted (+1 day), at most 10 days
+  let gone = 0;
+  for (const f of files) {
+    const kind = f.appProperties?.kind || '';
+    const isShort = /^short\d\.mp4$/.test(kind) || kind === 'shorts.json';
+    const posted = f.appProperties?.postedAt ? Date.parse(f.appProperties.postedAt) : 0;
+    const allShortsPosted = files.filter(x => /^short\d\.mp4$/.test(x.appProperties?.kind || '')).every(x => x.appProperties?.postedShort);
+    const keep = isShort && Date.now() - at < 10 * 864e5 &&
+      (kind === 'shorts.json' ? !allShortsPosted : (!posted || Date.now() - posted < 864e5));
+    if (!keep) { await remove(f.id); gone++; }
+  }
+  if (gone) log('cleanup: deleted', gone, 'file(s) of', run);
 }
 
 // 2) publish

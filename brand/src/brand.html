@@ -1,0 +1,103 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face { font-family: Bask; src: url('../../fonts/LibreBaskerville-VF.ttf'); font-weight: 400 700; }
+@font-face { font-family: BaskI; src: url('../../fonts/LibreBaskerville-Italic-VF.ttf'); }
+@font-face { font-family: Anton; src: url('../../fonts/Anton-Regular.ttf'); }
+html, body { margin: 0; padding: 0; background: #000; }
+body > div { display: none; }
+
+/* ---------- profile picture 800x800 ---------- */
+#profile { width: 800px; height: 800px; position: relative; overflow: hidden;
+  background: radial-gradient(circle at 50% 42%, #8e1f1a 0%, #5a0f0e 55%, #2c0606 100%); }
+#profile svg { position: absolute; inset: 0; }
+
+/* ---------- banner 2560x1440 (safe area 1546x423 centred) ---------- */
+#banner { width: 2560px; height: 1440px; position: relative; overflow: hidden;
+  background: url('bg_map.jpg') center/cover; }
+#banner .shade { position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(20,8,4,.35), rgba(20,8,4,.15) 35%, rgba(20,8,4,.15) 65%, rgba(20,8,4,.45)); }
+#banner .band { position: absolute; left: 0; right: 0; top: 470px; height: 500px;
+  background: linear-gradient(90deg, rgba(25,9,6,0) 0%, rgba(25,9,6,.78) 22%, rgba(25,9,6,.86) 50%, rgba(25,9,6,.78) 78%, rgba(25,9,6,0) 100%); }
+#banner .safe { position: absolute; left: 507px; top: 508px; width: 1546px; height: 423px;
+  display: flex; align-items: center; gap: 46px; }
+#banner .seal { width: 330px; height: 330px; flex: none; border-radius: 50%; overflow: hidden;
+  box-shadow: 0 0 0 8px #d9b25a, 0 10px 40px rgba(0,0,0,.6); }
+#banner .seal svg { width: 330px; height: 330px; display: block;
+  background: radial-gradient(circle at 50% 42%, #8e1f1a 0%, #5a0f0e 55%, #2c0606 100%); }
+#banner .words { color: #f6e7c4; }
+#banner h1 { font-family: Bask; font-weight: 700; font-size: 156px; letter-spacing: 6px; margin: 0; line-height: 1;
+  color: #f3dc9c; text-shadow: 0 4px 0 #3b1408, 0 10px 30px rgba(0,0,0,.6); white-space: nowrap; }
+#banner h1 .amp { font-family: BaskI; color: #e8b84f; }
+#banner .rule { height: 6px; width: 1040px; margin: 24px 0 22px; background: linear-gradient(90deg, #d9b25a, rgba(217,178,90,0)); }
+#banner .tag { font-family: BaskI; font-size: 50px; color: #f6e7c4; }
+#banner .when { font-family: Anton; font-size: 40px; letter-spacing: 7px; color: #e8b84f; margin-top: 18px; }
+</style></head>
+<body>
+
+<!-- Logo: gold crown over a crossed quill on a burgundy seal, thin gold ring. Our own vector art. -->
+<template id="emblem">
+<svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fbe7a1"/><stop offset=".45" stop-color="#e3b44e"/><stop offset="1" stop-color="#a8741f"/>
+    </linearGradient>
+    <linearGradient id="feather" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff6de"/><stop offset="1" stop-color="#d8c49a"/>
+    </linearGradient>
+  </defs>
+  <circle cx="400" cy="400" r="372" fill="none" stroke="url(#gold)" stroke-width="14"/>
+  <circle cx="400" cy="400" r="346" fill="none" stroke="#e3b44e" stroke-opacity=".45" stroke-width="3"/>
+  <!-- quill, diagonal behind the crown -->
+  <!-- quill: long feather rising top-right above the crown, bare shaft + dark nib bottom-left -->
+  <g transform="rotate(32 400 400)">
+    <path d="M400 60 C 455 110, 490 200, 478 300 L 470 330 L 486 345 L 462 372 L 474 392 C 455 430, 430 470, 404 500
+             L 396 500 C 372 470, 350 430, 336 395 L 350 378 L 328 352 L 345 335 L 330 300 C 318 200, 348 110, 400 60 Z"
+          fill="url(#feather)" stroke="#6b4a1f" stroke-width="6" stroke-linejoin="round"/>
+    <path d="M400 85 L 400 700" stroke="#7a5a2a" stroke-width="7" stroke-linecap="round"/>
+    <g stroke="#b39466" stroke-width="3" fill="none">
+      <path d="M400 150 L 452 120"/><path d="M400 200 L 468 168"/><path d="M400 250 L 474 220"/><path d="M400 300 L 466 280"/><path d="M400 360 L 455 345"/><path d="M400 420 L 440 410"/>
+      <path d="M400 150 L 350 122"/><path d="M400 200 L 334 170"/><path d="M400 250 L 328 222"/><path d="M400 300 L 336 282"/><path d="M400 360 L 346 348"/><path d="M400 420 L 362 412"/>
+    </g>
+    <path d="M392 690 L 400 745 L 408 690 Z" fill="#1c1208" stroke="#1c1208" stroke-width="3"/>
+  </g>
+  <!-- crown -->
+  <g stroke="#5a3a10" stroke-width="7" stroke-linejoin="round">
+    <path d="M220 470 L 250 300 L 330 395 L 400 255 L 470 395 L 550 300 L 580 470 Z" fill="url(#gold)"/>
+    <rect x="212" y="468" width="376" height="64" rx="10" fill="url(#gold)"/>
+  </g>
+  <g fill="#8e1f1a" stroke="#5a3a10" stroke-width="4">
+    <circle cx="250" cy="296" r="20"/><circle cx="400" cy="250" r="24"/><circle cx="550" cy="296" r="20"/>
+  </g>
+  <g fill="#1d4f5c" stroke="#5a3a10" stroke-width="4">
+    <circle cx="300" cy="500" r="15"/><circle cx="400" cy="500" r="17"/><circle cx="500" cy="500" r="15"/>
+  </g>
+  <!-- banner ribbon with monogram-free wordmark kept out: logo must read at 48 px -->
+  <path d="M250 590 Q 400 625 550 590 L 540 640 Q 400 672 260 640 Z" fill="#f3dc9c" stroke="#5a3a10" stroke-width="5"/>
+  <text x="400" y="642" text-anchor="middle" font-family="Bask" font-weight="700" font-size="42" fill="#5a0f0e" letter-spacing="3">I &amp; C</text>
+</svg>
+</template>
+
+<div id="profile"></div>
+
+<div id="banner">
+  <div class="shade"></div>
+  <div class="band"></div>
+  <div class="safe">
+    <div class="seal"></div>
+    <div class="words">
+      <h1>INK <span class="amp">&amp;</span> CROWNS</h1>
+      <div class="rule"></div>
+      <div class="tag">How nations rise, wars are won, and history really happened.</div>
+      <div class="when">NEW STORIES · MON · WED · FRI</div>
+    </div>
+  </div>
+</div>
+
+<script>
+const svg = document.getElementById('emblem').innerHTML;
+document.getElementById('profile').innerHTML = svg;
+// the seal uses the rendered logo PNG: a second inline copy of the SVG duplicates gradient ids and lost its colours
+document.querySelector('#banner .seal').innerHTML = '<img src="../ic_profile.png" width="330" height="330">';
+</script>
+</body></html>

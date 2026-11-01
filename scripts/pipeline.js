@@ -7,6 +7,7 @@ import { execFileSync } from 'node:child_process';
 import { ROOT, env, log, tts, TTS_MODELS, fluxImage, httpJson } from './lib.js';
 import { researchTrends, pickTopic, nextFormat } from './trends.js';
 import { competitorDemand } from './competitors.js';
+import { makeShorts } from './shorts.js';
 import { writeLongScript } from './long_script.js';
 import { renderVideo, preflight, dur } from './render.js';
 import { folder, list, uploadFile, QUEUE } from './drive.js';
@@ -165,6 +166,13 @@ async function step(r) {
     const marks = [['0:00', 'Intro']];
     sc.forEach((x, i) => { if (x.chapterTitle) marks.push([fmt(out.starts[i]), x.chapterTitle]); });
     s.chapters = marks; s.duration = out.total; s.music = music.slice(0, 3).map(f => path.basename(f, '.mp3'));
+    s.sceneTimes = sc.map((x, i) => ({ text: x.text, start: out.starts[i], vo: x.vo }));
+    s.stage = 'shorts'; save(r);
+  }
+  // 4 Shorts cut from this video, posted on the days without a new long video (asked 2026-11-01)
+  if (s.stage === 'shorts') {
+    try { s.shorts = await makeShorts(dir, s.script, s.sceneTimes); }
+    catch (e) { log('shorts failed (long video still goes ahead):', e.message.slice(0, 160)); s.shorts = []; }
     s.stage = 'upload'; save(r);
   }
   // finished videos wait in Google Drive; publish.js takes the oldest on publish days (no last-minute rush)
@@ -179,7 +187,10 @@ async function step(r) {
     fs.writeFileSync(path.join(dir, 'meta.json'), JSON.stringify(meta, null, 2));
     const qid = await folder(QUEUE);
     const have = (await list(qid)).filter(f => f.appProperties?.run === s.id).map(f => f.name);
-    for (const [f, mime] of [['final.mp4', 'video/mp4'], ['thumb.jpg', 'image/jpeg'], ['meta.json', 'application/json']]) {
+    const files = [['final.mp4', 'video/mp4'], ['thumb.jpg', 'image/jpeg'], ['meta.json', 'application/json']];
+    for (const sh of s.shorts || []) if (fs.existsSync(path.join(dir, sh.file))) files.push([sh.file, 'video/mp4']);
+    if (s.shorts?.length) files.push(['shorts.json', 'application/json']);
+    for (const [f, mime] of files) {
       if (have.includes(`${s.id}__${f}`)) continue;
       log('to Drive:', f);
       await uploadFile(path.join(dir, f), `${s.id}__${f}`, qid, mime, { run: s.id, kind: f });

@@ -80,6 +80,12 @@ export async function move(fileId, fromId, toId, appProperties) {
   });
 }
 
+export async function setProps(fileId, appProperties) {
+  await httpJson(`${API}/files/${fileId}?fields=id`, {
+    method: 'PATCH', headers: await H({ 'content-type': 'application/json' }), body: JSON.stringify({ appProperties }),
+  });
+}
+
 // Permanent delete (Drive trash still counts against the 15 GB) — only used 1 day after a confirmed YouTube upload.
 export async function remove(fileId) {
   const r = await fetch(`${API}/files/${fileId}`, { method: 'DELETE', headers: await H() });
