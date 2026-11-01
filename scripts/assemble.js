@@ -1,12 +1,12 @@
 // Assemble a video from preview/script.json: per-scene TTS, Ken Burns on the lithographs, the map clip,
 // crossfades, paper grain, music bed ducked under the voice, -14 LUFS.
-// Usage: node scripts/assemble.js <dir> [voice=Charon] [music.mp3] [w=1280] [h=720]
+// Usage: node scripts/assemble.js <dir> [voice=Charon] [music.mp3] [w=1280] [h=720] [musicStartSec=0]
 import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { tts, log } from './lib.js';
 
-const [dir, voice = 'Charon', music, W = '1280', H = '720'] = process.argv.slice(2);
+const [dir, voice = 'Charon', music, W = '1280', H = '720', MSTART = '0'] = process.argv.slice(2);
 const FPS = 30, XF = 0.5, GAP = 0.35;
 const s = JSON.parse(fs.readFileSync(path.join(dir, 'script.json'), 'utf8'));
 const ff = (args) => execFileSync('ffmpeg', ['-v', 'error', '-y', ...args], { stdio: 'inherit' });
@@ -56,7 +56,8 @@ for (let i = 1; i < s.scenes.length; i++) {
   chain += `${last}[${i}:v]xfade=transition=fade:duration=${XF}:offset=${t.toFixed(3)}[v${i}];`;
   last = `[v${i}]`;
 }
-chain += `${last}noise=alls=6:allf=t,vignette=PI/5,format=yuv420p,${SET}[vout]`;
+// static grain only: temporal noise (allf=t) flickers like TV snow
+chain += `${last}noise=alls=4,vignette=PI/5,format=yuv420p,${SET}[vout]`;
 ff([...inputs, '-filter_complex', chain, '-map', '[vout]', '-c:v', 'libx264', '-crf', '19', '-preset', 'medium', path.join(dir, 'video.mp4')]);
 
 // 4) voice track: each scene's VO starts where its clip starts
@@ -68,12 +69,14 @@ const vmix = s.scenes.map((_, i) => `[${i}:a]aresample=48000,adelay=${Math.round
   `;${s.scenes.map((_, i) => `[a${i}]`).join('')}amix=inputs=${s.scenes.length}:normalize=0,apad,atrim=0:${total.toFixed(3)}[vo]`;
 ff([...vin, '-filter_complex', vmix, '-map', '[vo]', '-ac', '2', path.join(dir, 'voice.wav')]);
 
-// 5) music under the voice (sidechain duck), fade out, loudness -14 LUFS
+// 5) cinematic music bed: both tracks loudness-matched first, music kept ~12-14 dB under the voice while he
+// talks (gentle duck) and swelling in the gaps (feedback 2026-11-01: louder, "dumdaar" cinematic bed).
 const mix = path.join(dir, 'mix.wav');
 if (music) {
-  ff(['-i', path.join(dir, 'voice.wav'), '-stream_loop', '-1', '-i', music, '-filter_complex',
-    `[1:a]aresample=48000,volume=0.32,atrim=0:${total.toFixed(3)},afade=t=in:d=1.5,afade=t=out:st=${(total - 2.5).toFixed(3)}:d=2.5[m];` +
-    `[0:a]asplit[v1][v2];[m][v1]sidechaincompress=threshold=0.03:ratio=8:attack=20:release=400[md];` +
+  ff(['-i', path.join(dir, 'voice.wav'), '-ss', MSTART, '-stream_loop', '-1', '-i', music, '-filter_complex',
+    `[0:a]loudnorm=I=-16:TP=-2:LRA=7,aresample=48000[vn];` +
+    `[1:a]aresample=48000,loudnorm=I=-16:TP=-2,volume=-9dB,atrim=0:${total.toFixed(3)},afade=t=in:d=1.2,afade=t=out:st=${(total - 3).toFixed(3)}:d=3[m];` +
+    `[vn]asplit[v1][v2];[m][v1]sidechaincompress=threshold=0.05:ratio=2.5:attack=40:release=600[md];` +
     `[v2][md]amix=inputs=2:normalize=0,loudnorm=I=-14:TP=-1.5:LRA=11[out]`, '-map', '[out]', '-ar', '48000', mix]);
 } else {
   ff(['-i', path.join(dir, 'voice.wav'), '-af', 'loudnorm=I=-14:TP=-1.5:LRA=11', '-ar', '48000', mix]);

@@ -16,6 +16,10 @@ SIL OFL fonts, Apache-2.0/MIT tools and models.
 | Track | Source | Licence | Downloaded |
 |---|---|---|---|
 | Silent Descent | https://assets.mixkit.co/music/580/580.mp3 | Mixkit Stock Music Free License (commercial, no attribution) | 2026-10-31 (Zindagi Ka Sach library) |
+| Dark Shadows | https://assets.mixkit.co/music/678/678.mp3 | Mixkit Stock Music Free License | 2026-11-01 |
+| Vastness | https://assets.mixkit.co/music/188/188.mp3 | Mixkit Stock Music Free License | 2026-11-01 |
+| Echoes | https://assets.mixkit.co/music/680/680.mp3 | Mixkit Stock Music Free License | 2026-11-01 |
+| The Journey | https://assets.mixkit.co/music/770/770.mp3 | Mixkit Stock Music Free License | 2026-11-01 |
 
 ## Images / maps
 | Item | Source | Licence |

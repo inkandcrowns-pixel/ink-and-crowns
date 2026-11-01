@@ -87,6 +87,52 @@ export async function aiJson(prompt, { check = x => x, temperature = 0.9, system
   throw new Error('All AI models failed:\n' + errors.join('\n'));
 }
 
+// Gemini TTS often appends a loud ~0.1 s static burst (TV-snow "shhh") after the last word, sometimes before the
+// first one (found 2026-11-01). Any loud window that follows/precedes near-silence at a clip edge is cut, and
+// isolated loud noise bursts inside the clip are muted. Returns { pcm, cut } with 16-bit mono PCM.
+export function cleanTtsPcm(pcm, sr = 24000) {
+  const x = new Int16Array(pcm.buffer.slice(pcm.byteOffset, pcm.byteOffset + pcm.length));
+  const win = Math.round(sr * 0.01), nw = Math.floor(x.length / win);
+  const rms = [], zcr = [];
+  for (let w = 0; w < nw; w++) {
+    let s = 0, z = 0;
+    for (let i = w * win; i < (w + 1) * win; i++) {
+      s += (x[i] / 32768) ** 2;
+      if (i > w * win && (x[i] >= 0) !== (x[i - 1] >= 0)) z++;
+    }
+    rms.push(Math.sqrt(s / win)); zcr.push(z / win);
+  }
+  const quiet = w => rms[w] < 0.02;
+  const burst = w => rms[w] > 0.25 && zcr[w] > 0.1;
+  let end = nw, start = 0, cut = 0;
+  // tail: walk back over burst windows; if they sit after ≥0.1 s of quiet, cut from the quiet
+  let w = nw - 1;
+  while (w > 0 && (burst(w) || rms[w] > 0.25)) w--;
+  if (w < nw - 1) { let q = 0; while (w - q > 0 && quiet(w - q)) q++; if (q >= 10) { end = w - q + 5; cut++; } }
+  // head: same, forwards
+  w = 0;
+  while (w < nw - 1 && burst(w)) w++;
+  if (w > 0) { let q = 0; while (w + q < nw && quiet(w + q)) q++; if (q >= 10) { start = w + q - 5; cut++; } }
+  // inside: a burst of ≤0.25 s with quiet on both sides is muted
+  for (let i = start + 10; i < end - 10; i++) {
+    if (!burst(i) || !quiet(i - 1)) continue;
+    let j = i; while (j < end && !quiet(j) && j - i < 26) j++;
+    if (j - i < 26 && quiet(j)) { x.fill(0, i * win, j * win); cut++; i = j; }
+  }
+  const out = x.slice(start * win, Math.min(x.length, end * win));
+  const f = Math.min(out.length >> 1, Math.round(sr * 0.015));   // 15 ms fades, no clicks
+  for (let i = 0; i < f; i++) { out[i] = out[i] * i / f; out[out.length - 1 - i] = out[out.length - 1 - i] * i / f; }
+  return { pcm: Buffer.from(out.buffer), cut };
+}
+
+export function writeWav(file, pcm, sr = 24000) {
+  const h = Buffer.alloc(44);
+  h.write('RIFF', 0); h.writeUInt32LE(36 + pcm.length, 4); h.write('WAVE', 8); h.write('fmt ', 12);
+  h.writeUInt32LE(16, 16); h.writeUInt16LE(1, 20); h.writeUInt16LE(1, 22); h.writeUInt32LE(sr, 24);
+  h.writeUInt32LE(sr * 2, 28); h.writeUInt16LE(2, 32); h.writeUInt16LE(16, 34); h.write('data', 36); h.writeUInt32LE(pcm.length, 40);
+  fs.writeFileSync(file, Buffer.concat([h, pcm]));
+}
+
 // Gemini TTS → 24 kHz mono WAV. Only the spoken text is sent (style lines would be read aloud).
 export async function tts(text, wavPath, { voice = 'Charon', models = ['gemini-3.8-flash-tts', 'gemini-3.1-flash-tts-preview', 'gemini-2.5-flash-preview-tts'] } = {}) {
   let last;
@@ -100,13 +146,9 @@ export async function tts(text, wavPath, { voice = 'Charon', models = ['gemini-3
           generationConfig: { responseModalities: ['AUDIO'], speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: voice } } } },
         }),
       }, { tries: 2, timeoutMs: 180000 });
-      const pcm = Buffer.from(d.candidates[0].content.parts[0].inlineData.data, 'base64');
-      const h = Buffer.alloc(44);
-      h.write('RIFF', 0); h.writeUInt32LE(36 + pcm.length, 4); h.write('WAVE', 8); h.write('fmt ', 12);
-      h.writeUInt32LE(16, 16); h.writeUInt16LE(1, 20); h.writeUInt16LE(1, 22); h.writeUInt32LE(24000, 24);
-      h.writeUInt32LE(48000, 28); h.writeUInt16LE(2, 32); h.writeUInt16LE(16, 34); h.write('data', 36); h.writeUInt32LE(pcm.length, 40);
-      fs.writeFileSync(wavPath, Buffer.concat([h, pcm]));
-      return { model, seconds: pcm.length / 48000 };
+      const { pcm, cut } = cleanTtsPcm(Buffer.from(d.candidates[0].content.parts[0].inlineData.data, 'base64'));
+      writeWav(wavPath, pcm);
+      return { model, seconds: pcm.length / 48000, cut };
     } catch (e) { last = e; }
   }
   throw last;
