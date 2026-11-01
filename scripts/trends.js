@@ -3,7 +3,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { ROOT, aiJson, log } from './lib.js';
-import { topRecent } from './yt.js';
+import { topRecent, channelSubs, topComments } from './yt.js';
 
 // Owner's formats (2026-11-01): the channel only makes these kinds of history / geopolitics explainers.
 // Each run focuses on the format used least recently, so the channel rotates through all of them.
@@ -42,10 +42,36 @@ export async function researchTrends(format = nextFormat()) {
   for (const q of [...format.queries, 'history documentary']) {
     try { for (const v of await topRecent(q)) seen.set(v.id, v); } catch (e) { log('search failed', q, e.message.slice(0, 120)); }
   }
-  const list = [...seen.values()].sort((a, b) => b.perDay - a.perDay).slice(0, 40);
-  fs.writeFileSync(path.join(STATE, 'trends.json'), JSON.stringify({ at: new Date().toISOString(), list }, null, 2));
-  log('trending videos', list.length, 'top', list[0]?.perDay, '/day');
-  return list;
+  // podcasts / interviews (> 75 min) and clips (< 8 min) are not our format
+  // English titles only (Hindi/Spanish hits rank high but say nothing about US demand)
+  const english = t => !/[^\u0000-ɏ -⁯\u{1F000}-\u{1FFFF}☀-➿]/u.test(t) && !/[¿¡ñ]|\b(qué|cómo|historia|guerra|documental)\b/i.test(t);
+  const vids = [...seen.values()].filter(v => v.minutes >= 8 && v.minutes <= 75 && english(v.title));
+  // outlier = views ÷ subscribers: a small channel's hit shows topic demand, a giant channel's shows only its fame
+  const subs = await channelSubs([...new Set(vids.map(v => v.channelId))]).catch(e => { log('subs failed', e.message.slice(0, 120)); return {}; });
+  for (const v of vids) {
+    v.subs = subs[v.channelId] || 0;
+    v.outlier = +(v.views / Math.max(1000, v.subs)).toFixed(2);
+    v.score = Math.round(v.perDay * Math.sqrt(Math.min(50, Math.max(0.1, v.outlier))));
+  }
+  const list = vids.sort((a, b) => b.score - a.score).slice(0, 40);
+  const requests = await viewerRequests(list);
+  fs.writeFileSync(path.join(STATE, 'trends.json'), JSON.stringify({ at: new Date().toISOString(), list, requests }, null, 2));
+  log('trending videos', list.length, 'top', list[0]?.perDay, '/day, outlier', list[0]?.outlier, '| viewer requests', requests.length);
+  return Object.assign(list, { requests });
+}
+
+// "Do a video on X" comments under the top trend videos and our own uploads (1 quota unit per video)
+const ASK = /\b(video|episode|part 2|next|cover|do one|you should|please (do|make)|would love|talk about)\b/i;
+async function viewerRequests(list) {
+  const ours = readJson('uploads.json', []).slice(-10).map(u => ({ id: u.id, title: u.title, own: true }));
+  const out = [];
+  for (const v of [...ours, ...list.slice(0, 8)]) {
+    for (const c of await topComments(v.id)) {
+      if (ASK.test(c.text) && c.text.length < 280) out.push({ on: v.title, own: !!v.own, likes: c.likes, text: c.text.replace(/\s+/g, ' ') });
+    }
+  }
+  // our own viewers first, then the most liked
+  return out.sort((a, b) => (b.own - a.own) || (b.likes - a.likes)).slice(0, 25);
 }
 
 // code-side guard: the reply must say which owner format it belongs to and be a real, dated event
@@ -57,8 +83,11 @@ export async function pickTopic(trending, format = nextFormat()) {
   const { data, model } = await aiJson(
     `You plan videos for "Ink & Crowns", an American history & geopolitics storytelling YouTube channel ` +
     `(15-21 min, US/UK audience).\nThis video's FORMAT: ${format.name} (format id "${format.id}").\n` +
-    `Demand signal: these videos get the most views per day right now (title | views/day):\n` +
-    trending.map(v => `- ${v.title} | ${v.perDay}`).join('\n') +
+    `Demand signal: these videos get the most views per day right now (title | views/day | outlier = views ÷ the ` +
+    `channel's subscribers; above 1 means the TOPIC pulled viewers, not the channel's fame):\n` +
+    trending.map(v => `- ${v.title} | ${v.perDay} | ${v.outlier ?? '?'}x`).join('\n') +
+    (trending.requests?.length ? `\n\nWhat viewers are asking for in comments (likes; "OUR" = our own channel, weigh these most):\n` +
+      trending.requests.map(r => `- ${r.own ? 'OUR ' : ''}(${r.likes}) ${r.text}`).join('\n') : '') +
     `\n\nWhat worked / didn't on OUR channel so far: ${JSON.stringify(learn.summary || 'no data yet')}\n` +
     `Topics we already made (never repeat): ${used.map(u => u.topic).join('; ') || 'none'}\n\n` +
     `Propose 5 ORIGINAL topics for THIS FORMAT with the highest US demand right now. Each must be a specific, real, ` +

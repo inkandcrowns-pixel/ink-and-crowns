@@ -31,8 +31,33 @@ export async function topRecent(q, days = 30, max = 25) {
   return v.items.map(x => {
     const ageDays = Math.max(1, (Date.now() - Date.parse(x.snippet.publishedAt)) / 864e5);
     const views = Number(x.statistics.viewCount || 0);
-    return { id: x.id, title: x.snippet.title, channel: x.snippet.channelTitle, views, perDay: Math.round(views / ageDays), duration: x.contentDetails.duration };
+    return { id: x.id, title: x.snippet.title, channel: x.snippet.channelTitle, channelId: x.snippet.channelId, views,
+      perDay: Math.round(views / ageDays), duration: x.contentDetails.duration, minutes: isoMinutes(x.contentDetails.duration) };
   });
+}
+
+const isoMinutes = d => { const m = /PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/.exec(d || '') || []; return (+m[1] || 0) * 60 + (+m[2] || 0) + (+m[3] || 0) / 60; };
+
+// Subscriber counts for channel ids (1 quota unit per 50 channels; hidden counts come back as 0).
+export async function channelSubs(ids) {
+  const out = {};
+  for (let i = 0; i < ids.length; i += 50) {
+    const r = await api(`channels?part=statistics&id=${ids.slice(i, i + 50).join(',')}`);
+    for (const c of r.items || []) out[c.id] = c.statistics.hiddenSubscriberCount ? 0 : Number(c.statistics.subscriberCount || 0);
+  }
+  return out;
+}
+
+// Top-level comments of a video, most relevant first (1 quota unit); comments turned off → [].
+// commentThreads needs the youtube.force-ssl scope, which our upload token lacks → read public comments with an
+// API key (YT_API_KEY, YouTube Data API only); without the key this returns [] and the picker runs without requests.
+export async function topComments(videoId, max = 50) {
+  if (!env.YT_API_KEY) return [];
+  try {
+    const r = await httpJson(`https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&order=relevance&textFormat=plainText` +
+      `&maxResults=${max}&videoId=${videoId}&key=${env.YT_API_KEY}`);
+    return (r.items || []).map(i => i.snippet.topLevelComment.snippet).map(s => ({ text: s.textDisplay.slice(0, 300), likes: s.likeCount }));
+  } catch { return []; }
 }
 
 // Resumable upload; scheduled videos go up private with publishAt (they go public by themselves).
