@@ -8,7 +8,7 @@ import { ROOT, env, log, tts, fluxImage, httpJson } from './lib.js';
 import { researchTrends, pickTopic } from './trends.js';
 import { writeLongScript } from './long_script.js';
 import { renderVideo, preflight, dur } from './render.js';
-import { upload, setThumbnail } from './yt.js';
+import { folder, list, uploadFile, QUEUE } from './drive.js';
 
 const args = process.argv.slice(2);
 const DRY = args.includes('--dry');
@@ -29,17 +29,7 @@ function currentRun() {
 }
 const save = r => wj(path.join(r.dir, 'state.json'), r.s);
 
-// Next free US prime-time slot: Mon/Wed/Fri 22:00 UTC (6 PM Eastern), at least 6 h from now.
-function nextSlot() {
-  const taken = new Set(rj(path.join(STATE, 'uploads.json'), []).map(u => u.publishAt));
-  const days = (env.PUBLISH_DAYS || '1,3,5').split(',').map(Number);
-  const hour = Number(env.PUBLISH_HOUR_UTC || 22);
-  for (let i = 0; i < 30; i++) {
-    const d = new Date(Date.now() + i * 864e5); d.setUTCHours(hour, 0, 0, 0);
-    if (days.includes(d.getUTCDay()) && d - Date.now() > 6 * 3600e3 && !taken.has(d.toISOString())) return d.toISOString();
-  }
-  return null;
-}
+const BUFFER = Number(env.BUFFER_TARGET || 4);   // ready videos to keep waiting in Drive
 
 async function geocode(place) {
   try {
@@ -148,24 +138,28 @@ async function step(r) {
     s.chapters = marks; s.duration = out.total; s.music = music.slice(0, 3).map(f => path.basename(f, '.mp3'));
     s.stage = 'upload'; save(r);
   }
-  if (s.stage === 'upload') {
-    if (DRY || !flag('YT_ENABLED')) { log('dry run / YT_ENABLED=false → not uploading. Final:', path.join(dir, 'final.mp4')); return 'ready'; }
-    const uploads = rj(path.join(STATE, 'uploads.json'), []);
-    if (uploads.some(u => u.run === path.basename(dir))) { s.stage = 'done'; save(r); return 'done'; }   // never twice
+  // finished videos wait in Google Drive; publish.js takes the oldest on publish days (no last-minute rush)
+  if (s.stage === 'upload' || s.stage === 'queue') {
+    if (DRY) { log('dry run → not queued. Final:', path.join(dir, 'final.mp4')); return 'ready'; }
     const p = s.script.pack;
-    const description = `${p.description}\n\nChapters\n${s.chapters.map(([t, n]) => `${t} ${n}`).join('\n')}\n\n` +
-      `Music: ${s.music.join(', ')} (Mixkit). Maps: Natural Earth.`;
-    const publishAt = nextSlot();
-    log('uploading, publishAt', publishAt);
-    const v = await upload(path.join(dir, 'final.mp4'), { title: p.title.slice(0, 100), description, tags: p.tags, publishAt,
-      synthetic: flag('YT_SYNTHETIC') });
-    uploads.push({ run: path.basename(dir), id: v.id, title: p.title, topic: s.topic.topic, publishAt, at: new Date().toISOString() });
-    wj(path.join(STATE, 'uploads.json'), uploads);
-    s.videoId = v.id; s.stage = 'done'; save(r);
-    try { await setThumbnail(v.id, path.join(dir, 'thumb.jpg')); log('thumbnail set'); }
-    catch (e) { log('thumbnail not set (channel needs phone verification for custom thumbnails?):', e.message.slice(0, 120)); }
-    log('UPLOADED https://youtu.be/' + v.id);
-    return 'done';
+    const meta = {
+      run: s.id, topic: s.topic.topic, title: p.title.slice(0, 100), tags: p.tags, duration: s.duration,
+      description: `${p.description}\n\nChapters\n${s.chapters.map(([t, n]) => `${t} ${n}`).join('\n')}\n\n` +
+        `Music: ${s.music.join(', ')} (Mixkit). Maps: Natural Earth.`,
+    };
+    fs.writeFileSync(path.join(dir, 'meta.json'), JSON.stringify(meta, null, 2));
+    const qid = await folder(QUEUE);
+    const have = (await list(qid)).filter(f => f.appProperties?.run === s.id).map(f => f.name);
+    for (const [f, mime] of [['final.mp4', 'video/mp4'], ['thumb.jpg', 'image/jpeg'], ['meta.json', 'application/json']]) {
+      if (have.includes(`${s.id}__${f}`)) continue;
+      log('to Drive:', f);
+      await uploadFile(path.join(dir, f), `${s.id}__${f}`, qid, mime, { run: s.id, kind: f });
+    }
+    s.stage = 'done'; s.queuedAt = new Date().toISOString(); save(r);
+    // free the Actions cache: only state.json + script.json stay
+    for (const f of fs.readdirSync(dir)) if (!['state.json', 'script.json'].includes(f)) fs.rmSync(path.join(dir, f), { recursive: true, force: true });
+    log('QUEUED in Google Drive:', meta.title);
+    return 'queued';
   }
   return s.stage;
 }
@@ -173,6 +167,11 @@ async function step(r) {
 async function main() {
   if (args[0] === 'status') { const c = currentRun(); console.log(c ? `${path.basename(c.dir)}: ${c.s.stage}` : 'no open run'); return; }
   let r = currentRun();
+  if (!r && !DRY && env.DRIVE_REFRESH_TOKEN) {
+    const ready = new Set((await list(await folder(QUEUE))).filter(f => f.appProperties?.kind === 'final.mp4').map(f => f.appProperties.run)).size;
+    if (ready >= BUFFER) { log(`buffer full: ${ready} videos ready in Drive (target ${BUFFER}) → nothing to make`); return; }
+    log(`buffer ${ready}/${BUFFER} → making the next video`);
+  }
   if (!r) {
     const topic = forcedTopic ? { topic: forcedTopic, angle: '', title: forcedTopic, map_place: forcedTopic } : await pickTopic(await researchTrends());
     const id = new Date().toISOString().slice(0, 10) + '-' + topic.topic.toLowerCase().replace(/[^a-z0-9]+/g, '-').slice(0, 40).replace(/-$/, '');

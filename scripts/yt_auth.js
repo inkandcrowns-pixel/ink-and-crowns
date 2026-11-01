@@ -12,11 +12,15 @@ const env = Object.fromEntries(
     .map(l => [l.slice(0, l.indexOf('=')), l.slice(l.indexOf('=') + 1).trim()])
 );
 
-const SCOPES = [
-  'https://www.googleapis.com/auth/youtube.upload',
-  'https://www.googleapis.com/auth/youtube',
-  'https://www.googleapis.com/auth/yt-analytics.readonly',
-].join(' ');
+// Google refuses YouTube + Drive scopes in one consent, so Drive gets its own token:
+//   node scripts/yt_auth.js         → YT_REFRESH_TOKEN
+//   node scripts/yt_auth.js drive   → DRIVE_REFRESH_TOKEN (drive.file = only files this app creates)
+const DRIVE = process.argv[2] === 'drive';
+const TOKEN_KEY = DRIVE ? 'DRIVE_REFRESH_TOKEN' : 'YT_REFRESH_TOKEN';
+const SCOPES = (DRIVE
+  ? ['https://www.googleapis.com/auth/drive.file']
+  : ['https://www.googleapis.com/auth/youtube.upload', 'https://www.googleapis.com/auth/youtube',
+    'https://www.googleapis.com/auth/yt-analytics.readonly']).join(' ');
 
 const server = http.createServer(async (req, res) => {
   const url = new URL(req.url, 'http://127.0.0.1');
@@ -37,15 +41,16 @@ const server = http.createServer(async (req, res) => {
     console.log('FAILED:', tok.error, tok.error_description);
     process.exit(1);
   }
-  const ch = await fetch('https://www.googleapis.com/youtube/v3/channels?part=snippet&mine=true', {
-    headers: { authorization: `Bearer ${tok.access_token}` },
-  }).then(x => x.json());
-  const c = ch.items?.[0];
-  let text = fs.readFileSync(envPath, 'utf8').replace(/^YT_REFRESH_TOKEN=.*\r?\n?/m, '');
+  const who = DRIVE
+    ? (await fetch('https://www.googleapis.com/drive/v3/about?fields=user', { headers: { authorization: `Bearer ${tok.access_token}` } })
+      .then(x => x.json())).user?.emailAddress
+    : (await fetch('https://www.googleapis.com/youtube/v3/channels?part=snippet&mine=true', { headers: { authorization: `Bearer ${tok.access_token}` } })
+      .then(x => x.json())).items?.[0]?.snippet?.title;
+  let text = fs.readFileSync(envPath, 'utf8').replace(new RegExp(`^${TOKEN_KEY}=.*\\r?\\n?`, 'm'), '');
   if (!text.endsWith('\n')) text += '\n';
-  fs.writeFileSync(envPath, text + `YT_REFRESH_TOKEN=${tok.refresh_token}\n`);
-  res.end(`Connected: ${c?.snippet?.title || '?'} (${c?.id || '?'}). You can close this tab.`);
-  console.log(`CONNECTED channel="${c?.snippet?.title}" id=${c?.id}; refresh token saved to .env`);
+  fs.writeFileSync(envPath, text + `${TOKEN_KEY}=${tok.refresh_token}\n`);
+  res.end(`Connected: ${who || '?'}. You can close this tab.`);
+  console.log(`CONNECTED ${DRIVE ? 'drive' : 'channel'}="${who}"; ${TOKEN_KEY} saved to .env`);
   process.exit(0);
 });
 

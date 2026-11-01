@@ -3,16 +3,22 @@ name: Ink & Crowns video
 on:
   schedule:
     - cron: '15 1 * * *'    # 06:45 IST: new day's free AI quota → script/voice/images
-    - cron: '15 13 * * *'   # 18:45 IST: second pass (more images, render, upload)
+    - cron: '15 13 * * *'   # 18:45 IST: second pass (more images, render, queue to Drive)
+    - cron: '0 18 * * *'    # 23:30 IST: publish job (Mon/Wed/Fri) + Drive cleanup (daily)
   workflow_dispatch:
     inputs:
       topic:
         description: 'Own topic for a NEW video (empty = trend research picks one)'
         required: false
       dry:
-        description: 'Dry run (make everything, do not upload)'
+        description: 'Dry run (make everything, do not queue/upload)'
         type: boolean
         default: true
+      mode:
+        description: 'make = build next video into the Drive queue; publish = upload the oldest queued video now'
+        type: choice
+        options: [make, publish]
+        default: make
 
 concurrency:
   group: video
@@ -26,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 300
     # schedule runs only when the repo variable AUTO_POST is "on" (pause switch)
-    if: github.event_name == 'workflow_dispatch' || vars.AUTO_POST == 'on'
+    if: (github.event_name == 'workflow_dispatch' && inputs.mode != 'publish') || (github.event_name == 'schedule' && github.event.schedule != '0 18 * * *' && vars.AUTO_POST == 'on')
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -84,6 +90,33 @@ jobs:
           git config user.email "inkandcrowns@gmail.com"
           git add state
           git diff --cached --quiet || (git commit -m "state: video run ${{ github.run_id }}" && git pull --rebase && git push)
+
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    if: (github.event_name == 'workflow_dispatch' && inputs.mode == 'publish') || (github.event_name == 'schedule' && github.event.schedule == '0 18 * * *' && vars.AUTO_POST == 'on')
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Tools
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+      - name: Publish oldest queued video + Drive cleanup
+        env:
+          ENV_FILE: ${{ secrets.ENV_FILE }}
+          FORCE: ${{ github.event_name == 'workflow_dispatch' && '--force' || '' }}
+        run: |
+          printf '%s\n' "$ENV_FILE" | tr -d '\r' > .env
+          node scripts/publish.js $FORCE
+      - name: Commit state
+        if: always()
+        run: |
+          rm -f .env
+          git config user.name "inkandcrowns-pixel"
+          git config user.email "inkandcrowns@gmail.com"
+          git add state
+          git diff --cached --quiet || (git commit -m "state: publish run ${{ github.run_id }}" && git pull --rebase && git push)
 
   tune:
     runs-on: ubuntu-latest
