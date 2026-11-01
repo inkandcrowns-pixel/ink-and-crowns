@@ -1,5 +1,6 @@
 // Full 8-12 min script: outline → chapter by chapter (draft + human-editor pass) → banned-phrase sweep →
 // web fact-check (Groq browser_search) → packaging (title, description, tags, thumbnail text).
+import fs from 'node:fs';
 import { aiJson, env, httpJson, log } from './lib.js';
 import { NARRATOR, BANNED, bannedHits } from './script_writer.js';
 
@@ -84,14 +85,18 @@ async function factCheck(chapters) {
   return { model: null, fixes: [] };
 }
 
-export async function writeLongScript(topic) {
+// cacheFile: outline + finished chapters are saved as they're made, so a restart continues instead of starting over
+export async function writeLongScript(topic, cacheFile) {
+  const cache = (() => { try { return JSON.parse(fs.readFileSync(cacheFile, 'utf8')); } catch { return {}; } })();
+  const keep = () => cacheFile && fs.writeFileSync(cacheFile, JSON.stringify(cache));
   log('outline…');
-  const plan = await outline(topic);
-  const chapters = [];
-  let tail = '';
-  for (let i = -1; i < plan.chapters.length; i++) {
+  const plan = cache.plan || (cache.plan = await outline(topic));
+  keep();
+  const chapters = cache.chapters || (cache.chapters = []);
+  let tail = chapters.at(-1)?.scenes.at(-1).text || '';
+  for (let i = chapters.length - 1; i < plan.chapters.length; i++) {
     const c = await writeChapter(topic, plan, i, tail);
-    chapters.push(c);
+    chapters.push(c); keep();
     tail = c.scenes.at(-1).text;
     log(`chapter ${i + 1}/${plan.chapters.length}: ${c.name} (${words(c.scenes.map(s => s.text).join(' '))} words, ${c.model})`);
   }
@@ -120,6 +125,7 @@ export async function writeLongScript(topic) {
       s.text = r.data.text;
     }
   }
+  log('style sweeps (length, tics, banned phrases)…');
   // repeated tics across chapters ("Honestly?" in every chapter sounded robotic in the first test)
   const tics = ['honestly?', 'classic ', 'here\'s the thing', 'spoiler', 'buckle'];
   for (const tic of tics) {
@@ -132,6 +138,7 @@ export async function writeLongScript(topic) {
   }
 
   // fact-check, then put each correction back into the narrator's own voice (raw fixes read like footnotes)
+  log('fact-check…');
   const fc = await factCheck(chapters);
   const clean = t => String(t).replace(/【[^】]*】/g, '').replace(/ | /g, ' ').replace(/\s{2,}/g, ' ').trim();
   for (const f of fc.fixes) {

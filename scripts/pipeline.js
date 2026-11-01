@@ -46,7 +46,7 @@ async function step(r) {
 
   if (s.stage === 'script') {
     log('writing script:', s.topic.topic);
-    s.script = await writeLongScript(s.topic);
+    s.script = await writeLongScript(s.topic, path.join(dir, 'script_parts.json'));
     wj(path.join(dir, 'script.json'), s.script);
     s.stage = 'voice'; save(r);
   }

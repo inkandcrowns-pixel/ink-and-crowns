@@ -35,11 +35,13 @@ export async function httpJson(url, opts = {}, { tries = 3, timeoutMs = 120000 }
       if (r.ok) return JSON.parse(text);
       last = new Error(`HTTP ${r.status}: ${text.slice(0, 200)}`);
       if (r.status !== 429 && r.status < 500) throw last;
+      // a long Retry-After (daily free limit) must not freeze the run for hours: fail fast, next model takes over
       const ra = Number(r.headers.get('retry-after'));
+      if (ra > 30) { last.message += ` (retry-after ${ra}s)`; throw last; }
       await sleep((ra > 0 ? ra * 1000 : 4000 * (i + 1)));
     } catch (e) {
       last = e;
-      if (/^HTTP 4(?!29)/.test(e.message)) throw e;
+      if (/^HTTP 4(?!29)|retry-after \d+s/.test(e.message)) throw e;
       await sleep(4000 * (i + 1));
     }
   }
