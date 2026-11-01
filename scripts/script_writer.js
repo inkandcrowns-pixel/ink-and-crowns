@@ -22,6 +22,10 @@ Rules:
 - No list-like structure, no "firstly/secondly", no rhetorical question in every paragraph, no cliffhanger clichés.
 - Never use these words/phrases: ${BANNED.join('; ')}.
 - Spell numbers the way a person says them aloud ("nineteen nineteen", "two point three million gallons").
+- Wars, armed groups, ongoing conflicts and controversies: explain causes, strategy and consequences neutrally;
+  say clearly what is proven, what is claimed and by whom; no gore or graphic detail; never glorify or excuse
+  terrorism; for contested origins (e.g. COVID-19) present the main hypotheses and official assessments as an
+  evidence-based debate — no "hidden truth" claims, no medical misinformation.
 - Never lean on one verbal tic: an aside like "Honestly?" may appear at most once in the whole video; vary how
   scenes and chapters open.`;
 

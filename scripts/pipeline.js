@@ -5,7 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { ROOT, env, log, tts, TTS_MODELS, fluxImage, httpJson } from './lib.js';
-import { researchTrends, pickTopic } from './trends.js';
+import { researchTrends, pickTopic, nextFormat } from './trends.js';
 import { writeLongScript } from './long_script.js';
 import { renderVideo, preflight, dur } from './render.js';
 import { folder, list, uploadFile, QUEUE } from './drive.js';
@@ -201,11 +201,14 @@ async function main() {
     log(`buffer ${ready}/${BUFFER} → making the next video`);
   }
   if (!r) {
-    const topic = forcedTopic ? { topic: forcedTopic, angle: '', title: forcedTopic, map_place: forcedTopic } : await pickTopic(await researchTrends());
+    const fmt = nextFormat();
+    const topic = forcedTopic ? { topic: forcedTopic, angle: '', title: forcedTopic, map_place: forcedTopic, format: 'manual' }
+      : await pickTopic(await researchTrends(fmt), fmt);
+    log('format:', topic.format);
     const id = new Date().toISOString().slice(0, 10) + '-' + topic.topic.toLowerCase().replace(/[^a-z0-9]+/g, '-').slice(0, 40).replace(/-$/, '');
     r = { dir: path.join(RUNS, id), s: { id, topic, stage: 'script', created: new Date().toISOString() } };
     fs.mkdirSync(r.dir, { recursive: true }); save(r);
-    const used = rj(path.join(STATE, 'topics.json'), []); used.push({ topic: topic.topic, run: id, at: r.s.created });
+    const used = rj(path.join(STATE, 'topics.json'), []); used.push({ topic: topic.topic, format: topic.format, run: id, at: r.s.created });
     wj(path.join(STATE, 'topics.json'), used);
     log('new video:', topic.topic);
   }
