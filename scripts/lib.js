@@ -49,11 +49,22 @@ export async function httpJson(url, opts = {}, { tries = 3, timeoutMs = 120000 }
 }
 
 const GEMINI_TEXT = ['gemini-3.6-flash', 'gemini-3.8-flash', 'gemini-3.1-flash-lite'];
-const GROQ_TEXT = ['openai/gpt-oss-120b', 'llama-3.3-70b-versatile'];
+// llama-3.3-70b-versatile no longer exists on Groq (404, 2026-11-01); checked list: gpt-oss-120b/20b, qwen3.8-27b
+const GROQ_TEXT = ['openai/gpt-oss-120b', 'qwen/qwen3.8-27b', 'openai/gpt-oss-20b'];
 
 function parseJson(s) {
   const t = String(s || '').replace(/^```(?:json)?\s*|\s*```$/g, '').trim();
-  return JSON.parse(t.slice(t.indexOf('{'), t.lastIndexOf('}') + 1));
+  const body = t.slice(t.indexOf('{'), t.lastIndexOf('}') + 1);
+  try { return JSON.parse(body); } catch (e) {
+    // two JSON objects back to back ("...}\n{...") → keep the first complete one
+    let depth = 0, inStr = false, esc = false;
+    for (let i = 0; i < body.length; i++) {
+      const c = body[i];
+      if (inStr) { if (esc) esc = false; else if (c === '\\') esc = true; else if (c === '"') inStr = false; continue; }
+      if (c === '"') inStr = true; else if (c === '{') depth++; else if (c === '}' && --depth === 0) return JSON.parse(body.slice(0, i + 1));
+    }
+    throw e;
+  }
 }
 
 // Circuit breaker: a model that times out / is overloaded is skipped for 20 min (a dry run lost ~4 min per
@@ -63,22 +74,39 @@ const isBenched = m => (benched.get(m) || 0) > Date.now();
 const bench = (m, e) => { if (/abort|timeout|HTTP (429|5\d\d)|fetch failed|ECONN/i.test(e.message)) benched.set(m, Date.now() + 20 * 60000); };
 
 // Ask for a JSON object; tries each Gemini model, then Groq. `check` validates/normalises the reply.
-export async function aiJson(prompt, { check = x => x, temperature = 0.9, system } = {}) {
+// A broken JSON reply gets one more try on the same model; if every model fails, wait 90 s and go round again
+// (twice) before giving up — the pipeline then resumes from its saved stage on the next run.
+export async function aiJson(prompt, opts = {}) {
+  for (let round = 0; ; round++) {
+    try { return await aiJsonOnce(prompt, opts); } catch (e) {
+      if (round >= 2) throw e;
+      log(`all AI models busy (round ${round + 1}), waiting 90 s…`);
+      benched.clear();
+      await sleep(90000);
+    }
+  }
+}
+
+async function aiJsonOnce(prompt, { check = x => x, temperature = 0.9, system } = {}) {
   const errors = [];
   for (const model of GEMINI_TEXT) {
-    if (isBenched(model)) continue;
-    try {
-      const d = await httpJson(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
-        method: 'POST',
-        headers: { 'content-type': 'application/json', 'x-goog-api-key': env.GEMINI_API_KEY },
-        body: JSON.stringify({
-          ...(system ? { systemInstruction: { parts: [{ text: system }] } } : {}),
-          contents: [{ parts: [{ text: prompt }] }],
-          generationConfig: { temperature, responseMimeType: 'application/json' },
-        }),
-      }, { tries: 1, timeoutMs: 100000 });
-      return { model, data: check(parseJson(d.candidates?.[0]?.content?.parts?.map(p => p.text).join(''))) };
-    } catch (e) { bench(model, e); errors.push(`${model}: ${e.message.slice(0, 120)}`); }
+    for (let attempt = 0; attempt < 2 && !isBenched(model); attempt++) {
+      try {
+        const d = await httpJson(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
+          method: 'POST',
+          headers: { 'content-type': 'application/json', 'x-goog-api-key': env.GEMINI_API_KEY },
+          body: JSON.stringify({
+            ...(system ? { systemInstruction: { parts: [{ text: system }] } } : {}),
+            contents: [{ parts: [{ text: prompt }] }],
+            generationConfig: { temperature: attempt ? 0.4 : temperature, responseMimeType: 'application/json' },
+          }),
+        }, { tries: 1, timeoutMs: 100000 });
+        return { model, data: check(parseJson(d.candidates?.[0]?.content?.parts?.map(p => p.text).join(''))) };
+      } catch (e) {
+        bench(model, e); errors.push(`${model}: ${e.message.slice(0, 120)}`);
+        if (!/JSON|no |too few|empty/i.test(e.message)) break;   // only bad-JSON replies are worth a second try
+      }
+    }
   }
   for (const model of GROQ_TEXT) {
     if (isBenched(model)) continue;
