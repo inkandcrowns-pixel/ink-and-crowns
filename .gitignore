@@ -1,4 +1,7 @@
-﻿.env
+.env
 output/
 temp/
 node_modules/
+preview/
+*.mp4
+music/
