@@ -33,7 +33,7 @@ export async function httpJson(url, opts = {}, { tries = 3, timeoutMs = 120000 }
       const r = await fetch(url, { ...opts, signal: AbortSignal.timeout(timeoutMs) });
       const text = await r.text();
       if (r.ok) return JSON.parse(text);
-      last = new Error(`HTTP ${r.status}: ${text.slice(0, 200)}`);
+      last = new Error(`HTTP ${r.status}: ${text.slice(0, 200)}${/PerDay/.test(text) ? ' [daily quota]' : ''}`);
       if (r.status !== 429 && r.status < 500) throw last;
       // a long Retry-After (daily free limit) must not freeze the run for hours: fail fast, next model takes over
       const ra = Number(r.headers.get('retry-after'));
@@ -52,7 +52,7 @@ const GEMINI_TEXT = ['gemini-3.6-flash', 'gemini-3.8-flash', 'gemini-3.1-flash-l
 // llama-3.3-70b-versatile no longer exists on Groq (404, 2026-11-01); checked list: gpt-oss-120b/20b, qwen3.8-27b
 const GROQ_TEXT = ['openai/gpt-oss-120b', 'qwen/qwen3.8-27b', 'openai/gpt-oss-20b'];
 
-function parseJson(s) {
+export function parseJson(s) {
   const t = String(s || '').replace(/^```(?:json)?\s*|\s*```$/g, '').trim();
   const body = t.slice(t.indexOf('{'), t.lastIndexOf('}') + 1);
   try { return JSON.parse(body); } catch (e) {
@@ -173,7 +173,10 @@ export function writeWav(file, pcm, sr = 24000) {
 }
 
 // Gemini TTS → 24 kHz mono WAV. Only the spoken text is sent (style lines would be read aloud).
-export async function tts(text, wavPath, { voice = 'Charon', models = ['gemini-3.8-flash-tts', 'gemini-3.1-flash-tts-preview', 'gemini-2.5-flash-preview-tts'] } = {}) {
+// Free tier = 10 requests/day per TTS model (found 2026-11-01), so callers send ~450-word chunks and keep ONE
+// model per video (voices differ slightly between models). A daily-quota error is thrown with e.quota = true.
+export const TTS_MODELS = ['gemini-3.8-flash-tts', 'gemini-3.8-flash-lite-tts', 'gemini-3.1-flash-tts-preview'];
+export async function tts(text, wavPath, { voice = 'Charon', models = TTS_MODELS } = {}) {
   let last;
   for (const model of models) {
     try {
@@ -188,7 +191,7 @@ export async function tts(text, wavPath, { voice = 'Charon', models = ['gemini-3
       const { pcm, cut } = cleanTtsPcm(Buffer.from(d.candidates[0].content.parts[0].inlineData.data, 'base64'));
       writeWav(wavPath, pcm);
       return { model, seconds: pcm.length / 48000, cut };
-    } catch (e) { last = e; }
+    } catch (e) { last = e; if (/daily quota|HTTP 429/.test(e.message)) e.quota = true; }
   }
   throw last;
 }

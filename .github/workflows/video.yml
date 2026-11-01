@@ -44,8 +44,13 @@ jobs:
       - name: Tools
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
-          pip install -q pillow numpy
+          pip install -q pillow numpy faster-whisper
           ffmpeg -version | head -1
+      - name: Whisper model cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: whisper-small-en
       - name: Restore work in progress
         uses: actions/cache/restore@v4
         with:

@@ -4,7 +4,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
-import { ROOT, env, log, tts, fluxImage, httpJson } from './lib.js';
+import { ROOT, env, log, tts, TTS_MODELS, fluxImage, httpJson } from './lib.js';
 import { researchTrends, pickTopic } from './trends.js';
 import { writeLongScript } from './long_script.js';
 import { renderVideo, preflight, dur } from './render.js';
@@ -52,11 +52,39 @@ async function step(r) {
   }
   if (s.stage === 'voice') {
     const sc = scenes();
-    for (let i = 0; i < sc.length; i += 3) {
-      await Promise.all(sc.slice(i, i + 3).map(async (x, k) => {
-        const f = path.join(dir, `vo${String(i + k).padStart(3, '0')}.wav`);
-        if (!fs.existsSync(f)) await tts(x.text, f, { voice: VOICE });
-      }));
+    // chunks of whole scenes, ≤450 words, never across a chapter (10 TTS requests/day on the free tier)
+    if (!s.chunks) {
+      s.chunks = [];
+      let cur = null;
+      sc.forEach((x, i) => {
+        const w = x.text.split(/\s+/).length;
+        if (!cur || cur.ci !== x.ci || cur.words + w > 450) { cur = { ci: x.ci, scenes: [], words: 0 }; s.chunks.push(cur); }
+        cur.scenes.push(i); cur.words += w;
+      });
+      save(r);
+    }
+    for (const [k, ch] of s.chunks.entries()) {
+      const wavF = path.join(dir, `chunk${String(k).padStart(2, '0')}.wav`);
+      if (fs.existsSync(wavF)) continue;
+      try {
+        // one model for the whole video: the first chunk picks it, the rest must use the same one
+        const res = await tts(ch.scenes.map(i => sc[i].text).join('\n\n'), wavF, { voice: VOICE, models: s.ttsModel ? [s.ttsModel] : TTS_MODELS });
+        if (!s.ttsModel) { s.ttsModel = res.model; }
+        log(`voice chunk ${k + 1}/${s.chunks.length}: ${res.seconds.toFixed(0)} s (${res.model})`); save(r);
+      } catch (e) {
+        if (e.quota) { log(`TTS daily free quota used (${s.ttsModel || 'all models'}) → voice continues next run`); save(r); return 'waiting'; }
+        throw e;
+      }
+    }
+    // cut every chunk into scene clips at the silences between scenes (Whisper word timings)
+    for (const [k, ch] of s.chunks.entries()) {
+      const first = path.join(dir, `vo${String(ch.scenes[0]).padStart(3, '0')}.wav`);
+      if (fs.existsSync(first)) continue;
+      const list = path.join(dir, `chunk${k}.json`), tmpPrefix = path.join(dir, `cut${k}_`);
+      fs.writeFileSync(list, JSON.stringify(ch.scenes.map(i => sc[i].text)));
+      const out = execFileSync('python', ['-I', path.join(ROOT, 'scripts', 'align.py'), path.join(dir, `chunk${String(k).padStart(2, '0')}.wav`), list, tmpPrefix]).toString();
+      log(`aligned chunk ${k + 1}: ${out.trim().slice(0, 120)}`);
+      ch.scenes.forEach((i, j) => fs.renameSync(`${tmpPrefix}${String(j).padStart(3, '0')}.wav`, path.join(dir, `vo${String(i).padStart(3, '0')}.wav`)));
     }
     s.voiceSeconds = sc.reduce((a, _, i) => a + dur(path.join(dir, `vo${String(i).padStart(3, '0')}.wav`)), 0);
     log('voice', (s.voiceSeconds / 60).toFixed(1), 'min');

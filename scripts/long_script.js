@@ -1,7 +1,7 @@
 // Full 8-12 min script: outline → chapter by chapter (draft + human-editor pass) → banned-phrase sweep →
 // web fact-check (Groq browser_search) → packaging (title, description, tags, thumbnail text).
 import fs from 'node:fs';
-import { aiJson, env, httpJson, log } from './lib.js';
+import { aiJson, env, httpJson, log, parseJson } from './lib.js';
 import { NARRATOR, BANNED, bannedHits } from './script_writer.js';
 
 const words = s => String(s).trim().split(/\s+/).filter(Boolean).length;
@@ -61,9 +61,20 @@ async function writeChapter(topic, plan, i, prevTail) {
   return { name: ch.name, scenes: edited.data.scenes, model: edited.model };
 }
 
-// Groq gpt-oss with built-in web search checks the claims and returns corrections.
+// Groq gpt-oss with built-in web search checks the claims, ONE CHAPTER per call (the whole script at once hit
+// Groq's tokens-per-minute limit, 2026-11-01), with a pause between chapters.
 async function factCheck(chapters) {
-  const text = chapters.map((c, ci) => c.scenes.map((s, si) => `[${ci}.${si}] ${s.text}`).join('\n')).join('\n');
+  const fixes = [];
+  let model = null;
+  for (const [ci, c] of chapters.entries()) {
+    const r = await factCheckText(c.scenes.map((s, si) => `[${ci}.${si}] ${s.text}`).join('\n'));
+    fixes.push(...r.fixes); model = r.model || model;
+    await new Promise(x => setTimeout(x, 12000));
+  }
+  return { model, fixes };
+}
+
+async function factCheckText(text) {
   for (const model of ['openai/gpt-oss-120b', 'openai/gpt-oss-20b']) {
     try {
       const d = await httpJson('https://api.groq.com/openai/v1/chat/completions', {
@@ -77,8 +88,7 @@ async function factCheck(chapters) {
             `${text}\n\nAnswer ONLY JSON: {"fixes":[{"id":"chapter.scene","text":"corrected narration","why":"short reason"}]}` }],
         }),
       }, { tries: 2, timeoutMs: 180000 });
-      const raw = d.choices?.[0]?.message?.content || '';
-      const j = JSON.parse(raw.slice(raw.indexOf('{'), raw.lastIndexOf('}') + 1));
+      const j = parseJson(d.choices?.[0]?.message?.content || '');
       return { model, fixes: Array.isArray(j.fixes) ? j.fixes : [] };
     } catch (e) { log('fact-check', model, 'failed:', e.message.slice(0, 120)); }
   }
@@ -107,12 +117,17 @@ export async function writeLongScript(topic, cacheFile) {
     const ci = chapters.map((c, k) => [k, words(c.scenes.map(s => s.text).join(' '))]).filter(([k]) => k > 0)
       .sort((a, b) => a[1] - b[1])[0][0];
     const c = chapters[ci];
-    log(`script ${total} words < 2300 → expanding "${c.name}"`);
-    const r = await aiJson(`${NARRATOR}\n\nThis chapter of a video about ${topic.topic} is too thin. Expand it by about ` +
-      `60% with more true, specific detail (people, places, what it felt like, consequences) — no padding, no repeats ` +
-      `of other chapters. Keep the voice.\nCHAPTER: ${JSON.stringify(c.scenes)}\nReturn JSON {${SCENE_SHAPE}}`,
+    log(`script ${total} words < 2300 → adding scenes to "${c.name}"`);
+    // asking to "expand" returned the same length; asking for NEW scenes to insert actually adds words
+    const need = Math.max(3, Math.round((2400 - total) / 30 / 2));
+    const r = await aiJson(`${NARRATOR}\n\nVideo about ${topic.topic}. This chapter is too thin:\n${JSON.stringify(c.scenes.map(s => s.text))}\n` +
+      `Write ${need} NEW scenes (25-35 words each) with more true, specific detail — people, places, what it felt ` +
+      `like, consequences — that fit between or after these lines. Don't repeat anything already said. ` +
+      `Return JSON {"after_scene": index of the existing scene they follow (0-based), ${SCENE_SHAPE}}`,
       { check: normScenes, temperature: 0.8 }).catch(() => null);
-    if (r) c.scenes = r.data.scenes; else break;
+    if (!r) break;
+    const at = Math.min(c.scenes.length - 1, Math.max(0, Number(r.data.after_scene ?? c.scenes.length - 1)));
+    c.scenes.splice(at + 1, 0, ...r.data.scenes);
   }
 
   // banned phrases: rewrite only the offending scenes
