@@ -17,7 +17,8 @@ ACCENT = (160, 32, 24)
 PAPER = (176, 205, 196)      # sea: faded teal watercolour wash (colour, not plain paper: feedback 2026-11-01)
 LAND = (226, 196, 128)       # land: warm ochre
 
-geo = json.load(open(os.path.expanduser("~/VideoAssets/maps/ne_10m_ind.geojson"), encoding="utf-8"))
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+geo = json.load(open(os.path.join(ROOT, "data", "ne_10m_ind.geojson"), encoding="utf-8"))
 polys = []
 for f in geo["features"]:
     g = f["geometry"]
@@ -48,10 +49,10 @@ def paper_texture():
     return Image.composite(Image.new("RGB", (W, H), (150, 115, 75)), img, vign)
 
 BASE = paper_texture()
-serif = "C:/Windows/Fonts/georgiab.ttf"
-serif_i = "C:/Windows/Fonts/georgiai.ttf"
-f_label = ImageFont.truetype(serif, int(H * 0.062))
-f_sub = ImageFont.truetype(serif_i, int(H * 0.033))
+# Libre Baskerville (SIL OFL) ships in fonts/, so Linux runners render the same as the laptop
+f_label = ImageFont.truetype(os.path.join(ROOT, "fonts", "LibreBaskerville-VF.ttf"), int(H * 0.058))
+f_label.set_variation_by_name("Bold")
+f_sub = ImageFont.truetype(os.path.join(ROOT, "fonts", "LibreBaskerville-Italic-VF.ttf"), int(H * 0.032))
 
 def ease(t):
     return t * t * (3 - 2 * t)

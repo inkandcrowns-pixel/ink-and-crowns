@@ -21,7 +21,9 @@ Rules:
 - Concrete facts only: real names, dates, numbers, places. Never invent quotes or numbers; if unsure, leave it out.
 - No list-like structure, no "firstly/secondly", no rhetorical question in every paragraph, no cliffhanger clichés.
 - Never use these words/phrases: ${BANNED.join('; ')}.
-- Spell numbers the way a person says them aloud ("nineteen nineteen", "two point three million gallons").`;
+- Spell numbers the way a person says them aloud ("nineteen nineteen", "two point three million gallons").
+- Never lean on one verbal tic: an aside like "Honestly?" may appear at most once in the whole video; vary how
+  scenes and chapters open.`;
 
 function wordCount(s) { return String(s).trim().split(/\s+/).filter(Boolean).length; }
 export function bannedHits(text) {

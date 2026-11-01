@@ -1,0 +1,178 @@
+// Ink & Crowns pipeline. One call advances the current video as far as it can and saves progress:
+// topic → script → voice → images (quota-aware, resumes next run) → maps → thumbnail → render → preflight → upload.
+// Usage: node scripts/pipeline.js [run|status] [--topic "..."] [--dry]   (dry = everything except the upload)
+import fs from 'node:fs';
+import path from 'node:path';
+import { execFileSync } from 'node:child_process';
+import { ROOT, env, log, tts, fluxImage, httpJson } from './lib.js';
+import { researchTrends, pickTopic } from './trends.js';
+import { writeLongScript } from './long_script.js';
+import { renderVideo, preflight, dur } from './render.js';
+import { upload, setThumbnail } from './yt.js';
+
+const args = process.argv.slice(2);
+const DRY = args.includes('--dry');
+const forcedTopic = args.includes('--topic') ? args[args.indexOf('--topic') + 1] : null;
+const STATE = path.join(ROOT, 'state');
+const RUNS = path.join(ROOT, 'runs');
+fs.mkdirSync(STATE, { recursive: true }); fs.mkdirSync(RUNS, { recursive: true });
+const rj = (f, d) => { try { return JSON.parse(fs.readFileSync(f, 'utf8')); } catch { return d; } };
+const wj = (f, o) => { fs.writeFileSync(f + '.tmp', JSON.stringify(o, null, 2)); fs.renameSync(f + '.tmp', f); };
+const flag = (k, d = 'false') => String(env[k] ?? d).toLowerCase() === 'true';
+const IMAGES_PER_RUN = Number(env.IMAGES_PER_RUN || 60);
+const VOICE = env.VOICE || 'Charon';
+
+function currentRun() {
+  const dirs = fs.readdirSync(RUNS).filter(d => fs.existsSync(path.join(RUNS, d, 'state.json'))).sort();
+  for (const d of dirs) { const s = rj(path.join(RUNS, d, 'state.json')); if (s.stage !== 'done') return { dir: path.join(RUNS, d), s }; }
+  return null;
+}
+const save = r => wj(path.join(r.dir, 'state.json'), r.s);
+
+// Next free US prime-time slot: Mon/Wed/Fri 22:00 UTC (6 PM Eastern), at least 6 h from now.
+function nextSlot() {
+  const taken = new Set(rj(path.join(STATE, 'uploads.json'), []).map(u => u.publishAt));
+  const days = (env.PUBLISH_DAYS || '1,3,5').split(',').map(Number);
+  const hour = Number(env.PUBLISH_HOUR_UTC || 22);
+  for (let i = 0; i < 30; i++) {
+    const d = new Date(Date.now() + i * 864e5); d.setUTCHours(hour, 0, 0, 0);
+    if (days.includes(d.getUTCDay()) && d - Date.now() > 6 * 3600e3 && !taken.has(d.toISOString())) return d.toISOString();
+  }
+  return null;
+}
+
+async function geocode(place) {
+  try {
+    const r = await httpJson(`https://nominatim.openstreetmap.org/search?format=json&limit=1&q=${encodeURIComponent(place)}`,
+      { headers: { 'user-agent': 'InkAndCrowns/1.0 (inkandcrowns@gmail.com)' } }, { tries: 2 });
+    if (r[0]) return [Number(r[0].lon), Number(r[0].lat)];
+  } catch { /* fall through */ }
+  return null;
+}
+
+async function step(r) {
+  const { dir, s } = r;
+  const scenes = () => s.script.chapters.flatMap((c, ci) => c.scenes.map((sc, si) => ({ ...sc, ci, si, chapterTitle: si === 0 && ci > 0 ? c.name : null })));
+
+  if (s.stage === 'script') {
+    log('writing script:', s.topic.topic);
+    s.script = await writeLongScript(s.topic);
+    wj(path.join(dir, 'script.json'), s.script);
+    s.stage = 'voice'; save(r);
+  }
+  if (s.stage === 'voice') {
+    const sc = scenes();
+    for (let i = 0; i < sc.length; i += 3) {
+      await Promise.all(sc.slice(i, i + 3).map(async (x, k) => {
+        const f = path.join(dir, `vo${String(i + k).padStart(3, '0')}.wav`);
+        if (!fs.existsSync(f)) await tts(x.text, f, { voice: VOICE });
+      }));
+    }
+    s.voiceSeconds = sc.reduce((a, _, i) => a + dur(path.join(dir, `vo${String(i).padStart(3, '0')}.wav`)), 0);
+    log('voice', (s.voiceSeconds / 60).toFixed(1), 'min');
+    s.stage = 'images'; save(r);
+  }
+  if (s.stage === 'images') {
+    const sc = scenes();
+    let made = 0, quotaHit = false;
+    const todo = sc.map((x, i) => [x, i]).filter(([x, i]) => x.visual !== 'map' && !fs.existsSync(path.join(dir, `img${String(i).padStart(3, '0')}.jpg`)));
+    const thumbBg = path.join(dir, 'thumb_bg.jpg');
+    if (!fs.existsSync(thumbBg)) todo.unshift([{ prompt: s.script.pack.thumb_prompt }, 'thumb']);
+    for (let k = 0; k < todo.length && made < IMAGES_PER_RUN && !quotaHit; k += 3) {
+      await Promise.all(todo.slice(k, k + 3).map(async ([x, i]) => {
+        const f = i === 'thumb' ? thumbBg : path.join(dir, `img${String(i).padStart(3, '0')}.jpg`);
+        try { await fluxImage(x.prompt, f); made++; } catch (e) {
+          if (/4006|daily|allocation|quota|429/i.test(e.message)) quotaHit = true;
+          log('image', i, 'failed:', e.message.slice(0, 140));
+        }
+      }));
+    }
+    const left = sc.filter((x, i) => x.visual !== 'map' && !fs.existsSync(path.join(dir, `img${String(i).padStart(3, '0')}.jpg`))).length;
+    log(`images made ${made}, left ${left}${quotaHit ? ' (free quota used up, continues next run)' : ''}`);
+    if (left || !fs.existsSync(thumbBg)) { save(r); return 'waiting'; }
+    s.stage = 'maps'; save(r);
+  }
+  if (s.stage === 'maps') {
+    const year = (s.topic.topic.match(/\b(1\d{3}|20\d{2})\b/) || [])[1] || '';
+    for (const [x, i] of scenes().map((x, i) => [x, i]).filter(([x]) => x.visual === 'map')) {
+      const out = path.join(dir, `map${String(i).padStart(3, '0')}`);
+      if (fs.existsSync(path.join(out, 'f0149.png'))) continue;
+      const place = x.place || s.topic.map_place;
+      const ll = await geocode(place) || await geocode(s.topic.map_place);
+      if (!ll) { log('no coordinates for', place, '→ map beat becomes an illustration'); x.visual = 'ink'; continue; }
+      const label = place.split(',')[0].toUpperCase();
+      execFileSync('python', ['-I', path.join(ROOT, 'scripts', 'map_scene.py'), out, String(ll[0]), String(ll[1]), label, year, '5', '1920', '1080'], { stdio: 'inherit' });
+      await new Promise(res => setTimeout(res, 1100));   // Nominatim: max 1 request/second
+    }
+    // a map beat we couldn't place needs an image too
+    for (const [x, i] of scenes().map((x, i) => [x, i])) {
+      const img = path.join(dir, `img${String(i).padStart(3, '0')}.jpg`);
+      if (x.visual === 'map' && !fs.existsSync(path.join(dir, `map${String(i).padStart(3, '0')}`, 'f0149.png')) && !fs.existsSync(img)) await fluxImage(x.prompt || x.text, img);
+    }
+    s.stage = 'thumb'; save(r);
+  }
+  if (s.stage === 'thumb') {
+    execFileSync('python', ['-I', path.join(ROOT, 'scripts', 'thumb.py'), path.join(dir, 'thumb_bg.jpg'), path.join(dir, 'thumb.jpg'),
+      s.script.pack.thumb_text, Math.random() < 0.5 ? 'left' : 'right'], { stdio: 'inherit' });
+    s.stage = 'render'; save(r);
+  }
+  if (s.stage === 'render') {
+    const sc = scenes().map((x, i) => {
+      const n = String(i).padStart(3, '0');
+      const mapDir = path.join(dir, `map${n}`);
+      const hasMap = fs.existsSync(path.join(mapDir, 'f0149.png'));
+      return { ...x, visual: hasMap ? 'map' : 'ink', mapDir: hasMap ? mapDir : null, img: path.join(dir, `img${n}.jpg`),
+        voFile: path.join(dir, `vo${n}.wav`), vo: dur(path.join(dir, `vo${n}.wav`)) };
+    });
+    const music = fs.readdirSync(path.join(ROOT, 'music')).filter(f => f.endsWith('.mp3')).map(f => path.join(ROOT, 'music', f))
+      .sort(() => Math.random() - 0.5);
+    log('render', sc.length, 'scenes…');
+    const out = renderVideo(sc, dir, { musicFiles: music.slice(0, 3) });
+    const pf = preflight(out.final, out.total);
+    log('preflight', JSON.stringify(pf));
+    if (!pf.ok) throw new Error('preflight failed: ' + pf.problems.join(', '));
+    // YouTube chapters from the real scene start times
+    const fmt = t => `${Math.floor(t / 60)}:${String(Math.floor(t % 60)).padStart(2, '0')}`;
+    const marks = [['0:00', 'Intro']];
+    sc.forEach((x, i) => { if (x.chapterTitle) marks.push([fmt(out.starts[i]), x.chapterTitle]); });
+    s.chapters = marks; s.duration = out.total; s.music = music.slice(0, 3).map(f => path.basename(f, '.mp3'));
+    s.stage = 'upload'; save(r);
+  }
+  if (s.stage === 'upload') {
+    if (DRY || !flag('YT_ENABLED')) { log('dry run / YT_ENABLED=false → not uploading. Final:', path.join(dir, 'final.mp4')); return 'ready'; }
+    const uploads = rj(path.join(STATE, 'uploads.json'), []);
+    if (uploads.some(u => u.run === path.basename(dir))) { s.stage = 'done'; save(r); return 'done'; }   // never twice
+    const p = s.script.pack;
+    const description = `${p.description}\n\nChapters\n${s.chapters.map(([t, n]) => `${t} ${n}`).join('\n')}\n\n` +
+      `Music: ${s.music.join(', ')} (Mixkit). Maps: Natural Earth.`;
+    const publishAt = nextSlot();
+    log('uploading, publishAt', publishAt);
+    const v = await upload(path.join(dir, 'final.mp4'), { title: p.title.slice(0, 100), description, tags: p.tags, publishAt,
+      synthetic: flag('YT_SYNTHETIC') });
+    uploads.push({ run: path.basename(dir), id: v.id, title: p.title, topic: s.topic.topic, publishAt, at: new Date().toISOString() });
+    wj(path.join(STATE, 'uploads.json'), uploads);
+    s.videoId = v.id; s.stage = 'done'; save(r);
+    try { await setThumbnail(v.id, path.join(dir, 'thumb.jpg')); log('thumbnail set'); }
+    catch (e) { log('thumbnail not set (channel needs phone verification for custom thumbnails?):', e.message.slice(0, 120)); }
+    log('UPLOADED https://youtu.be/' + v.id);
+    return 'done';
+  }
+  return s.stage;
+}
+
+async function main() {
+  if (args[0] === 'status') { const c = currentRun(); console.log(c ? `${path.basename(c.dir)}: ${c.s.stage}` : 'no open run'); return; }
+  let r = currentRun();
+  if (!r) {
+    const topic = forcedTopic ? { topic: forcedTopic, angle: '', title: forcedTopic, map_place: forcedTopic } : await pickTopic(await researchTrends());
+    const id = new Date().toISOString().slice(0, 10) + '-' + topic.topic.toLowerCase().replace(/[^a-z0-9]+/g, '-').slice(0, 40).replace(/-$/, '');
+    r = { dir: path.join(RUNS, id), s: { id, topic, stage: 'script', created: new Date().toISOString() } };
+    fs.mkdirSync(r.dir, { recursive: true }); save(r);
+    const used = rj(path.join(STATE, 'topics.json'), []); used.push({ topic: topic.topic, run: id, at: r.s.created });
+    wj(path.join(STATE, 'topics.json'), used);
+    log('new video:', topic.topic);
+  }
+  const res = await step(r);
+  log('result:', res);
+}
+main().catch(e => { console.error('FAILED:', e.stack || e.message); process.exit(1); });
