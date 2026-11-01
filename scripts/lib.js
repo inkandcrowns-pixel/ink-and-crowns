@@ -54,10 +54,17 @@ function parseJson(s) {
   return JSON.parse(t.slice(t.indexOf('{'), t.lastIndexOf('}') + 1));
 }
 
+// Circuit breaker: a model that times out / is overloaded is skipped for 20 min (a dry run lost ~4 min per
+// chapter waiting on busy Gemini models, 2026-11-01). Bad JSON doesn't trip it.
+const benched = new Map();
+const isBenched = m => (benched.get(m) || 0) > Date.now();
+const bench = (m, e) => { if (/abort|timeout|HTTP (429|5\d\d)|fetch failed|ECONN/i.test(e.message)) benched.set(m, Date.now() + 20 * 60000); };
+
 // Ask for a JSON object; tries each Gemini model, then Groq. `check` validates/normalises the reply.
 export async function aiJson(prompt, { check = x => x, temperature = 0.9, system } = {}) {
   const errors = [];
   for (const model of GEMINI_TEXT) {
+    if (isBenched(model)) continue;
     try {
       const d = await httpJson(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
         method: 'POST',
@@ -67,11 +74,12 @@ export async function aiJson(prompt, { check = x => x, temperature = 0.9, system
           contents: [{ parts: [{ text: prompt }] }],
           generationConfig: { temperature, responseMimeType: 'application/json' },
         }),
-      }, { tries: 2, timeoutMs: 150000 });
+      }, { tries: 1, timeoutMs: 100000 });
       return { model, data: check(parseJson(d.candidates?.[0]?.content?.parts?.map(p => p.text).join(''))) };
-    } catch (e) { errors.push(`${model}: ${e.message.slice(0, 120)}`); }
+    } catch (e) { bench(model, e); errors.push(`${model}: ${e.message.slice(0, 120)}`); }
   }
   for (const model of GROQ_TEXT) {
+    if (isBenched(model)) continue;
     try {
       const d = await httpJson('https://api.groq.com/openai/v1/chat/completions', {
         method: 'POST',
@@ -82,8 +90,9 @@ export async function aiJson(prompt, { check = x => x, temperature = 0.9, system
         }),
       }, { tries: 2 });
       return { model, data: check(parseJson(d.choices?.[0]?.message?.content)) };
-    } catch (e) { errors.push(`${model}: ${e.message.slice(0, 120)}`); }
+    } catch (e) { bench(model, e); errors.push(`${model}: ${e.message.slice(0, 120)}`); }
   }
+  if (!errors.length) { benched.clear(); return aiJson(prompt, { check, temperature, system }); }  // all benched: retry everything
   throw new Error('All AI models failed:\n' + errors.join('\n'));
 }
 
