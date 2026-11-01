@@ -6,6 +6,7 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { ROOT, env, log, tts, TTS_MODELS, fluxImage, httpJson } from './lib.js';
 import { researchTrends, pickTopic, nextFormat } from './trends.js';
+import { competitorDemand } from './competitors.js';
 import { writeLongScript } from './long_script.js';
 import { renderVideo, preflight, dur } from './render.js';
 import { folder, list, uploadFile, QUEUE } from './drive.js';
@@ -202,8 +203,13 @@ async function main() {
   }
   if (!r) {
     const fmt = nextFormat();
-    const topic = forcedTopic ? { topic: forcedTopic, angle: '', title: forcedTopic, map_place: forcedTopic, format: 'manual' }
-      : await pickTopic(await researchTrends(fmt), fmt);
+    let topic;
+    if (forcedTopic) topic = { topic: forcedTopic, angle: '', title: forcedTopic, map_place: forcedTopic, format: 'manual' };
+    else {
+      const trend = await researchTrends(fmt);
+      const audience = await competitorDemand(trend).catch(e => { log('competitor analysis skipped:', e.message.slice(0, 120)); return null; });
+      topic = await pickTopic(trend, fmt, audience);
+    }
     log('format:', topic.format);
     const id = new Date().toISOString().slice(0, 10) + '-' + topic.topic.toLowerCase().replace(/[^a-z0-9]+/g, '-').slice(0, 40).replace(/-$/, '');
     r = { dir: path.join(RUNS, id), s: { id, topic, stage: 'script', created: new Date().toISOString() } };

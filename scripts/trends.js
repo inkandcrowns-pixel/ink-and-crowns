@@ -77,7 +77,7 @@ async function viewerRequests(list) {
 // code-side guard: the reply must say which owner format it belongs to and be a real, dated event
 const fits = t => FORMATS.some(f => f.id === t.format) && Number(t.year) > 0;
 
-export async function pickTopic(trending, format = nextFormat()) {
+export async function pickTopic(trending, format = nextFormat(), audience = null) {
   const used = readJson('topics.json', []);
   const learn = readJson('learnings.json', {});
   const { data, model } = await aiJson(
@@ -88,6 +88,11 @@ export async function pickTopic(trending, format = nextFormat()) {
     trending.map(v => `- ${v.title} | ${v.perDay} | ${v.outlier ?? '?'}x`).join('\n') +
     (trending.requests?.length ? `\n\nWhat viewers are asking for in comments (likes; "OUR" = our own channel, weigh these most):\n` +
       trending.requests.map(r => `- ${r.own ? 'OUR ' : ''}(${r.likes}) ${r.text}`).join('\n') : '') +
+    // competitor watch (competitors.js): what over-performs on rival channels and what their viewers ask for
+    (audience?.wants?.length ? `\n\nCompetitor analysis (what this audience demands; strength 1-10):\n` +
+      audience.wants.map(w => `- [${w.strength}] ${w.topic} — ${w.evidence}`).join('\n') +
+      (audience.gaps?.length ? `\nGaps viewers say nobody covers well: ${audience.gaps.join('; ')}` : '') +
+      (audience.saturated?.length ? `\nSaturated right now (avoid unless a truly new angle): ${audience.saturated.join('; ')}` : '') : '') +
     `\n\nWhat worked / didn't on OUR channel so far: ${JSON.stringify(learn.summary || 'no data yet')}\n` +
     `Topics we already made (never repeat): ${used.map(u => u.topic).join('; ') || 'none'}\n\n` +
     `Propose 5 ORIGINAL topics for THIS FORMAT with the highest US demand right now. Each must be a specific, real, ` +
@@ -97,7 +102,8 @@ export async function pickTopic(trending, format = nextFormat()) {
     `violence or gore, never glorify terrorists or armed groups, no partisan US domestic politics, no hate; ` +
     `contested claims (e.g. COVID-19 origins) are framed as an evidence-based debate presenting the main ` +
     `hypotheses and what official/intelligence assessments say — never "the hidden truth" or medical ` +
-    `misinformation. Rank them by expected US views (demand signal above + our own channel results).\n` +
+    `misinformation. Rank them by expected US views (demand signal + competitor analysis + our own results; ` +
+    `a topic the competitor audience explicitly asks for and nobody covers well ranks highest).\n` +
     `Return JSON {"topics":[{"topic":"specific story, place, year","angle":"the hook in one line","why":"why it will get views",` +
     `"title":"YouTube title, max 60 chars, curiosity without clickbait lies","map_place":"main real place name",` +
     `"year":"main year as a number","format":"${format.id}"}]}`,
