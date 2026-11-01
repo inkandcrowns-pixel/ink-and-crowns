@@ -181,5 +181,21 @@ export async function writeLongScript(topic, cacheFile) {
     `subject, dramatic, no text)","description":"2 short human paragraphs, no hashtags spam, no emojis","tags":["8-12 tags"]}`,
     { check: d => { if (!d.title || !d.description) throw new Error('no package'); return d; } },
   );
+  await verifyPack(pack, all);
   return { topic, plan, chapters, pack, words: words(all), banned_left: bannedHits(all), fact_fixes: fc.fixes };
+}
+
+// The first dry run produced "Americans Sold Trucks to Save Nazi Horses" — nothing was sold. Misleading titles
+// hurt trust and the channel, so title + thumbnail text must be literally supported by the script.
+export async function verifyPack(pack, script) {
+  const { data } = await aiJson(
+    `Script of a history video:\n${script.slice(0, 9000)}\n\nProposed YouTube title: "${pack.title}"\nThumbnail text: "${pack.thumb_text}"\n` +
+    `Check every claim in the title and thumbnail text against the script and real history. Curiosity is fine, ` +
+    `invented or exaggerated events are not. Return JSON {"title_ok":true/false,"thumb_ok":true/false,` +
+    `"title":"the same title if ok, else an honest curiosity title max 60 chars","thumb_text":"same if ok, else 2-4 honest words","why":"short"}`,
+    { check: d => { if (!d.title) throw new Error('no verdict'); return d; }, temperature: 0.3 },
+  );
+  if (!data.title_ok) { log('title fixed:', pack.title, '→', data.title, `(${data.why})`); pack.title = data.title; }
+  if (!data.thumb_ok && data.thumb_text) { log('thumb text fixed:', pack.thumb_text, '→', data.thumb_text); pack.thumb_text = data.thumb_text; }
+  return pack;
 }
