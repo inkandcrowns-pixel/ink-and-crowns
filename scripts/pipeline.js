@@ -124,7 +124,17 @@ async function step(r) {
       return { ...x, visual: hasMap ? 'map' : 'ink', mapDir: hasMap ? mapDir : null, img: path.join(dir, `img${n}.jpg`),
         voFile: path.join(dir, `vo${n}.wav`), vo: dur(path.join(dir, `vo${n}.wav`)) };
     });
-    const music = fs.readdirSync(path.join(ROOT, 'music')).filter(f => f.endsWith('.mp3')).map(f => path.join(ROOT, 'music', f))
+    // Mixkit tracks are fetched at run time (their licence doesn't allow re-hosting them in a public repo)
+    const mdir = path.join(ROOT, 'music');
+    fs.mkdirSync(mdir, { recursive: true });
+    for (const m of rj(path.join(ROOT, 'data', 'music.json'), [])) {
+      const f = path.join(mdir, `${m.name}.mp3`);
+      if (fs.existsSync(f)) continue;
+      const res = await fetch(m.url, { headers: { 'user-agent': 'InkAndCrowns/1.0 (inkandcrowns@gmail.com)' } });
+      if (res.ok) fs.writeFileSync(f, Buffer.from(await res.arrayBuffer()));
+      await new Promise(x => setTimeout(x, 1500));
+    }
+    const music = fs.readdirSync(mdir).filter(f => f.endsWith('.mp3')).map(f => path.join(mdir, f))
       .sort(() => Math.random() - 0.5);
     log('render', sc.length, 'scenes…');
     const out = renderVideo(sc, dir, { musicFiles: music.slice(0, 3) });
