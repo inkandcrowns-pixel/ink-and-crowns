@@ -22,6 +22,9 @@ export async function researchTrends() {
   return list;
 }
 
+// code-side guard for the history-only rule: needs a year before 2000 (in "year" or in the topic text)
+const isHistory = t => { const y = Number(t.year) || Number((String(t.topic).match(/\b(\d{3,4})\b/) || [])[1]); return y > 0 && y < 2000; };
+
 export async function pickTopic(trending) {
   const used = readJson('topics.json', []);
   const learn = readJson('learnings.json', {});
@@ -34,13 +37,19 @@ export async function pickTopic(trending) {
     `Propose 5 ORIGINAL topics in the same demand space (same eras/themes people are clicking now), but each must be ` +
     `a specific true story that is NOT the subject of any title above, with a fresh angle. Real, well-documented ` +
     `events only (we fact-check). Prefer stories with a human drama, a twist and a clear place on a map. ` +
-    `Avoid graphic violence, sexual content, hate, and current politics. Rank them by expected US views.\n` +
+    `HISTORY ONLY (owner's rule): every topic must be a real historical event, person or place story that ` +
+    `happened before the year 2000 — no science, tech, true crime of recent years, current affairs or fiction. ` +
+    `Avoid graphic violence, sexual content, hate, and current politics. Rank them by expected US views ` +
+    `(demand signal above + our own channel results).\n` +
     `Return JSON {"topics":[{"topic":"specific story, place, year","angle":"the hook in one line","why":"why it will get views",` +
-    `"title":"YouTube title, max 60 chars, curiosity without clickbait lies","map_place":"main real place name"}]}`,
-    { check: d => { if (!d.topics?.length) throw new Error('no topics'); return d; }, temperature: 1.0 },
+    `"title":"YouTube title, max 60 chars, curiosity without clickbait lies","map_place":"main real place name",` +
+    `"year":"main year as a number"}]}`,
+    // a reply without any usable history topic counts as a bad reply, so aiJson asks again / tries the next model
+    { check: d => { if (!d.topics?.some(isHistory)) throw new Error('no history topics'); return d; }, temperature: 1.0 },
   );
   const usedSet = new Set(used.map(u => u.topic.toLowerCase()));
-  const pick = data.topics.find(t => !usedSet.has(String(t.topic).toLowerCase())) || data.topics[0];
+  const pick = data.topics.find(t => isHistory(t) && !usedSet.has(String(t.topic).toLowerCase()));
+  if (!pick) throw new Error('no fresh history topic in the AI reply');
   log('topic by', model, '→', pick.topic);
   return { ...pick, candidates: data.topics };
 }
