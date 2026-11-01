@@ -38,8 +38,9 @@ export async function outline(topic) {
 
 async function writeChapter(topic, plan, i, prevTail) {
   const ch = i < 0 ? { name: 'Cold open', beats: [plan.cold_open], key_facts: [] } : plan.chapters[i];
-  // 15-21 min at ~145 wpm ≈ 2,200-3,000 words; aim ~2,700 because drafts come out ~10% short (asked 2026-11-01)
-  const target = i < 0 ? 150 : Math.round(2550 / plan.chapters.length);
+  // 15-21 min: the TTS reads 145-175 wpm depending on the model (lite read 2,300 words in 13.1 min), so aim
+  // ~3,000 words; drafts come out ~10% short (asked 2026-11-01)
+  const target = i < 0 ? 160 : Math.round(3000 / plan.chapters.length);
   const isLast = i === plan.chapters.length - 1;
   const what = i < 0
     ? 'the COLD OPEN (start mid-action with a vivid specific detail; no "Imagine", no question as the first line; ' +
@@ -66,10 +67,12 @@ async function writeChapter(topic, plan, i, prevTail) {
 async function factCheck(chapters) {
   const fixes = [];
   let model = null;
+  // web search results make each call ~8-10k tokens; Groq free allows about one such call per minute
   for (const [ci, c] of chapters.entries()) {
-    const r = await factCheckText(c.scenes.map((s, si) => `[${ci}.${si}] ${s.text}`).join('\n'));
+    let r = await factCheckText(c.scenes.map((s, si) => `[${ci}.${si}] ${s.text}`).join('\n'));
+    if (!r.model) { await new Promise(x => setTimeout(x, 65000)); r = await factCheckText(c.scenes.map((s, si) => `[${ci}.${si}] ${s.text}`).join('\n')); }
     fixes.push(...r.fixes); model = r.model || model;
-    await new Promise(x => setTimeout(x, 12000));
+    await new Promise(x => setTimeout(x, 65000));
   }
   return { model, fixes };
 }
@@ -110,16 +113,16 @@ export async function writeLongScript(topic, cacheFile) {
     tail = c.scenes.at(-1).text;
     log(`chapter ${i + 1}/${plan.chapters.length}: ${c.name} (${words(c.scenes.map(s => s.text).join(' '))} words, ${c.model})`);
   }
-  // too short for 15 min (~2,250 words)? expand the shortest chapters with more real detail, not padding
-  for (let pass = 0; pass < 3; pass++) {
+  // too short for 15 min even at 175 wpm (~2,700 words)? add real scenes to the thinnest chapters
+  for (let pass = 0; pass < 5; pass++) {
     const total = words(chapters.flatMap(c => c.scenes.map(s => s.text)).join(' '));
-    if (total >= 2300) break;
+    if (total >= 2700) break;
     const ci = chapters.map((c, k) => [k, words(c.scenes.map(s => s.text).join(' '))]).filter(([k]) => k > 0)
       .sort((a, b) => a[1] - b[1])[0][0];
     const c = chapters[ci];
-    log(`script ${total} words < 2300 → adding scenes to "${c.name}"`);
+    log(`script ${total} words < 2700 → adding scenes to "${c.name}"`);
     // asking to "expand" returned the same length; asking for NEW scenes to insert actually adds words
-    const need = Math.max(3, Math.round((2400 - total) / 30 / 2));
+    const need = Math.min(6, Math.max(3, Math.round((2850 - total) / 30 / 2)));
     const r = await aiJson(`${NARRATOR}\n\nVideo about ${topic.topic}. This chapter is too thin:\n${JSON.stringify(c.scenes.map(s => s.text))}\n` +
       `Write ${need} NEW scenes (25-35 words each) with more true, specific detail — people, places, what it felt ` +
       `like, consequences — that fit between or after these lines. Don't repeat anything already said. ` +

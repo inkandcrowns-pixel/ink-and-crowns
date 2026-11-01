@@ -52,13 +52,13 @@ async function step(r) {
   }
   if (s.stage === 'voice') {
     const sc = scenes();
-    // chunks of whole scenes, ≤450 words, never across a chapter (10 TTS requests/day on the free tier)
+    // chunks of whole scenes, ≤600 words, may span chapters (10 TTS requests/day on the free tier → ~5 per video)
     if (!s.chunks) {
       s.chunks = [];
       let cur = null;
       sc.forEach((x, i) => {
         const w = x.text.split(/\s+/).length;
-        if (!cur || cur.ci !== x.ci || cur.words + w > 450) { cur = { ci: x.ci, scenes: [], words: 0 }; s.chunks.push(cur); }
+        if (!cur || cur.words + w > 600) { cur = { ci: x.ci, scenes: [], words: 0 }; s.chunks.push(cur); }
         cur.scenes.push(i); cur.words += w;
       });
       save(r);
