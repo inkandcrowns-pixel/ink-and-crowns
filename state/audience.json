@@ -1,0 +1,54 @@
+{
+  "at": "2026-11-03T14:29:53.308Z",
+  "channels": [
+    "Ambrose Discovery",
+    "Ziro History",
+    "Hidden Ops India",
+    "The Present Past",
+    "World at War"
+  ],
+  "wants": [
+    {
+      "topic": "Climate‑impact on iconic landmarks (e.g., Everest melting, Arctic/Antarctic changes)",
+      "evidence": "Ambrose Discovery best video \"Mount Everest’s Melting Ice…\" (vsNormal 13.78) and comments demanding cleanup and protection",
+      "strength": 9
+    },
+    {
+      "topic": "Resolution of long‑standing mysteries with scientific evidence (e.g., Loch Ness, sealed caves)",
+      "evidence": "Ambrose Discovery \"Loch Ness Monster Mystery Was Finally Solved\" (vsNormal 11.65) and comments asking for “finally” answers",
+      "strength": 8
+    },
+    {
+      "topic": "Comparative economic‑geopolitical analyses (e.g., why South Korea prospered vs. North Korea)",
+      "evidence": "Ziro History \"Why South Korea Became Rich…\" (vsNormal 2.71) and multiple comments requesting more country‑comparisons (India, Pakistan, Nigeria)",
+      "strength": 8
+    },
+    {
+      "topic": "Comprehensive, time‑boxed histories of major civilizations (Egypt, Medieval Europe)",
+      "evidence": "Ziro History \"The Entire History of Egypt…\" (vsNormal 3.29) and \"The Entire History of Medieval Europe…\" (vsNormal 2.48) with high comment engagement",
+      "strength": 7
+    },
+    {
+      "topic": "Viewer‑requested regional deep‑dives (India, Pakistan, Nigeria, Palestine/Israel)",
+      "evidence": "Comments on Ziro History asking for India, Pakistan, Nigeria videos and criticism of Israel‑Palestine framing",
+      "strength": 6
+    }
+  ],
+  "gaps": [
+    "More balanced coverage of Middle‑East conflicts – viewers complain about perceived bias toward Israel",
+    "In‑depth economic histories of South‑Asian nations (India, Pakistan) and African nations (Nigeria, broader Sub‑Saharan)",
+    "Scientific‑rigor explanations for popular myths without sensational thumbnails",
+    "Follow‑up “part 2” videos for topics that generate strong curiosity (e.g., Everest waste cleanup, cave discoveries)"
+  ],
+  "saturated": [
+    "\"The Entire History of X in Y minutes\" rapid‑summary format",
+    "\"Why X Became Rich While Y Stayed Poor\" comparative wealth videos",
+    "Generic “Finally Solved” mystery titles without a unique hook"
+  ],
+  "title_patterns": [
+    "\"[Location] — What [Shocking/Unexpected] [Revealed/Found]\" (e.g., \"Mount Everest’s Melting Ice… And It’s Far Worse Than Anyone Imagined\")",
+    "\"[Mystery] Mystery Was Finally Solved — The Answer Is Not What We Expected\"",
+    "\"Scientists Opened a Cave Sealed for [Time] — What Was Inside Rewrites Everything We Know\"",
+    "\"Why [Country] Became Rich While [Country] Stayed Poor in [Duration] minutes\""
+  ]
+}

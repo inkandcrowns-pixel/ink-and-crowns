@@ -1,0 +1,276 @@
+{
+  "channels": {
+    "UCAVxoa11gRHcit9_onvTkMQ": {
+      "title": "Ambrose Discovery",
+      "hits": 1,
+      "outlierSum": 43.3,
+      "scannedAt": "2026-11-03T14:27:03.213Z",
+      "subs": 98300,
+      "lastSeen": "2026-11-03T14:27:02.101Z"
+    },
+    "UC3MJVwoumJMTqCe9IaEhtiw": {
+      "title": "World at War",
+      "hits": 1,
+      "outlierSum": 1.9,
+      "scannedAt": "2026-11-03T14:27:08.342Z",
+      "subs": 1330000,
+      "lastSeen": "2026-11-03T14:27:02.101Z"
+    },
+    "UCRKosUcTVIsh5_-tQOynHSg": {
+      "title": "Hidden Ops India",
+      "hits": 1,
+      "outlierSum": 8.79,
+      "scannedAt": "2026-11-03T14:27:05.815Z",
+      "subs": 105000,
+      "lastSeen": "2026-11-03T14:27:02.101Z"
+    },
+    "UCmOCpBKeoBPp-HwarhIBA2g": {
+      "title": "Best Documentary",
+      "hits": 1,
+      "outlierSum": 0.37,
+      "scannedAt": null,
+      "subs": 8440000,
+      "lastSeen": "2026-11-03T14:27:02.101Z"
+    },
+    "UCpVm7bg6pXKo1Pr6k5kxG9A": {
+      "title": "National Geographic",
+      "hits": 2,
+      "outlierSum": 0.14,
+      "scannedAt": null,
+      "subs": 26600000,
+      "lastSeen": "2026-11-03T14:27:02.101Z"
+    },
+    "UC5Axef4J11DIu17y2RKVqNQ": {
+      "title": "The Present Past",
+      "hits": 1,
+      "outlierSum": 2.09,
+      "scannedAt": "2026-11-03T14:27:07.105Z",
+      "subs": 468000,
+      "lastSeen": "2026-11-03T14:27:02.101Z"
+    },
+    "UC-BSVXejMFhhml4V_VyoGxg": {
+      "title": "KCRA 3",
+      "hits": 1,
+      "outlierSum": 1.7,
+      "scannedAt": null,
+      "subs": 394000,
+      "lastSeen": "2026-11-03T14:27:02.101Z"
+    },
+    "UC0D2w4MJDTzx8ceT1YSbiTw": {
+      "title": "Ziro History",
+      "hits": 2,
+      "outlierSum": 18.88,
+      "scannedAt": "2026-11-03T14:27:04.043Z",
+      "subs": 20300,
+      "lastSeen": "2026-11-03T14:27:02.101Z"
+    },
+    "UCjJec0wv1EUomjrBNt1xCTA": {
+      "title": "Tousi TV",
+      "hits": 1,
+      "outlierSum": 0.54,
+      "scannedAt": null,
+      "subs": 1690000,
+      "lastSeen": "2026-11-03T14:27:02.101Z"
+    },
+    "UCNye-wNBqNL5ZzHSJj3l8Bg": {
+      "title": "Al Jazeera English",
+      "hits": 1,
+      "outlierSum": 0.07,
+      "scannedAt": null,
+      "subs": 18300000,
+      "lastSeen": "2026-11-03T14:27:02.101Z"
+    },
+    "UCupvZG-5ko_eiXAupbDfxWw": {
+      "title": "CNN",
+      "hits": 1,
+      "outlierSum": 0.06,
+      "scannedAt": null,
+      "subs": 20000000,
+      "lastSeen": "2026-11-03T14:27:02.101Z"
+    },
+    "UCugDb3auxoCmwAYXmVUBKtA": {
+      "title": "Uncensored World",
+      "hits": 2,
+      "outlierSum": 0.24,
+      "scannedAt": null,
+      "subs": 121000,
+      "lastSeen": "2026-11-03T14:27:02.101Z"
+    },
+    "UCrM8pwq4KX1MMGqyOqhNY5g": {
+      "title": "Everything About South East Asia",
+      "hits": 1,
+      "outlierSum": 1.03,
+      "scannedAt": null,
+      "subs": 5490,
+      "lastSeen": "2026-11-03T14:27:02.101Z"
+    },
+    "UCPcABVoFfCK5gDfX0PY1KGg": {
+      "title": "Drew Durnil",
+      "hits": 1,
+      "outlierSum": 0.02,
+      "scannedAt": null,
+      "subs": 1560000,
+      "lastSeen": "2026-11-03T14:27:02.101Z"
+    },
+    "UCdlfL2g13cMX0I6BTFTIAwA": {
+      "title": "Coal Pot Days",
+      "hits": 1,
+      "outlierSum": 0.38,
+      "scannedAt": null,
+      "subs": 2350,
+      "lastSeen": "2026-11-03T14:27:02.101Z"
+    },
+    "UCtynWpOu-AMYp8OKsfs3Jnw": {
+      "title": "Rivo History",
+      "hits": 1,
+      "outlierSum": 0.95,
+      "scannedAt": null,
+      "subs": 82,
+      "lastSeen": "2026-11-03T14:27:02.101Z"
+    },
+    "UCqXldhHYDYz6HU8uKqOrgXQ": {
+      "title": "The History",
+      "hits": 1,
+      "outlierSum": 0.53,
+      "scannedAt": null,
+      "subs": 15,
+      "lastSeen": "2026-11-03T14:27:02.101Z"
+    },
+    "UC56_9v8aHiQ5wU17eCFBXuw": {
+      "title": "Pipo History",
+      "hits": 3,
+      "outlierSum": 0.77,
+      "scannedAt": null,
+      "subs": 7,
+      "lastSeen": "2026-11-03T14:27:02.101Z"
+    },
+    "UCgWhw5xXjBDEvSnjvLVrZFg": {
+      "title": "Wait, Why?",
+      "hits": 1,
+      "outlierSum": 0.18,
+      "scannedAt": null,
+      "subs": 14,
+      "lastSeen": "2026-11-03T14:27:02.101Z"
+    },
+    "UCyrZzVyfIK1zoKnXihs6f9A": {
+      "title": "Zyro History ",
+      "hits": 1,
+      "outlierSum": 0.05,
+      "scannedAt": null,
+      "subs": 2,
+      "lastSeen": "2026-11-03T14:27:02.101Z"
+    },
+    "UCMMjH3QeM1gI_qHGiF4XiKQ": {
+      "title": "Nations In Lines",
+      "hits": 1,
+      "outlierSum": 0.08,
+      "scannedAt": null,
+      "subs": 0,
+      "lastSeen": "2026-11-03T14:27:02.101Z"
+    },
+    "UC55dNMFZtOV1WLHbF8Rncbg": {
+      "title": "Mapsodic",
+      "hits": 1,
+      "outlierSum": 0.11,
+      "scannedAt": null,
+      "subs": 226,
+      "lastSeen": "2026-11-03T14:27:02.101Z"
+    },
+    "UCyfd1szrUCdnRjj8sT0AajQ": {
+      "title": "Docucollage History ",
+      "hits": 1,
+      "outlierSum": 0.01,
+      "scannedAt": null,
+      "subs": 5,
+      "lastSeen": "2026-11-03T14:27:02.101Z"
+    },
+    "UCg1byVeHeHv8gsHisuVYNHg": {
+      "title": "Untold Files",
+      "hits": 1,
+      "outlierSum": 0.04,
+      "scannedAt": null,
+      "subs": 3,
+      "lastSeen": "2026-11-03T14:27:02.101Z"
+    },
+    "UCMNv4c0E8FNsurgt5tU-k0w": {
+      "title": "OriginCipher",
+      "hits": 1,
+      "outlierSum": 0.06,
+      "scannedAt": null,
+      "subs": 65,
+      "lastSeen": "2026-11-03T14:27:02.101Z"
+    },
+    "UC2a7xNEbWrLZzt1iB5fDVeA": {
+      "title": "Great Minds, Simply",
+      "hits": 1,
+      "outlierSum": 0.01,
+      "scannedAt": null,
+      "subs": 159,
+      "lastSeen": "2026-11-03T14:27:02.101Z"
+    },
+    "UCX_oyDf3hrLSVR07o3uEsmQ": {
+      "title": "Dark Truth Documentaries",
+      "hits": 1,
+      "outlierSum": 0.08,
+      "scannedAt": null,
+      "subs": 21,
+      "lastSeen": "2026-11-03T14:27:02.101Z"
+    },
+    "UCaukD2nn17caLBoyXeFJwgA": {
+      "title": "Legends and Landmarks: History Unfolded",
+      "hits": 1,
+      "outlierSum": 0.07,
+      "scannedAt": null,
+      "subs": 23,
+      "lastSeen": "2026-11-03T14:27:02.101Z"
+    },
+    "UCw2whulTOxeFnXP95r9Sv0A": {
+      "title": "Mindset Hub Tube",
+      "hits": 1,
+      "outlierSum": 0.09,
+      "scannedAt": null,
+      "subs": 432,
+      "lastSeen": "2026-11-03T14:27:02.101Z"
+    },
+    "UCMtfqMwR-UCPAhkivozqg5A": {
+      "title": "EnglishHistory Heritage ",
+      "hits": 1,
+      "outlierSum": 0.04,
+      "scannedAt": null,
+      "subs": 6,
+      "lastSeen": "2026-11-03T14:27:02.101Z"
+    },
+    "UCFPagws3vGIz1cHNeOX5img": {
+      "title": "DNST History",
+      "hits": 1,
+      "outlierSum": 0.01,
+      "scannedAt": null,
+      "subs": 7,
+      "lastSeen": "2026-11-03T14:27:02.101Z"
+    },
+    "UC55StYNWDxfIzOicu2CTp7g": {
+      "title": "Old History ",
+      "hits": 1,
+      "outlierSum": 1,
+      "scannedAt": null,
+      "subs": 21,
+      "lastSeen": "2026-11-03T14:27:02.101Z"
+    },
+    "UCxee7fzc6PvX7OvL_oSzNUg": {
+      "title": "Epoch Forge",
+      "hits": 1,
+      "outlierSum": 0.01,
+      "scannedAt": null,
+      "subs": 799,
+      "lastSeen": "2026-11-03T14:27:02.101Z"
+    },
+    "UCcBLZImyd--SfIizxvJWEoQ": {
+      "title": "Trueday Facts",
+      "hits": 1,
+      "outlierSum": 1,
+      "scannedAt": null,
+      "subs": 179,
+      "lastSeen": "2026-11-03T14:27:02.101Z"
+    }
+  }
+}
