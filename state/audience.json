@@ -1,54 +1,60 @@
 {
-  "at": "2026-11-03T14:29:53.308Z",
+  "at": "2026-11-04T14:28:57.149Z",
   "channels": [
-    "Ambrose Discovery",
-    "Ziro History",
-    "Hidden Ops India",
-    "The Present Past",
-    "World at War"
+    "World Files | Nizam Nazeer",
+    "KCRA 3",
+    "Tousi TV",
+    "The Time Page",
+    "History Doodle"
   ],
   "wants": [
     {
-      "topic": "Climate‑impact on iconic landmarks (e.g., Everest melting, Arctic/Antarctic changes)",
-      "evidence": "Ambrose Discovery best video \"Mount Everest’s Melting Ice…\" (vsNormal 13.78) and comments demanding cleanup and protection",
+      "topic": "Gulf region power‑plays and underworld stories (e.g., Dubai’s criminal networks, Qatar’s birth)",
+      "evidence": "World Files video “ദുബായ് അധോലോകത്തിന്റെ ഞെട്ടിക്കുന്ന കഥ | Super Cartel” (vsNormal 18.7) and “How Qatar Was Born Part 2” (vsNormal 4.87) with comments praising the shocking details and asking for more similar tales",
       "strength": 9
     },
     {
-      "topic": "Resolution of long‑standing mysteries with scientific evidence (e.g., Loch Ness, sealed caves)",
-      "evidence": "Ambrose Discovery \"Loch Ness Monster Mystery Was Finally Solved\" (vsNormal 11.65) and comments asking for “finally” answers",
+      "topic": "Hot‑button current geopolitics with a partisan edge (EU‑Poland clash, migrant riots in Germany, Iran‑Israel tensions)",
+      "evidence": "Tousi TV “BREAKING: EU Globalists Launch Coup In Poland” (vsNormal 4.43) and “BREAKING: Europe At WAR – Migrant Riots Reach Germany” (vsNormal 3.89); comments show high engagement (hundreds of likes, calls to action)",
       "strength": 8
     },
     {
-      "topic": "Comparative economic‑geopolitical analyses (e.g., why South Korea prospered vs. North Korea)",
-      "evidence": "Ziro History \"Why South Korea Became Rich…\" (vsNormal 2.71) and multiple comments requesting more country‑comparisons (India, Pakistan, Nigeria)",
-      "strength": 8
-    },
-    {
-      "topic": "Comprehensive, time‑boxed histories of major civilizations (Egypt, Medieval Europe)",
-      "evidence": "Ziro History \"The Entire History of Egypt…\" (vsNormal 3.29) and \"The Entire History of Medieval Europe…\" (vsNormal 2.48) with high comment engagement",
+      "topic": "Deep‑dive ancient empire narratives that are less covered in mainstream US media (Mughal Empire, Indus Valley, Ottoman rise)",
+      "evidence": "The Time Page “The Rise and Fall of the Mughal Empire” (vsNormal 8.83) despite zero subscriber base; viewers comment “more detailed content like this”",
       "strength": 7
     },
     {
-      "topic": "Viewer‑requested regional deep‑dives (India, Pakistan, Nigeria, Palestine/Israel)",
-      "evidence": "Comments on Ziro History asking for India, Pakistan, Nigeria videos and criticism of Israel‑Palestine framing",
+      "topic": "Mystery/obscure historical sites and events (e.g., Velliyamkallu Sacrifice Rock, regional folklore)",
+      "evidence": "World Files “Mystery of Sacrifice Rock” (vsNormal 2.55) with comments lauding the thorough presentation and asking for similar hidden‑history videos",
       "strength": 6
+    },
+    {
+      "topic": "Series/part‑2 formats that continue a story line",
+      "evidence": "World Files “How Qatar Was Born Part 2” (vsNormal 4.87) and multiple comments requesting “part 3” or “continue the story”",
+      "strength": 7
     }
   ],
   "gaps": [
-    "More balanced coverage of Middle‑East conflicts – viewers complain about perceived bias toward Israel",
-    "In‑depth economic histories of South‑Asian nations (India, Pakistan) and African nations (Nigeria, broader Sub‑Saharan)",
-    "Scientific‑rigor explanations for popular myths without sensational thumbnails",
-    "Follow‑up “part 2” videos for topics that generate strong curiosity (e.g., Everest waste cleanup, cave discoveries)"
+    "Balanced, fact‑checked coverage of controversial geopolitics (many comments demand less bias and more sources)",
+    "US‑centric historical and geopolitical analysis (the audience is US‑based but few videos focus on American history or its role in world events)",
+    "Coverage of African, Latin American, and South‑Asian contemporary history (viewers repeatedly ask “what about Africa?” or “why don’t you cover Brazil?”)",
+    "Post‑event analysis – viewers want “what happened next?” after a major event is explained"
   ],
   "saturated": [
-    "\"The Entire History of X in Y minutes\" rapid‑summary format",
-    "\"Why X Became Rich While Y Stayed Poor\" comparative wealth videos",
-    "Generic “Finally Solved” mystery titles without a unique hook"
+    "General “Rise and Fall of the Roman Empire” style videos",
+    "Standard “Spartans vs Persians” battle recaps",
+    "Broad “Mughal Empire” overviews without a fresh angle",
+    "Generic “Complete History Explained” titles without a hook"
   ],
   "title_patterns": [
-    "\"[Location] — What [Shocking/Unexpected] [Revealed/Found]\" (e.g., \"Mount Everest’s Melting Ice… And It’s Far Worse Than Anyone Imagined\")",
-    "\"[Mystery] Mystery Was Finally Solved — The Answer Is Not What We Expected\"",
-    "\"Scientists Opened a Cave Sealed for [Time] — What Was Inside Rewrites Everything We Know\"",
-    "\"Why [Country] Became Rich While [Country] Stayed Poor in [Duration] minutes\""
+    "BREAKING: …",
+    "LIVE: …",
+    "Mystery of …",
+    "How X Was Born / How X Came To Power",
+    "Part X / Part 2",
+    "The Rise and Fall of …",
+    "Complete History Explained",
+    "Shocking/Untold Story of …",
+    "Super Cartel / Insider …"
   ]
 }

@@ -2,19 +2,19 @@
   "channels": {
     "UCAVxoa11gRHcit9_onvTkMQ": {
       "title": "Ambrose Discovery",
-      "hits": 1,
-      "outlierSum": 43.3,
+      "hits": 2,
+      "outlierSum": 86.28999999999999,
       "scannedAt": "2026-11-03T14:27:03.213Z",
-      "subs": 98300,
-      "lastSeen": "2026-11-03T14:27:02.101Z"
+      "subs": 99200,
+      "lastSeen": "2026-11-04T14:28:06.633Z"
     },
     "UC3MJVwoumJMTqCe9IaEhtiw": {
       "title": "World at War",
-      "hits": 1,
-      "outlierSum": 1.9,
+      "hits": 2,
+      "outlierSum": 3.8099999999999996,
       "scannedAt": "2026-11-03T14:27:08.342Z",
       "subs": 1330000,
-      "lastSeen": "2026-11-03T14:27:02.101Z"
+      "lastSeen": "2026-11-04T14:28:06.633Z"
     },
     "UCRKosUcTVIsh5_-tQOynHSg": {
       "title": "Hidden Ops India",
@@ -26,67 +26,67 @@
     },
     "UCmOCpBKeoBPp-HwarhIBA2g": {
       "title": "Best Documentary",
-      "hits": 1,
-      "outlierSum": 0.37,
+      "hits": 2,
+      "outlierSum": 0.74,
       "scannedAt": null,
       "subs": 8440000,
-      "lastSeen": "2026-11-03T14:27:02.101Z"
+      "lastSeen": "2026-11-04T14:28:06.633Z"
     },
     "UCpVm7bg6pXKo1Pr6k5kxG9A": {
       "title": "National Geographic",
-      "hits": 2,
-      "outlierSum": 0.14,
+      "hits": 5,
+      "outlierSum": 0.31999999999999995,
       "scannedAt": null,
       "subs": 26600000,
-      "lastSeen": "2026-11-03T14:27:02.101Z"
+      "lastSeen": "2026-11-04T14:28:06.633Z"
     },
     "UC5Axef4J11DIu17y2RKVqNQ": {
       "title": "The Present Past",
-      "hits": 1,
-      "outlierSum": 2.09,
+      "hits": 2,
+      "outlierSum": 4.23,
       "scannedAt": "2026-11-03T14:27:07.105Z",
       "subs": 468000,
-      "lastSeen": "2026-11-03T14:27:02.101Z"
+      "lastSeen": "2026-11-04T14:28:06.633Z"
     },
     "UC-BSVXejMFhhml4V_VyoGxg": {
       "title": "KCRA 3",
-      "hits": 1,
-      "outlierSum": 1.7,
-      "scannedAt": null,
+      "hits": 2,
+      "outlierSum": 3.4,
+      "scannedAt": "2026-11-04T14:28:10.129Z",
       "subs": 394000,
-      "lastSeen": "2026-11-03T14:27:02.101Z"
+      "lastSeen": "2026-11-04T14:28:06.633Z"
     },
     "UC0D2w4MJDTzx8ceT1YSbiTw": {
       "title": "Ziro History",
-      "hits": 2,
-      "outlierSum": 18.88,
+      "hits": 4,
+      "outlierSum": 35.46,
       "scannedAt": "2026-11-03T14:27:04.043Z",
-      "subs": 20300,
-      "lastSeen": "2026-11-03T14:27:02.101Z"
+      "subs": 21100,
+      "lastSeen": "2026-11-04T14:28:06.633Z"
     },
     "UCjJec0wv1EUomjrBNt1xCTA": {
       "title": "Tousi TV",
-      "hits": 1,
-      "outlierSum": 0.54,
-      "scannedAt": null,
-      "subs": 1690000,
-      "lastSeen": "2026-11-03T14:27:02.101Z"
+      "hits": 2,
+      "outlierSum": 1.09,
+      "scannedAt": "2026-11-04T14:28:11.334Z",
+      "subs": 1680000,
+      "lastSeen": "2026-11-04T14:28:06.633Z"
     },
     "UCNye-wNBqNL5ZzHSJj3l8Bg": {
       "title": "Al Jazeera English",
-      "hits": 1,
-      "outlierSum": 0.07,
+      "hits": 2,
+      "outlierSum": 0.14,
       "scannedAt": null,
       "subs": 18300000,
-      "lastSeen": "2026-11-03T14:27:02.101Z"
+      "lastSeen": "2026-11-04T14:28:06.633Z"
     },
     "UCupvZG-5ko_eiXAupbDfxWw": {
       "title": "CNN",
-      "hits": 1,
-      "outlierSum": 0.06,
+      "hits": 2,
+      "outlierSum": 0.12,
       "scannedAt": null,
       "subs": 20000000,
-      "lastSeen": "2026-11-03T14:27:02.101Z"
+      "lastSeen": "2026-11-04T14:28:06.633Z"
     },
     "UCugDb3auxoCmwAYXmVUBKtA": {
       "title": "Uncensored World",
@@ -122,11 +122,11 @@
     },
     "UCtynWpOu-AMYp8OKsfs3Jnw": {
       "title": "Rivo History",
-      "hits": 1,
-      "outlierSum": 0.95,
+      "hits": 2,
+      "outlierSum": 1.9,
       "scannedAt": null,
-      "subs": 82,
-      "lastSeen": "2026-11-03T14:27:02.101Z"
+      "subs": 107,
+      "lastSeen": "2026-11-04T14:28:06.633Z"
     },
     "UCqXldhHYDYz6HU8uKqOrgXQ": {
       "title": "The History",
@@ -271,6 +271,214 @@
       "scannedAt": null,
       "subs": 179,
       "lastSeen": "2026-11-03T14:27:02.101Z"
+    },
+    "UCzMCXC8Izkk-SCMbpbwtLRQ": {
+      "title": "Indian Explainer Hindi",
+      "hits": 1,
+      "outlierSum": 50,
+      "scannedAt": null,
+      "subs": 4060,
+      "lastSeen": "2026-11-04T14:28:06.633Z"
+    },
+    "UCWh76g3H7IYBqcnvdgDog9w": {
+      "title": "Prima Historian",
+      "hits": 1,
+      "outlierSum": 50,
+      "scannedAt": null,
+      "subs": 4270,
+      "lastSeen": "2026-11-04T14:28:06.633Z"
+    },
+    "UCyu6uvgi0bwnjd29jFMfmqA": {
+      "title": "World Files | Nizam Nazeer",
+      "hits": 1,
+      "outlierSum": 10.05,
+      "scannedAt": "2026-11-04T14:28:07.589Z",
+      "subs": 18900,
+      "lastSeen": "2026-11-04T14:28:06.633Z"
+    },
+    "UC3ScyryU9Oy9Wse3a8OAmYQ": {
+      "title": "FRONTLINE PBS | Official",
+      "hits": 1,
+      "outlierSum": 0.12,
+      "scannedAt": null,
+      "subs": 4840000,
+      "lastSeen": "2026-11-04T14:28:06.633Z"
+    },
+    "UCKUuzWMeilXB_wgsicrLwNw": {
+      "title": "Money Matters",
+      "hits": 1,
+      "outlierSum": 13.09,
+      "scannedAt": null,
+      "subs": 1540,
+      "lastSeen": "2026-11-04T14:28:06.633Z"
+    },
+    "UCB6t4aNXEq4zRhjLNEV3D8w": {
+      "title": "Hindi Explanation ",
+      "hits": 1,
+      "outlierSum": 6.92,
+      "scannedAt": null,
+      "subs": 1210,
+      "lastSeen": "2026-11-04T14:28:06.633Z"
+    },
+    "UCxnPwpqdjoL0u1DDfeLVwoA": {
+      "title": "Whispers of History",
+      "hits": 1,
+      "outlierSum": 1.27,
+      "scannedAt": null,
+      "subs": 528,
+      "lastSeen": "2026-11-04T14:28:06.633Z"
+    },
+    "UCRmJbUmKGJQyIgVH_yQDeFg": {
+      "title": "Dark Revenge Mystery",
+      "hits": 1,
+      "outlierSum": 0.54,
+      "scannedAt": null,
+      "subs": 30,
+      "lastSeen": "2026-11-04T14:28:06.633Z"
+    },
+    "UClp7YzmIeK6BF8t5TFzP42g": {
+      "title": "Era Express.",
+      "hits": 1,
+      "outlierSum": 0.71,
+      "scannedAt": null,
+      "subs": 199,
+      "lastSeen": "2026-11-04T14:28:06.633Z"
+    },
+    "UCJt8DOVCsclYSO40wYyQmEg": {
+      "title": "Then To Tomorrow",
+      "hits": 1,
+      "outlierSum": 0.37,
+      "scannedAt": null,
+      "subs": 1250,
+      "lastSeen": "2026-11-04T14:28:06.633Z"
+    },
+    "UChRKHG04DnLXnkV8a6VGcUQ": {
+      "title": "History Doodle",
+      "hits": 1,
+      "outlierSum": 0.39,
+      "scannedAt": "2026-11-04T14:28:12.276Z",
+      "subs": 0,
+      "lastSeen": "2026-11-04T14:28:06.633Z"
+    },
+    "UCdTIgNEheZomb6VFZk1dXBg": {
+      "title": "Time_Atlas",
+      "hits": 1,
+      "outlierSum": 0.51,
+      "scannedAt": null,
+      "subs": 84,
+      "lastSeen": "2026-11-04T14:28:06.633Z"
+    },
+    "UC7HqhZd6ivRa_028xvyrVTQ": {
+      "title": "HISTORY OUTLIER",
+      "hits": 1,
+      "outlierSum": 0.31,
+      "scannedAt": null,
+      "subs": 2,
+      "lastSeen": "2026-11-04T14:28:06.633Z"
+    },
+    "UCenKXQ8QZdiulye3T04JqWA": {
+      "title": "Global History",
+      "hits": 1,
+      "outlierSum": 0.49,
+      "scannedAt": null,
+      "subs": 40,
+      "lastSeen": "2026-11-04T14:28:06.633Z"
+    },
+    "UCSmmpCMnsPmWA1WLd3c39AQ": {
+      "title": "Gyani Diaries ",
+      "hits": 1,
+      "outlierSum": 0.79,
+      "scannedAt": null,
+      "subs": 436,
+      "lastSeen": "2026-11-04T14:28:06.633Z"
+    },
+    "UCpAFezBAzTk5lm9URmlxWxQ": {
+      "title": "Geo Mysteries",
+      "hits": 1,
+      "outlierSum": 0.24,
+      "scannedAt": null,
+      "subs": 35,
+      "lastSeen": "2026-11-04T14:28:06.633Z"
+    },
+    "UCuYMV-7py5ueTbiJ-DystyA": {
+      "title": "Dark History Vault",
+      "hits": 1,
+      "outlierSum": 0.75,
+      "scannedAt": null,
+      "subs": 88,
+      "lastSeen": "2026-11-04T14:28:06.633Z"
+    },
+    "UCgKb9FtwE67cR2yrg8Fns_Q": {
+      "title": "Rise & Fall of Empires",
+      "hits": 1,
+      "outlierSum": 0.5,
+      "scannedAt": null,
+      "subs": 250,
+      "lastSeen": "2026-11-04T14:28:06.633Z"
+    },
+    "UCs3ZFxODfoxRe0H2849oFIQ": {
+      "title": "TimeUnfold",
+      "hits": 1,
+      "outlierSum": 0.55,
+      "scannedAt": null,
+      "subs": 5,
+      "lastSeen": "2026-11-04T14:28:06.633Z"
+    },
+    "UCzQj1d0M79T-BZqouXgrCdg": {
+      "title": "Empire Uncovered",
+      "hits": 1,
+      "outlierSum": 0.45,
+      "scannedAt": null,
+      "subs": 11,
+      "lastSeen": "2026-11-04T14:28:06.633Z"
+    },
+    "UCYE-ljEuZoEVl9CQ7UATV4g": {
+      "title": "Rizzu Explainer Hindi ",
+      "hits": 1,
+      "outlierSum": 0.51,
+      "scannedAt": null,
+      "subs": 371,
+      "lastSeen": "2026-11-04T14:28:06.633Z"
+    },
+    "UC8cweYWoGrY-8eh8vsbx9Rw": {
+      "title": " Fly High Education by Salma Mam",
+      "hits": 1,
+      "outlierSum": 0.06,
+      "scannedAt": null,
+      "subs": 4610,
+      "lastSeen": "2026-11-04T14:28:06.633Z"
+    },
+    "UCITNNBtro7zw87-SM6sg62w": {
+      "title": "The Time Page",
+      "hits": 1,
+      "outlierSum": 0.48,
+      "scannedAt": "2026-11-04T14:28:11.965Z",
+      "subs": 0,
+      "lastSeen": "2026-11-04T14:28:06.633Z"
+    },
+    "UCOLXyIrACvobA18wgXD23Fw": {
+      "title": "ChronicleX",
+      "hits": 1,
+      "outlierSum": 0.42,
+      "scannedAt": null,
+      "subs": 42,
+      "lastSeen": "2026-11-04T14:28:06.633Z"
+    },
+    "UCLAKL0974Vx1dKSmeEhLhmg": {
+      "title": "SPEAK ENGLISH",
+      "hits": 1,
+      "outlierSum": 0.01,
+      "scannedAt": null,
+      "subs": 76900,
+      "lastSeen": "2026-11-04T14:28:06.633Z"
+    },
+    "UC02zuEYRrOCI7U81DmXlB4w": {
+      "title": "Chrono Vault Prime",
+      "hits": 1,
+      "outlierSum": 0.35,
+      "scannedAt": null,
+      "subs": 18,
+      "lastSeen": "2026-11-04T14:28:06.633Z"
     }
   }
 }
