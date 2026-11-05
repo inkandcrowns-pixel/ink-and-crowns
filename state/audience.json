@@ -1,60 +1,53 @@
 {
-  "at": "2026-11-04T14:28:57.149Z",
+  "at": "2026-11-05T15:07:20.572Z",
   "channels": [
-    "World Files | Nizam Nazeer",
-    "KCRA 3",
-    "Tousi TV",
-    "The Time Page",
-    "History Doodle"
+    "Nils History",
+    "Real Time History",
+    "History Uncensored",
+    "BBC News Africa",
+    "War Archive"
   ],
   "wants": [
     {
-      "topic": "Gulf region power‑plays and underworld stories (e.g., Dubai’s criminal networks, Qatar’s birth)",
-      "evidence": "World Files video “ദുബായ് അധോലോകത്തിന്റെ ഞെട്ടിക്കുന്ന കഥ | Super Cartel” (vsNormal 18.7) and “How Qatar Was Born Part 2” (vsNormal 4.87) with comments praising the shocking details and asking for more similar tales",
+      "topic": "Logistics and military supply chain analysis",
+      "evidence": "Real Time History's Operation Barbarossa video comments focusing on 'Iron Law of Logistics' and horse-drawn transport limitations.",
       "strength": 9
     },
     {
-      "topic": "Hot‑button current geopolitics with a partisan edge (EU‑Poland clash, migrant riots in Germany, Iran‑Israel tensions)",
-      "evidence": "Tousi TV “BREAKING: EU Globalists Launch Coup In Poland” (vsNormal 4.43) and “BREAKING: Europe At WAR – Migrant Riots Reach Germany” (vsNormal 3.89); comments show high engagement (hundreds of likes, calls to action)",
+      "topic": "Ancient history 'weirdness' or obscure trivia",
+      "evidence": "Nils History's 'Weirder Than You Think' title series consistently achieving high vsNormal metrics.",
+      "strength": 10
+    },
+    {
+      "topic": "Human-centric, non-AI presentation",
+      "evidence": "Repeated praise in comments for Nils History's 'No AI' branding and personal narration style.",
       "strength": 8
     },
     {
-      "topic": "Deep‑dive ancient empire narratives that are less covered in mainstream US media (Mughal Empire, Indus Valley, Ottoman rise)",
-      "evidence": "The Time Page “The Rise and Fall of the Mughal Empire” (vsNormal 8.83) despite zero subscriber base; viewers comment “more detailed content like this”",
+      "topic": "Multi-part series on deep-dive historical events",
+      "evidence": "High frequency of 'Part 2 please' requests on Nils History videos.",
       "strength": 7
     },
     {
-      "topic": "Mystery/obscure historical sites and events (e.g., Velliyamkallu Sacrifice Rock, regional folklore)",
-      "evidence": "World Files “Mystery of Sacrifice Rock” (vsNormal 2.55) with comments lauding the thorough presentation and asking for similar hidden‑history videos",
-      "strength": 6
-    },
-    {
-      "topic": "Series/part‑2 formats that continue a story line",
-      "evidence": "World Files “How Qatar Was Born Part 2” (vsNormal 4.87) and multiple comments requesting “part 3” or “continue the story”",
+      "topic": "Geopolitical parallels between historical conflicts and modern wars",
+      "evidence": "Viewer comments connecting Soviet-Afghan war to current GWOT and US experiences in Vietnam.",
       "strength": 7
     }
   ],
   "gaps": [
-    "Balanced, fact‑checked coverage of controversial geopolitics (many comments demand less bias and more sources)",
-    "US‑centric historical and geopolitical analysis (the audience is US‑based but few videos focus on American history or its role in world events)",
-    "Coverage of African, Latin American, and South‑Asian contemporary history (viewers repeatedly ask “what about Africa?” or “why don’t you cover Brazil?”)",
-    "Post‑event analysis – viewers want “what happened next?” after a major event is explained"
+    "Comprehensive, non-AI documentaries on the 'petty' or interpersonal dramas of ancient rulers.",
+    "Detailed analysis of the 'lost' cultural artifacts (poetry, plays) rather than just major architectural monuments.",
+    "Nuanced, non-partisan breakdowns of logistics failures in major historical invasions."
   ],
   "saturated": [
-    "General “Rise and Fall of the Roman Empire” style videos",
-    "Standard “Spartans vs Persians” battle recaps",
-    "Broad “Mughal Empire” overviews without a fresh angle",
-    "Generic “Complete History Explained” titles without a hook"
+    "General 'Seven Wonders of the World' overviews without a specific unique angle.",
+    "Basic Wikipedia-style summaries of major battles that lack logistical or intelligence-failure depth.",
+    "AI-generated historical content that viewers are actively identifying and criticizing."
   ],
   "title_patterns": [
-    "BREAKING: …",
-    "LIVE: …",
-    "Mystery of …",
-    "How X Was Born / How X Came To Power",
-    "Part X / Part 2",
-    "The Rise and Fall of …",
-    "Complete History Explained",
-    "Shocking/Untold Story of …",
-    "Super Cartel / Insider …"
+    "[Topic] Was Weirder Than You Think",
+    "Was [Event/Operation] Doomed to Fail?",
+    "The [Subject] That [Action/Result] (No AI)",
+    "[Event] (Full Documentary)"
   ]
 }

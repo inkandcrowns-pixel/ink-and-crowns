@@ -2,19 +2,19 @@
   "channels": {
     "UCAVxoa11gRHcit9_onvTkMQ": {
       "title": "Ambrose Discovery",
-      "hits": 2,
-      "outlierSum": 86.28999999999999,
+      "hits": 3,
+      "outlierSum": 129.07999999999998,
       "scannedAt": "2026-11-03T14:27:03.213Z",
-      "subs": 99200,
-      "lastSeen": "2026-11-04T14:28:06.633Z"
+      "subs": 99800,
+      "lastSeen": "2026-11-05T15:06:49.451Z"
     },
     "UC3MJVwoumJMTqCe9IaEhtiw": {
       "title": "World at War",
-      "hits": 2,
-      "outlierSum": 3.8099999999999996,
+      "hits": 3,
+      "outlierSum": 5.7299999999999995,
       "scannedAt": "2026-11-03T14:27:08.342Z",
       "subs": 1330000,
-      "lastSeen": "2026-11-04T14:28:06.633Z"
+      "lastSeen": "2026-11-05T15:06:49.451Z"
     },
     "UCRKosUcTVIsh5_-tQOynHSg": {
       "title": "Hidden Ops India",
@@ -26,67 +26,67 @@
     },
     "UCmOCpBKeoBPp-HwarhIBA2g": {
       "title": "Best Documentary",
-      "hits": 2,
-      "outlierSum": 0.74,
+      "hits": 3,
+      "outlierSum": 1.12,
       "scannedAt": null,
       "subs": 8440000,
-      "lastSeen": "2026-11-04T14:28:06.633Z"
+      "lastSeen": "2026-11-05T15:06:49.451Z"
     },
     "UCpVm7bg6pXKo1Pr6k5kxG9A": {
       "title": "National Geographic",
-      "hits": 5,
-      "outlierSum": 0.31999999999999995,
+      "hits": 7,
+      "outlierSum": 0.4799999999999999,
       "scannedAt": null,
       "subs": 26600000,
-      "lastSeen": "2026-11-04T14:28:06.633Z"
+      "lastSeen": "2026-11-05T15:06:49.451Z"
     },
     "UC5Axef4J11DIu17y2RKVqNQ": {
       "title": "The Present Past",
-      "hits": 2,
-      "outlierSum": 4.23,
+      "hits": 3,
+      "outlierSum": 6.41,
       "scannedAt": "2026-11-03T14:27:07.105Z",
       "subs": 468000,
-      "lastSeen": "2026-11-04T14:28:06.633Z"
+      "lastSeen": "2026-11-05T15:06:49.451Z"
     },
     "UC-BSVXejMFhhml4V_VyoGxg": {
       "title": "KCRA 3",
-      "hits": 2,
-      "outlierSum": 3.4,
+      "hits": 3,
+      "outlierSum": 5.109999999999999,
       "scannedAt": "2026-11-04T14:28:10.129Z",
       "subs": 394000,
-      "lastSeen": "2026-11-04T14:28:06.633Z"
+      "lastSeen": "2026-11-05T15:06:49.451Z"
     },
     "UC0D2w4MJDTzx8ceT1YSbiTw": {
       "title": "Ziro History",
-      "hits": 4,
-      "outlierSum": 35.46,
+      "hits": 5,
+      "outlierSum": 36.49,
       "scannedAt": "2026-11-03T14:27:04.043Z",
-      "subs": 21100,
-      "lastSeen": "2026-11-04T14:28:06.633Z"
+      "subs": 21700,
+      "lastSeen": "2026-11-05T15:06:49.451Z"
     },
     "UCjJec0wv1EUomjrBNt1xCTA": {
       "title": "Tousi TV",
-      "hits": 2,
-      "outlierSum": 1.09,
+      "hits": 3,
+      "outlierSum": 1.6400000000000001,
       "scannedAt": "2026-11-04T14:28:11.334Z",
       "subs": 1680000,
-      "lastSeen": "2026-11-04T14:28:06.633Z"
+      "lastSeen": "2026-11-05T15:06:49.451Z"
     },
     "UCNye-wNBqNL5ZzHSJj3l8Bg": {
       "title": "Al Jazeera English",
-      "hits": 2,
-      "outlierSum": 0.14,
+      "hits": 3,
+      "outlierSum": 0.21000000000000002,
       "scannedAt": null,
       "subs": 18300000,
-      "lastSeen": "2026-11-04T14:28:06.633Z"
+      "lastSeen": "2026-11-05T15:06:49.451Z"
     },
     "UCupvZG-5ko_eiXAupbDfxWw": {
       "title": "CNN",
-      "hits": 2,
-      "outlierSum": 0.12,
+      "hits": 3,
+      "outlierSum": 0.18,
       "scannedAt": null,
       "subs": 20000000,
-      "lastSeen": "2026-11-04T14:28:06.633Z"
+      "lastSeen": "2026-11-05T15:06:49.451Z"
     },
     "UCugDb3auxoCmwAYXmVUBKtA": {
       "title": "Uncensored World",
@@ -479,6 +479,230 @@
       "scannedAt": null,
       "subs": 18,
       "lastSeen": "2026-11-04T14:28:06.633Z"
+    },
+    "UCHnyfMqiRRG1u-2MsSQLbXA": {
+      "title": "Veritasium",
+      "hits": 1,
+      "outlierSum": 0.7,
+      "scannedAt": null,
+      "subs": 21400000,
+      "lastSeen": "2026-11-05T15:06:49.451Z"
+    },
+    "UC-CzFjDbVlqH_mHK-oBy45Q": {
+      "title": "Nils History",
+      "hits": 1,
+      "outlierSum": 22.35,
+      "scannedAt": "2026-11-05T15:06:50.420Z",
+      "subs": 85400,
+      "lastSeen": "2026-11-05T15:06:49.451Z"
+    },
+    "UCB1eDEd1AYG3YrRIJSZzMOQ": {
+      "title": "Real Time History",
+      "hits": 1,
+      "outlierSum": 1.92,
+      "scannedAt": "2026-11-05T15:06:51.253Z",
+      "subs": 767000,
+      "lastSeen": "2026-11-05T15:06:49.451Z"
+    },
+    "UCyKoMruI8B8QW-JzG4lehbQ": {
+      "title": "Armor Verdict",
+      "hits": 1,
+      "outlierSum": 50,
+      "scannedAt": null,
+      "subs": 903,
+      "lastSeen": "2026-11-05T15:06:49.451Z"
+    },
+    "UCvhPRRiwI1_p4OBsY0yz6mg": {
+      "title": "BBC News Africa",
+      "hits": 1,
+      "outlierSum": 0.84,
+      "scannedAt": "2026-11-05T15:06:52.705Z",
+      "subs": 1980000,
+      "lastSeen": "2026-11-05T15:06:49.451Z"
+    },
+    "UC850JkAjgLpH4MuPzd2yawQ": {
+      "title": "Atlas Unfolded",
+      "hits": 1,
+      "outlierSum": 50,
+      "scannedAt": null,
+      "subs": 1560,
+      "lastSeen": "2026-11-05T15:06:49.451Z"
+    },
+    "UCmswCtt5aDnRq48rzwowrdg": {
+      "title": "Sauron The White",
+      "hits": 1,
+      "outlierSum": 19.83,
+      "scannedAt": null,
+      "subs": 5090,
+      "lastSeen": "2026-11-05T15:06:49.451Z"
+    },
+    "UCPNro6-pzlC4koUqQB7r6uw": {
+      "title": "Blitzkrieg",
+      "hits": 1,
+      "outlierSum": 12.93,
+      "scannedAt": null,
+      "subs": 6120,
+      "lastSeen": "2026-11-05T15:06:49.451Z"
+    },
+    "UCvPXiKxH-eH9xq-80vpgmKQ": {
+      "title": "Epic History",
+      "hits": 1,
+      "outlierSum": 0.22,
+      "scannedAt": null,
+      "subs": 3200000,
+      "lastSeen": "2026-11-05T15:06:49.451Z"
+    },
+    "UCJP9GiWWRTKVGptOtj102_A": {
+      "title": "Cine Recaps Hindi",
+      "hits": 1,
+      "outlierSum": 32.51,
+      "scannedAt": null,
+      "subs": 3210,
+      "lastSeen": "2026-11-05T15:06:49.451Z"
+    },
+    "UCnx-XVHJElrvcTRdiB3z5bw": {
+      "title": "WarVerse",
+      "hits": 1,
+      "outlierSum": 11.76,
+      "scannedAt": null,
+      "subs": 6390,
+      "lastSeen": "2026-11-05T15:06:49.451Z"
+    },
+    "UC7t63g5TYdhbE8t1Ti-Wa6g": {
+      "title": "War Machine Anatomy",
+      "hits": 1,
+      "outlierSum": 38,
+      "scannedAt": null,
+      "subs": 1110,
+      "lastSeen": "2026-11-05T15:06:49.451Z"
+    },
+    "UC2YHYn047fkAob8Od3leQjw": {
+      "title": "Ethos",
+      "hits": 1,
+      "outlierSum": 7.5,
+      "scannedAt": null,
+      "subs": 7470,
+      "lastSeen": "2026-11-05T15:06:49.451Z"
+    },
+    "UC6GJSRKam_2BnNblvoguKiA": {
+      "title": "War Archive",
+      "hits": 1,
+      "outlierSum": 0.72,
+      "scannedAt": "2026-11-05T15:06:53.495Z",
+      "subs": 134000,
+      "lastSeen": "2026-11-05T15:06:49.451Z"
+    },
+    "UCcYlQVzWCQDBQfvnSonGITQ": {
+      "title": "AREMACIELO",
+      "hits": 1,
+      "outlierSum": 6.85,
+      "scannedAt": null,
+      "subs": 7110,
+      "lastSeen": "2026-11-05T15:06:49.451Z"
+    },
+    "UCQd7G7YM9wyKbE_HuGeKsTQ": {
+      "title": "COULD THEY WIN?",
+      "hits": 1,
+      "outlierSum": 10.51,
+      "scannedAt": null,
+      "subs": 322,
+      "lastSeen": "2026-11-05T15:06:49.451Z"
+    },
+    "UCAZMbGUSxw_cF7CPPe-tbdg": {
+      "title": "Filmy Airline",
+      "hits": 1,
+      "outlierSum": 12.25,
+      "scannedAt": null,
+      "subs": 538,
+      "lastSeen": "2026-11-05T15:06:49.451Z"
+    },
+    "UCMmaBzfCCwZ2KqaBJjkj0fw": {
+      "title": "Kings and Generals",
+      "hits": 1,
+      "outlierSum": 0.11,
+      "scannedAt": null,
+      "subs": 4220000,
+      "lastSeen": "2026-11-05T15:06:49.451Z"
+    },
+    "UCS7W63SpRiX5NdNsGjDpMlA": {
+      "title": "The War Economy",
+      "hits": 1,
+      "outlierSum": 21,
+      "scannedAt": null,
+      "subs": 1320,
+      "lastSeen": "2026-11-05T15:06:49.451Z"
+    },
+    "UCSb-hMisx_eZ7i1hcjTwF_w": {
+      "title": "Henry Stewart History",
+      "hits": 1,
+      "outlierSum": 0.51,
+      "scannedAt": null,
+      "subs": 103000,
+      "lastSeen": "2026-11-05T15:06:49.451Z"
+    },
+    "UCv9L4VaUsOGvBPJ8VTANOlQ": {
+      "title": "Lore Fortress",
+      "hits": 1,
+      "outlierSum": 0.4,
+      "scannedAt": null,
+      "subs": 97900,
+      "lastSeen": "2026-11-05T15:06:49.451Z"
+    },
+    "UCNW4sTGvJdrEQCqiXpovEbw": {
+      "title": "Point Blank History",
+      "hits": 1,
+      "outlierSum": 16.02,
+      "scannedAt": null,
+      "subs": 73,
+      "lastSeen": "2026-11-05T15:06:49.451Z"
+    },
+    "UCRi2h75k0cAsMin5TYxZJgw": {
+      "title": "Agent Flappy",
+      "hits": 1,
+      "outlierSum": 0.54,
+      "scannedAt": null,
+      "subs": 151000,
+      "lastSeen": "2026-11-05T15:06:49.451Z"
+    },
+    "UCmv2Mg0r8CfCuVM-G76-yiw": {
+      "title": "Professor Doodle",
+      "hits": 1,
+      "outlierSum": 5.1,
+      "scannedAt": null,
+      "subs": 2790,
+      "lastSeen": "2026-11-05T15:06:49.451Z"
+    },
+    "UCwlVlNiji54R_9JUGizkI9g": {
+      "title": "History Uncensored",
+      "hits": 1,
+      "outlierSum": 1.17,
+      "scannedAt": "2026-11-05T15:06:51.967Z",
+      "subs": 51600,
+      "lastSeen": "2026-11-05T15:06:49.451Z"
+    },
+    "UCcLNf2fEt0Kck6PuOlOUigw": {
+      "title": "Before the First Shot",
+      "hits": 1,
+      "outlierSum": 13.07,
+      "scannedAt": null,
+      "subs": 122,
+      "lastSeen": "2026-11-05T15:06:49.451Z"
+    },
+    "UCyQrni5QNCKh9gQjZO_mGkQ": {
+      "title": "Sketchy Warfare",
+      "hits": 2,
+      "outlierSum": 7.35,
+      "scannedAt": null,
+      "subs": 2300,
+      "lastSeen": "2026-11-05T15:06:49.451Z"
+    },
+    "UCqtuPVZc2NuPr5f4AC-tn3w": {
+      "title": "Odditory",
+      "hits": 1,
+      "outlierSum": 10.63,
+      "scannedAt": null,
+      "subs": 230,
+      "lastSeen": "2026-11-05T15:06:49.451Z"
     }
   }
 }
