@@ -1,53 +1,48 @@
 {
-  "at": "2026-11-05T15:07:20.572Z",
+  "at": "2026-11-06T14:27:52.245Z",
   "channels": [
-    "Nils History",
-    "Real Time History",
-    "History Uncensored",
-    "BBC News Africa",
-    "War Archive"
+    "Top Fives",
+    "ikhtilaf Explained",
+    "Ambrose Discovery",
+    "Ziro History",
+    "Hidden Ops India"
   ],
   "wants": [
     {
-      "topic": "Logistics and military supply chain analysis",
-      "evidence": "Real Time History's Operation Barbarossa video comments focusing on 'Iron Law of Logistics' and horse-drawn transport limitations.",
+      "topic": "Scientific and intellectual history of the Islamic Golden Age",
+      "evidence": "ikhtilaf Explained's best-performing video focused on 20 Muslim scientists, signaling a high demand for legacy-based, educational content.",
       "strength": 9
     },
     {
-      "topic": "Ancient history 'weirdness' or obscure trivia",
-      "evidence": "Nils History's 'Weirder Than You Think' title series consistently achieving high vsNormal metrics.",
-      "strength": 10
-    },
-    {
-      "topic": "Human-centric, non-AI presentation",
-      "evidence": "Repeated praise in comments for Nils History's 'No AI' branding and personal narration style.",
+      "topic": "Spite-driven historical narratives",
+      "evidence": "Top Fives' video on 'Houses Built To Annoy Neighbors' performed well, showing an appetite for petty history and human-interest conflicts.",
       "strength": 8
     },
     {
-      "topic": "Multi-part series on deep-dive historical events",
-      "evidence": "High frequency of 'Part 2 please' requests on Nils History videos.",
-      "strength": 7
+      "topic": "Human-interest historical trivia (Unusual/Bizarre)",
+      "evidence": "Top Fives' best-performing videos focus on 'Unusual Restaurants' and 'Buildings with Worlds Inside', proving that 'weird' history attracts high click-through rates.",
+      "strength": 8
     },
     {
-      "topic": "Geopolitical parallels between historical conflicts and modern wars",
-      "evidence": "Viewer comments connecting Soviet-Afghan war to current GWOT and US experiences in Vietnam.",
-      "strength": 7
+      "topic": "Validation of cultural/religious history by Western figures",
+      "evidence": "ikhtilaf Explained's content regarding celebrities praising Islam or historical figures discussing the Prophet Muhammad shows that the audience seeks external validation of their identity.",
+      "strength": 9
     }
   ],
   "gaps": [
-    "Comprehensive, non-AI documentaries on the 'petty' or interpersonal dramas of ancient rulers.",
-    "Detailed analysis of the 'lost' cultural artifacts (poetry, plays) rather than just major architectural monuments.",
-    "Nuanced, non-partisan breakdowns of logistics failures in major historical invasions."
+    "In-depth analysis of Islamic contributions to modern technology beyond surface-level lists.",
+    "Nuanced, non-clickbait architectural history that avoids relying on misleading thumbnail imagery.",
+    "Contextualizing historical figures through a lens that bridges the gap between traditional religious scholarship and modern academic history."
   ],
   "saturated": [
-    "General 'Seven Wonders of the World' overviews without a specific unique angle.",
-    "Basic Wikipedia-style summaries of major battles that lack logistical or intelligence-failure depth.",
-    "AI-generated historical content that viewers are actively identifying and criticizing."
+    "Generic 'Top 10' lists of largest machines or paintings (evidenced by low vsNormal scores).",
+    "Clickbait-heavy 'mystery' architecture videos that fail to deliver on the thumbnail's premise.",
+    "General 'celebrity opinion' compilations that lack a strong historical or geopolitical thesis."
   ],
   "title_patterns": [
-    "[Topic] Was Weirder Than You Think",
-    "Was [Event/Operation] Doomed to Fail?",
-    "The [Subject] That [Action/Result] (No AI)",
-    "[Event] (Full Documentary)"
+    "The 'Number + Adjective + Noun' format (e.g., '20 Muslim Scientists Who Changed Modern Science Forever')",
+    "The 'Conflict/Spite' hook (e.g., 'Houses Built To Annoy Neighbors')",
+    "The 'Validation' hook (e.g., 'What History’s Greatest Minds REALLY Said About...')",
+    "The 'Curiosity Gap' hook (e.g., '15 Buildings With Entire Worlds Inside')"
   ]
 }

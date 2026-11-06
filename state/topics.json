@@ -27,5 +27,11 @@
     "format": "war",
     "run": "2026-11-05-the-siege-of-baghdad-1258",
     "at": "2026-11-05T15:08:08.131Z"
+  },
+  {
+    "topic": "Ignaz Semmelweis and the rejection of handwashing, Vienna, 1847",
+    "format": "mocked",
+    "run": "2026-11-06-ignaz-semmelweis-and-the-rejection-of-ha",
+    "at": "2026-11-06T14:28:25.420Z"
   }
 ]
