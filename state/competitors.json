@@ -2,19 +2,19 @@
   "channels": {
     "UCAVxoa11gRHcit9_onvTkMQ": {
       "title": "Ambrose Discovery",
-      "hits": 4,
-      "outlierSum": 171.82999999999998,
+      "hits": 5,
+      "outlierSum": 214.63,
       "scannedAt": "2026-11-06T14:27:15.440Z",
       "subs": 100000,
-      "lastSeen": "2026-11-06T14:27:12.708Z"
+      "lastSeen": "2026-11-07T14:00:19.373Z"
     },
     "UC3MJVwoumJMTqCe9IaEhtiw": {
       "title": "World at War",
-      "hits": 4,
-      "outlierSum": 7.659999999999999,
-      "scannedAt": "2026-11-03T14:27:08.342Z",
+      "hits": 5,
+      "outlierSum": 9.6,
+      "scannedAt": "2026-11-07T14:00:23.485Z",
       "subs": 1330000,
-      "lastSeen": "2026-11-06T14:27:12.708Z"
+      "lastSeen": "2026-11-07T14:00:19.373Z"
     },
     "UCRKosUcTVIsh5_-tQOynHSg": {
       "title": "Hidden Ops India",
@@ -26,27 +26,27 @@
     },
     "UCmOCpBKeoBPp-HwarhIBA2g": {
       "title": "Best Documentary",
-      "hits": 5,
-      "outlierSum": 1.51,
+      "hits": 6,
+      "outlierSum": 1.8900000000000001,
       "scannedAt": null,
       "subs": 8440000,
-      "lastSeen": "2026-11-06T14:27:12.708Z"
+      "lastSeen": "2026-11-07T14:00:19.373Z"
     },
     "UCpVm7bg6pXKo1Pr6k5kxG9A": {
       "title": "National Geographic",
-      "hits": 9,
-      "outlierSum": 0.6499999999999999,
+      "hits": 11,
+      "outlierSum": 0.82,
       "scannedAt": null,
       "subs": 26600000,
-      "lastSeen": "2026-11-06T14:27:12.708Z"
+      "lastSeen": "2026-11-07T14:00:19.373Z"
     },
     "UC5Axef4J11DIu17y2RKVqNQ": {
       "title": "The Present Past",
-      "hits": 4,
-      "outlierSum": 8.63,
-      "scannedAt": "2026-11-03T14:27:07.105Z",
+      "hits": 5,
+      "outlierSum": 10.91,
+      "scannedAt": "2026-11-07T14:00:22.381Z",
       "subs": 469000,
-      "lastSeen": "2026-11-06T14:27:12.708Z"
+      "lastSeen": "2026-11-07T14:00:19.373Z"
     },
     "UC-BSVXejMFhhml4V_VyoGxg": {
       "title": "KCRA 3",
@@ -74,19 +74,19 @@
     },
     "UCNye-wNBqNL5ZzHSJj3l8Bg": {
       "title": "Al Jazeera English",
-      "hits": 3,
-      "outlierSum": 0.21000000000000002,
+      "hits": 4,
+      "outlierSum": 0.28,
       "scannedAt": null,
       "subs": 18300000,
-      "lastSeen": "2026-11-05T15:06:49.451Z"
+      "lastSeen": "2026-11-07T14:00:19.373Z"
     },
     "UCupvZG-5ko_eiXAupbDfxWw": {
       "title": "CNN",
-      "hits": 4,
-      "outlierSum": 0.24,
+      "hits": 5,
+      "outlierSum": 0.3,
       "scannedAt": null,
-      "subs": 20000000,
-      "lastSeen": "2026-11-06T14:27:12.708Z"
+      "subs": 20100000,
+      "lastSeen": "2026-11-07T14:00:19.373Z"
     },
     "UCugDb3auxoCmwAYXmVUBKtA": {
       "title": "Uncensored World",
@@ -274,11 +274,11 @@
     },
     "UCzMCXC8Izkk-SCMbpbwtLRQ": {
       "title": "Indian Explainer Hindi",
-      "hits": 2,
-      "outlierSum": 100,
+      "hits": 3,
+      "outlierSum": 150,
       "scannedAt": null,
-      "subs": 4210,
-      "lastSeen": "2026-11-06T14:27:12.708Z"
+      "subs": 4280,
+      "lastSeen": "2026-11-07T14:00:19.373Z"
     },
     "UCWh76g3H7IYBqcnvdgDog9w": {
       "title": "Prima Historian",
@@ -292,7 +292,7 @@
       "title": "World Files | Nizam Nazeer",
       "hits": 1,
       "outlierSum": 10.05,
-      "scannedAt": "2026-11-04T14:28:07.589Z",
+      "scannedAt": "2026-11-07T14:00:24.596Z",
       "subs": 18900,
       "lastSeen": "2026-11-04T14:28:06.633Z"
     },
@@ -490,11 +490,11 @@
     },
     "UC-CzFjDbVlqH_mHK-oBy45Q": {
       "title": "Nils History",
-      "hits": 2,
-      "outlierSum": 44.82,
+      "hits": 3,
+      "outlierSum": 67.47,
       "scannedAt": "2026-11-05T15:06:50.420Z",
-      "subs": 86100,
-      "lastSeen": "2026-11-06T14:27:12.708Z"
+      "subs": 86700,
+      "lastSeen": "2026-11-07T14:00:19.373Z"
     },
     "UCB1eDEd1AYG3YrRIJSZzMOQ": {
       "title": "Real Time History",
@@ -514,11 +514,11 @@
     },
     "UCvhPRRiwI1_p4OBsY0yz6mg": {
       "title": "BBC News Africa",
-      "hits": 2,
-      "outlierSum": 1.68,
+      "hits": 3,
+      "outlierSum": 2.52,
       "scannedAt": "2026-11-05T15:06:52.705Z",
       "subs": 1980000,
-      "lastSeen": "2026-11-06T14:27:12.708Z"
+      "lastSeen": "2026-11-07T14:00:19.373Z"
     },
     "UC850JkAjgLpH4MuPzd2yawQ": {
       "title": "Atlas Unfolded",
@@ -706,11 +706,11 @@
     },
     "UCww528CS8IGbHrqVyBydgQQ": {
       "title": "Outlier Atlas",
-      "hits": 1,
-      "outlierSum": 50,
+      "hits": 2,
+      "outlierSum": 100,
       "scannedAt": null,
-      "subs": 2840,
-      "lastSeen": "2026-11-06T14:27:12.708Z"
+      "subs": 2870,
+      "lastSeen": "2026-11-07T14:00:19.373Z"
     },
     "UCbAlVnKhbGLK78GsSemQXxw": {
       "title": "Top Fives",
@@ -887,6 +887,230 @@
       "scannedAt": null,
       "subs": 82,
       "lastSeen": "2026-11-06T14:27:12.708Z"
+    },
+    "UCmGSJVG3mCRXVOP4yZrU1Dw": {
+      "title": "Johnny Harris",
+      "hits": 1,
+      "outlierSum": 0.72,
+      "scannedAt": null,
+      "subs": 8010000,
+      "lastSeen": "2026-11-07T14:00:19.373Z"
+    },
+    "UCmC5Q2nJE_xnMchG_UR1elw": {
+      "title": "State Dossiers",
+      "hits": 1,
+      "outlierSum": 40.72,
+      "scannedAt": null,
+      "subs": 701,
+      "lastSeen": "2026-11-07T14:00:19.373Z"
+    },
+    "UC3uJIdRFTGgLWrUziaHbzrg": {
+      "title": "NDTV Profit",
+      "hits": 1,
+      "outlierSum": 0.79,
+      "scannedAt": null,
+      "subs": 1830000,
+      "lastSeen": "2026-11-07T14:00:19.373Z"
+    },
+    "UCsDTy8jvHcwMvSZf_JGi-FA": {
+      "title": "Abhi and Niyu",
+      "hits": 1,
+      "outlierSum": 0.18,
+      "scannedAt": null,
+      "subs": 6660000,
+      "lastSeen": "2026-11-07T14:00:19.373Z"
+    },
+    "UC8OTJizv5UyocRLN3SIwfPQ": {
+      "title": "Aamir Sindhi",
+      "hits": 1,
+      "outlierSum": 7.01,
+      "scannedAt": null,
+      "subs": 5500,
+      "lastSeen": "2026-11-07T14:00:19.373Z"
+    },
+    "UCyzvb3N0ChAnWeQhoD0McRg": {
+      "title": "Faisal Warraich",
+      "hits": 1,
+      "outlierSum": 0.48,
+      "scannedAt": null,
+      "subs": 1040000,
+      "lastSeen": "2026-11-07T14:00:19.373Z"
+    },
+    "UCrC8mOqJQpoB7NuIMKIS6rQ": {
+      "title": "StudyIQ IAS",
+      "hits": 1,
+      "outlierSum": 0.02,
+      "scannedAt": null,
+      "subs": 20600000,
+      "lastSeen": "2026-11-07T14:00:19.373Z"
+    },
+    "UCedvFkS-QEdNA1LfoX9K6FQ": {
+      "title": "Youngs Capital",
+      "hits": 1,
+      "outlierSum": 1.41,
+      "scannedAt": "2026-11-07T14:00:20.356Z",
+      "subs": 21800,
+      "lastSeen": "2026-11-07T14:00:19.373Z"
+    },
+    "UCHTuxzisSMWkoePz-EMUjnw": {
+      "title": "ToonRaider",
+      "hits": 1,
+      "outlierSum": 5.81,
+      "scannedAt": null,
+      "subs": 6450,
+      "lastSeen": "2026-11-07T14:00:19.373Z"
+    },
+    "UCAkE5p4CXJlyiWfRyLa614A": {
+      "title": "SANJEET WITH TTI STUDY ",
+      "hits": 1,
+      "outlierSum": 0.28,
+      "scannedAt": null,
+      "subs": 154000,
+      "lastSeen": "2026-11-07T14:00:19.373Z"
+    },
+    "UCrMrhdigRPMcNxtj9LX6l6w": {
+      "title": "J.C News V2",
+      "hits": 1,
+      "outlierSum": 1.53,
+      "scannedAt": null,
+      "subs": 1980,
+      "lastSeen": "2026-11-07T14:00:19.373Z"
+    },
+    "UCwlvSJdcMc7iGdR-aducSog": {
+      "title": "Geopolitical Economy Report",
+      "hits": 1,
+      "outlierSum": 0.2,
+      "scannedAt": null,
+      "subs": 763000,
+      "lastSeen": "2026-11-07T14:00:19.373Z"
+    },
+    "UCtUQHzC0QmABOQERfABAhZg": {
+      "title": "ATP Geopolitics",
+      "hits": 1,
+      "outlierSum": 0.23,
+      "scannedAt": null,
+      "subs": 67200,
+      "lastSeen": "2026-11-07T14:00:19.373Z"
+    },
+    "UCwd8Byi93KbnsYmCcKLExvQ": {
+      "title": "Negocios TV",
+      "hits": 1,
+      "outlierSum": 0.03,
+      "scannedAt": null,
+      "subs": 2850000,
+      "lastSeen": "2026-11-07T14:00:19.373Z"
+    },
+    "UCVnlxndkPPcPPV-pkwT3WOw": {
+      "title": "Maj Gen Yash Mor",
+      "hits": 1,
+      "outlierSum": 0.14,
+      "scannedAt": null,
+      "subs": 387000,
+      "lastSeen": "2026-11-07T14:00:19.373Z"
+    },
+    "UC_lrBstHQdtQ8cHlFY0j6wQ": {
+      "title": "Aswin Sundharam ",
+      "hits": 1,
+      "outlierSum": 0.04,
+      "scannedAt": null,
+      "subs": 46700,
+      "lastSeen": "2026-11-07T14:00:19.373Z"
+    },
+    "UCNVBSLdAP9a-yI4GszzSYXA": {
+      "title": "NewsBaba / Mahfuz Talukder",
+      "hits": 1,
+      "outlierSum": 0.2,
+      "scannedAt": null,
+      "subs": 32900,
+      "lastSeen": "2026-11-07T14:00:19.373Z"
+    },
+    "UC56wktytBwGJ8zE-2OCaxfA": {
+      "title": "Neuz Nepalese",
+      "hits": 1,
+      "outlierSum": 0.06,
+      "scannedAt": null,
+      "subs": 40300,
+      "lastSeen": "2026-11-07T14:00:19.374Z"
+    },
+    "UCjVvdJfxH0mgx-LP1lGEljg": {
+      "title": "OFFGRID SKILLS",
+      "hits": 1,
+      "outlierSum": 0.38,
+      "scannedAt": null,
+      "subs": 1700,
+      "lastSeen": "2026-11-07T14:00:19.374Z"
+    },
+    "UCBAJJhl_4FpRjMEFN6pHVig": {
+      "title": "Origins of War",
+      "hits": 1,
+      "outlierSum": 0.15,
+      "scannedAt": null,
+      "subs": 1910,
+      "lastSeen": "2026-11-07T14:00:19.374Z"
+    },
+    "UCEsb82yzTXmogkwOoDGe1Qw": {
+      "title": "Iron Chronicle",
+      "hits": 1,
+      "outlierSum": 0.19,
+      "scannedAt": null,
+      "subs": 183,
+      "lastSeen": "2026-11-07T14:00:19.374Z"
+    },
+    "UCutVLfw0uDq7Q2gvY9c002g": {
+      "title": "Mind Over Time",
+      "hits": 1,
+      "outlierSum": 0.48,
+      "scannedAt": null,
+      "subs": 35,
+      "lastSeen": "2026-11-07T14:00:19.374Z"
+    },
+    "UC3La-pgm_MOBsqGN6PTvPTQ": {
+      "title": "Breaking Taboos",
+      "hits": 1,
+      "outlierSum": 0.15,
+      "scannedAt": null,
+      "subs": 2,
+      "lastSeen": "2026-11-07T14:00:19.374Z"
+    },
+    "UCcH4si_ucA7YqqRDJu-Lqhg": {
+      "title": "Vidhigya CLAT Coaching ",
+      "hits": 1,
+      "outlierSum": 1,
+      "scannedAt": "2026-11-07T14:00:21.194Z",
+      "subs": 60700,
+      "lastSeen": "2026-11-07T14:00:19.374Z"
+    },
+    "UCUBileLPWZl2jyfjjIZYiZQ": {
+      "title": "Success Mantra Digital",
+      "hits": 1,
+      "outlierSum": 0.03,
+      "scannedAt": null,
+      "subs": 8450,
+      "lastSeen": "2026-11-07T14:00:19.374Z"
+    },
+    "UCVQSVC34FMG9qBXoDrKTolQ": {
+      "title": "Quantum_Academy",
+      "hits": 1,
+      "outlierSum": 0.03,
+      "scannedAt": null,
+      "subs": 575,
+      "lastSeen": "2026-11-07T14:00:19.374Z"
+    },
+    "UCnRE61BcGymfoeo8H-EsTRg": {
+      "title": "GlobalEarthArchive",
+      "hits": 1,
+      "outlierSum": 0.05,
+      "scannedAt": null,
+      "subs": 89,
+      "lastSeen": "2026-11-07T14:00:19.374Z"
+    },
+    "UCAzSCrz5EqDBjO1jdfxwt2A": {
+      "title": "ChrisChannelNews",
+      "hits": 1,
+      "outlierSum": 0.04,
+      "scannedAt": null,
+      "subs": 101,
+      "lastSeen": "2026-11-07T14:00:19.374Z"
     }
   }
 }
