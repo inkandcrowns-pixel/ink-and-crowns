@@ -34,11 +34,11 @@
     },
     "UCpVm7bg6pXKo1Pr6k5kxG9A": {
       "title": "National Geographic",
-      "hits": 11,
-      "outlierSum": 0.82,
+      "hits": 14,
+      "outlierSum": 1.05,
       "scannedAt": null,
       "subs": 26600000,
-      "lastSeen": "2026-11-07T14:00:19.373Z"
+      "lastSeen": "2026-11-10T02:14:02.750Z"
     },
     "UC5Axef4J11DIu17y2RKVqNQ": {
       "title": "The Present Past",
@@ -50,11 +50,11 @@
     },
     "UC-BSVXejMFhhml4V_VyoGxg": {
       "title": "KCRA 3",
-      "hits": 3,
-      "outlierSum": 5.109999999999999,
-      "scannedAt": "2026-11-04T14:28:10.129Z",
-      "subs": 394000,
-      "lastSeen": "2026-11-05T15:06:49.451Z"
+      "hits": 4,
+      "outlierSum": 6.829999999999999,
+      "scannedAt": "2026-11-10T02:14:08.345Z",
+      "subs": 395000,
+      "lastSeen": "2026-11-10T02:14:02.750Z"
     },
     "UC0D2w4MJDTzx8ceT1YSbiTw": {
       "title": "Ziro History",
@@ -68,17 +68,17 @@
       "title": "Tousi TV",
       "hits": 4,
       "outlierSum": 2.1900000000000004,
-      "scannedAt": "2026-11-04T14:28:11.334Z",
+      "scannedAt": "2026-11-10T02:14:09.494Z",
       "subs": 1680000,
       "lastSeen": "2026-11-06T14:27:12.708Z"
     },
     "UCNye-wNBqNL5ZzHSJj3l8Bg": {
       "title": "Al Jazeera English",
-      "hits": 4,
-      "outlierSum": 0.28,
+      "hits": 6,
+      "outlierSum": 0.36000000000000004,
       "scannedAt": null,
       "subs": 18300000,
-      "lastSeen": "2026-11-07T14:00:19.373Z"
+      "lastSeen": "2026-11-10T02:14:02.750Z"
     },
     "UCupvZG-5ko_eiXAupbDfxWw": {
       "title": "CNN",
@@ -274,11 +274,11 @@
     },
     "UCzMCXC8Izkk-SCMbpbwtLRQ": {
       "title": "Indian Explainer Hindi",
-      "hits": 3,
-      "outlierSum": 150,
+      "hits": 4,
+      "outlierSum": 200,
       "scannedAt": null,
-      "subs": 4280,
-      "lastSeen": "2026-11-07T14:00:19.373Z"
+      "subs": 4450,
+      "lastSeen": "2026-11-10T02:14:02.750Z"
     },
     "UCWh76g3H7IYBqcnvdgDog9w": {
       "title": "Prima Historian",
@@ -298,11 +298,11 @@
     },
     "UC3ScyryU9Oy9Wse3a8OAmYQ": {
       "title": "FRONTLINE PBS | Official",
-      "hits": 1,
-      "outlierSum": 0.12,
+      "hits": 2,
+      "outlierSum": 0.25,
       "scannedAt": null,
-      "subs": 4840000,
-      "lastSeen": "2026-11-04T14:28:06.633Z"
+      "subs": 4860000,
+      "lastSeen": "2026-11-10T02:14:02.750Z"
     },
     "UCKUuzWMeilXB_wgsicrLwNw": {
       "title": "Money Matters",
@@ -490,19 +490,19 @@
     },
     "UC-CzFjDbVlqH_mHK-oBy45Q": {
       "title": "Nils History",
-      "hits": 3,
-      "outlierSum": 67.47,
+      "hits": 4,
+      "outlierSum": 90.62,
       "scannedAt": "2026-11-05T15:06:50.420Z",
-      "subs": 86700,
-      "lastSeen": "2026-11-07T14:00:19.373Z"
+      "subs": 88200,
+      "lastSeen": "2026-11-10T02:14:02.750Z"
     },
     "UCB1eDEd1AYG3YrRIJSZzMOQ": {
       "title": "Real Time History",
-      "hits": 1,
-      "outlierSum": 1.92,
+      "hits": 2,
+      "outlierSum": 3.9,
       "scannedAt": "2026-11-05T15:06:51.253Z",
-      "subs": 767000,
-      "lastSeen": "2026-11-05T15:06:49.451Z"
+      "subs": 768000,
+      "lastSeen": "2026-11-10T02:14:02.750Z"
     },
     "UCyKoMruI8B8QW-JzG4lehbQ": {
       "title": "Armor Verdict",
@@ -546,11 +546,11 @@
     },
     "UCvPXiKxH-eH9xq-80vpgmKQ": {
       "title": "Epic History",
-      "hits": 1,
-      "outlierSum": 0.22,
+      "hits": 2,
+      "outlierSum": 0.45999999999999996,
       "scannedAt": null,
       "subs": 3200000,
-      "lastSeen": "2026-11-05T15:06:49.451Z"
+      "lastSeen": "2026-11-10T02:14:02.750Z"
     },
     "UCJP9GiWWRTKVGptOtj102_A": {
       "title": "Cine Recaps Hindi",
@@ -674,11 +674,11 @@
     },
     "UCwlVlNiji54R_9JUGizkI9g": {
       "title": "History Uncensored",
-      "hits": 1,
-      "outlierSum": 1.17,
+      "hits": 2,
+      "outlierSum": 2.34,
       "scannedAt": "2026-11-05T15:06:51.967Z",
-      "subs": 51600,
-      "lastSeen": "2026-11-05T15:06:49.451Z"
+      "subs": 51900,
+      "lastSeen": "2026-11-10T02:14:02.750Z"
     },
     "UCcLNf2fEt0Kck6PuOlOUigw": {
       "title": "Before the First Shot",
@@ -706,11 +706,11 @@
     },
     "UCww528CS8IGbHrqVyBydgQQ": {
       "title": "Outlier Atlas",
-      "hits": 2,
-      "outlierSum": 100,
+      "hits": 3,
+      "outlierSum": 150,
       "scannedAt": null,
-      "subs": 2870,
-      "lastSeen": "2026-11-07T14:00:19.373Z"
+      "subs": 3000,
+      "lastSeen": "2026-11-10T02:14:02.750Z"
     },
     "UCbAlVnKhbGLK78GsSemQXxw": {
       "title": "Top Fives",
@@ -914,11 +914,11 @@
     },
     "UCsDTy8jvHcwMvSZf_JGi-FA": {
       "title": "Abhi and Niyu",
-      "hits": 1,
-      "outlierSum": 0.18,
+      "hits": 2,
+      "outlierSum": 0.36,
       "scannedAt": null,
       "subs": 6660000,
-      "lastSeen": "2026-11-07T14:00:19.373Z"
+      "lastSeen": "2026-11-10T02:14:02.750Z"
     },
     "UC8OTJizv5UyocRLN3SIwfPQ": {
       "title": "Aamir Sindhi",
@@ -930,11 +930,11 @@
     },
     "UCyzvb3N0ChAnWeQhoD0McRg": {
       "title": "Faisal Warraich",
-      "hits": 1,
-      "outlierSum": 0.48,
+      "hits": 2,
+      "outlierSum": 0.96,
       "scannedAt": null,
       "subs": 1040000,
-      "lastSeen": "2026-11-07T14:00:19.373Z"
+      "lastSeen": "2026-11-10T02:14:02.750Z"
     },
     "UCrC8mOqJQpoB7NuIMKIS6rQ": {
       "title": "StudyIQ IAS",
@@ -1111,6 +1111,182 @@
       "scannedAt": null,
       "subs": 101,
       "lastSeen": "2026-11-07T14:00:19.374Z"
+    },
+    "UCcK9yDz5INb1Q9Tw82ICeVQ": {
+      "title": "Um Documentário",
+      "hits": 1,
+      "outlierSum": 17.81,
+      "scannedAt": "2026-11-10T02:14:03.973Z",
+      "subs": 126000,
+      "lastSeen": "2026-11-10T02:14:02.750Z"
+    },
+    "UCNDM0eq9WmBDr5UwMQFeFew": {
+      "title": "World View - Documentary",
+      "hits": 1,
+      "outlierSum": 17.64,
+      "scannedAt": "2026-11-10T02:14:04.648Z",
+      "subs": 45500,
+      "lastSeen": "2026-11-10T02:14:02.750Z"
+    },
+    "UCRgMIwmmh1-2k5HeTQ2cdkQ": {
+      "title": "Gaurav Thakur",
+      "hits": 1,
+      "outlierSum": 0.39,
+      "scannedAt": null,
+      "subs": 7410000,
+      "lastSeen": "2026-11-10T02:14:02.750Z"
+    },
+    "UC2Nwwobsd0ctkzVieXZvyQA": {
+      "title": "Ankit Inspires India",
+      "hits": 1,
+      "outlierSum": 0.48,
+      "scannedAt": null,
+      "subs": 6030000,
+      "lastSeen": "2026-11-10T02:14:02.750Z"
+    },
+    "UC2TsKs8KgTLPZf5d0hcJcGQ": {
+      "title": "Chat History Compilations",
+      "hits": 1,
+      "outlierSum": 3.4,
+      "scannedAt": "2026-11-10T02:14:05.458Z",
+      "subs": 238000,
+      "lastSeen": "2026-11-10T02:14:02.750Z"
+    },
+    "UCW39zufHfsuGgpLviKh297Q": {
+      "title": "DW Documentary",
+      "hits": 1,
+      "outlierSum": 0.14,
+      "scannedAt": null,
+      "subs": 6520000,
+      "lastSeen": "2026-11-10T02:14:02.750Z"
+    },
+    "UCNdLg5u-Ed5w2apVfFsCiDg": {
+      "title": "Things I Care About",
+      "hits": 1,
+      "outlierSum": 1.22,
+      "scannedAt": null,
+      "subs": 120000,
+      "lastSeen": "2026-11-10T02:14:02.750Z"
+    },
+    "UC1bUswUinAEFYaRQFvAKjPA": {
+      "title": "THE CHANAKYA DIALOGUES HINDI",
+      "hits": 1,
+      "outlierSum": 0.22,
+      "scannedAt": null,
+      "subs": 4810000,
+      "lastSeen": "2026-11-10T02:14:02.750Z"
+    },
+    "UCCn20Z4_S1gS3a-l1J5Nu3w": {
+      "title": "Israr Ilim Speaks",
+      "hits": 1,
+      "outlierSum": 19.27,
+      "scannedAt": null,
+      "subs": 3510,
+      "lastSeen": "2026-11-10T02:14:02.750Z"
+    },
+    "UCSFsgkNKlSlngbIxKafSPPA": {
+      "title": "The Iron Archive",
+      "hits": 1,
+      "outlierSum": 18.64,
+      "scannedAt": null,
+      "subs": 579,
+      "lastSeen": "2026-11-10T02:14:02.750Z"
+    },
+    "UCAyd8kYxON-KM0UuRuK_sIg": {
+      "title": "Syed Muzammil Official",
+      "hits": 1,
+      "outlierSum": 0.43,
+      "scannedAt": null,
+      "subs": 764000,
+      "lastSeen": "2026-11-10T02:14:02.750Z"
+    },
+    "UCN28V9zDyq7CSSAdI2wOrxQ": {
+      "title": "Rohit Upadhyay",
+      "hits": 1,
+      "outlierSum": 0.23,
+      "scannedAt": null,
+      "subs": 885000,
+      "lastSeen": "2026-11-10T02:14:02.750Z"
+    },
+    "UC83iGbaOhZR8AWNYYNzSNjg": {
+      "title": "India Global Review",
+      "hits": 1,
+      "outlierSum": 0.2,
+      "scannedAt": null,
+      "subs": 941000,
+      "lastSeen": "2026-11-10T02:14:02.750Z"
+    },
+    "UCgau4awdKG2ni2Ib4jvUqFA": {
+      "title": "DER STANDARD",
+      "hits": 1,
+      "outlierSum": 0.58,
+      "scannedAt": null,
+      "subs": 189000,
+      "lastSeen": "2026-11-10T02:14:02.750Z"
+    },
+    "UC4gwciwDIcmqC0QKaUlAFjA": {
+      "title": "Global Sach ( Dr. Nasir Baig, Ph.D )",
+      "hits": 1,
+      "outlierSum": 0.55,
+      "scannedAt": null,
+      "subs": 188000,
+      "lastSeen": "2026-11-10T02:14:02.750Z"
+    },
+    "UC16niRr50-MSBwiO3YDb3RA": {
+      "title": "BBC News",
+      "hits": 1,
+      "outlierSum": 0.01,
+      "scannedAt": null,
+      "subs": 20300000,
+      "lastSeen": "2026-11-10T02:14:02.750Z"
+    },
+    "UChzVhAwzGR7hV-4O8ZmBLHg": {
+      "title": "Glenn Greenwald",
+      "hits": 1,
+      "outlierSum": 0.24,
+      "scannedAt": null,
+      "subs": 478000,
+      "lastSeen": "2026-11-10T02:14:02.750Z"
+    },
+    "UCPgLNge0xqQHWM5B5EFH9Cg": {
+      "title": "The Telegraph",
+      "hits": 2,
+      "outlierSum": 0.03,
+      "scannedAt": null,
+      "subs": 6210000,
+      "lastSeen": "2026-11-10T02:14:02.750Z"
+    },
+    "UCu25cmjSkxUFYn5Uk0ASSdQ": {
+      "title": "Ain-ul-Ilm",
+      "hits": 1,
+      "outlierSum": 8.41,
+      "scannedAt": null,
+      "subs": 1210,
+      "lastSeen": "2026-11-10T02:14:02.750Z"
+    },
+    "UCFSLaYcAnj0CCEkB0WxWz1Q": {
+      "title": "Vlog Central",
+      "hits": 1,
+      "outlierSum": 0.07,
+      "scannedAt": null,
+      "subs": 865000,
+      "lastSeen": "2026-11-10T02:14:02.750Z"
+    },
+    "UCNZR15cy3w1fzGXgI5oy5aA": {
+      "title": "Mike Ritland",
+      "hits": 1,
+      "outlierSum": 0.08,
+      "scannedAt": null,
+      "subs": 548000,
+      "lastSeen": "2026-11-10T02:14:02.750Z"
+    },
+    "UCaAMwNosHuhJdcCocMF7enw": {
+      "title": "Nadir Baloch",
+      "hits": 1,
+      "outlierSum": 0.62,
+      "scannedAt": null,
+      "subs": 24700,
+      "lastSeen": "2026-11-10T02:14:02.750Z"
     }
   }
 }

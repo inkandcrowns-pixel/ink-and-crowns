@@ -1,48 +1,47 @@
 {
-  "at": "2026-11-07T14:00:38.339Z",
+  "at": "2026-11-10T02:14:23.494Z",
   "channels": [
-    "Youngs Capital",
-    "Vidhigya CLAT Coaching ",
-    "The Present Past",
-    "World at War",
-    "World Files | Nizam Nazeer"
+    "Um Documentário",
+    "World View - Documentary",
+    "Chat History Compilations",
+    "KCRA 3",
+    "Tousi TV"
   ],
   "wants": [
     {
-      "topic": "Economic and institutional mechanics driving modern war participation (e.g. rural poverty vs. military salaries, coercion, penal recruitment)",
-      "evidence": "'Why Russians Still Sign Up to Die' achieved a massive 40.89 vsNormal rating, with top comments heavily discussing the regional purchasing power of soldier pay ($2,500/mo) and institutional recruitment pressure.",
-      "strength": 10
-    },
-    {
-      "topic": "Covert intelligence operations, secret military logistics, and international cover-ups",
-      "evidence": "'The Israeli Plane Crash Conspiracy' achieved 11.59 vsNormal, with top comments focusing on Mossad presence, unauthorized arms/depleted uranium transport on civilian flights, and missing black boxes.",
+      "topic": "Real-time global tragedy/disaster analysis",
+      "evidence": "Comments on Um Documentário's Miyako and Yungay videos frequently link content to current events in Nepal and other regions.",
       "strength": 9
     },
     {
-      "topic": "Institutional failures of global peacekeeping bodies (e.g. UN inaction during genocides)",
-      "evidence": "'When a Genocide Was Broadcast Live on TV' generated 8,700+ comments, with viewers aggressively discussing UN bureaucratic absurdity ('cue to run') and peacekeeper passivity in Srebrenica and Rwanda.",
+      "topic": "Human-centric historical scandals and private lives",
+      "evidence": "World View's 'JFK's Women' and 'Bill Clinton' videos show high engagement regarding the intersection of personal morality and political power.",
       "strength": 8
     },
     {
-      "topic": "Psychological and inner-circle power dynamics of historical dictators",
-      "evidence": "'Hitler's Court: The Private World of the Dictator' gained 2.58M views (5.8 vsNormal) by focusing on private court dynamics rather than generic battlefield movements.",
+      "topic": "Visual evidence and primary source integration",
+      "evidence": "Viewer feedback explicitly demands real footage, photos, and primary source documents to validate AI-narrated documentaries.",
+      "strength": 7
+    },
+    {
+      "topic": "Geopolitical impact of gang violence and organized crime",
+      "evidence": "High vsNormal metrics on the Chicago gang documentary suggest an appetite for 'street-level' geopolitics.",
       "strength": 8
     }
   ],
   "gaps": [
-    "Systemic financial/procedural loopholes used by state militaries to avoid family compensation (e.g., 'Missing in Action' classifications to skip death benefits).",
-    "Investigations into 'sniper tourism' and foreign mercenaries in post-Cold War urban sieges.",
-    "Comparative analyses of modern state historical denial and how war crimes are scrubbed from national education systems."
+    "Integration of real footage/photos into AI-generated documentary formats",
+    "Nuanced analysis of how ancient warning systems (like stones) compare to modern infrastructure failures",
+    "Objective, non-partisan deep dives into the intersection of intelligence agencies and political scandals"
   ],
   "saturated": [
-    "Standard surface-level biographies of political figures (e.g., 'Who Was Dick Cheney?' underperformed severely at 0.1 vsNormal).",
-    "Generic broad-brush WWII history overviews lacking a specific psychological, logistical, or covert angle.",
-    "Vlog-style or off-niche cultural experiments (e.g., Italian gesture training at 0.01 vsNormal)."
+    "General AI-narrated history overviews without primary source footage",
+    "Overly sensationalized 'sex scandal' recaps that lack historical context",
+    "Generic prehistoric documentaries that do not provide specific, actionable scientific takeaways"
   ],
   "title_patterns": [
-    "Why [Group/Nation] Still [Irrationally High-Risk Action] (e.g., 'Why Russians Still Sign Up to Die')",
-    "The [Country/Event] [Disaster/Crash] Conspiracy (e.g., 'The Israeli Plane Crash Conspiracy')",
-    "When [Historical Tragedy] Was [Unusual Media/Public Exposure] (e.g., 'When a Genocide Was Broadcast Live on TV')",
-    "[Dictator/Leader]'s [Private Realm/Court]: The Internal World of [Role] (e.g., 'Hitler's Court: The Private World of the Dictator')"
+    "The TRAGEDY of [Place]: The [Subject] [Action] in [Timeframe]",
+    "Inside [Location]'s Deadliest [Topic]",
+    "[Name]'s [Subject]: [Category/Keywords] in the White House"
   ]
 }
