@@ -1,47 +1,48 @@
 {
-  "at": "2026-11-10T02:14:23.494Z",
+  "at": "2026-11-12T02:19:36.871Z",
   "channels": [
-    "Um Documentário",
-    "World View - Documentary",
-    "Chat History Compilations",
-    "KCRA 3",
-    "Tousi TV"
+    "San English",
+    "AniHis Hindi",
+    "Markets of the Past",
+    "Nils History",
+    "Real Time History"
   ],
   "wants": [
     {
-      "topic": "Real-time global tragedy/disaster analysis",
-      "evidence": "Comments on Um Documentário's Miyako and Yungay videos frequently link content to current events in Nepal and other regions.",
+      "topic": "Human-centric, boots-on-the-ground military perspectives",
+      "evidence": "High vsNormal for 'Ukrainians Dug Under a Russian Howitzer' and 'Russian Female Soldier' videos; comments praising authentic, non-musical, frontline footage.",
+      "strength": 10
+    },
+    {
+      "topic": "Intelligence, Espionage, and Covert Operations",
+      "evidence": "AniHis Hindi's 'Operation Hornet' and Markets of the Past's 'Admiral Yamamoto' (intelligence-focused) both significantly outperformed channel medians.",
       "strength": 9
     },
     {
-      "topic": "Human-centric historical scandals and private lives",
-      "evidence": "World View's 'JFK's Women' and 'Bill Clinton' videos show high engagement regarding the intersection of personal morality and political power.",
+      "topic": "Geopolitical 'Why' analysis (Economic/Strategic)",
+      "evidence": "Markets of the Past's 'Why America Became Richer Than Latin America' video and AniHis Hindi's 'Jio/Starlink' analysis.",
       "strength": 8
     },
     {
-      "topic": "Visual evidence and primary source integration",
-      "evidence": "Viewer feedback explicitly demands real footage, photos, and primary source documents to validate AI-narrated documentaries.",
+      "topic": "2D Animation explainers for complex history",
+      "evidence": "AniHis Hindi's consistent use of animation for historical storytelling correlates with high performance.",
       "strength": 7
-    },
-    {
-      "topic": "Geopolitical impact of gang violence and organized crime",
-      "evidence": "High vsNormal metrics on the Chicago gang documentary suggest an appetite for 'street-level' geopolitics.",
-      "strength": 8
     }
   ],
   "gaps": [
-    "Integration of real footage/photos into AI-generated documentary formats",
-    "Nuanced analysis of how ancient warning systems (like stones) compare to modern infrastructure failures",
-    "Objective, non-partisan deep dives into the intersection of intelligence agencies and political scandals"
+    "Deep-dive analysis of specific military hardware/tech used in current conflicts without the 'clickbait' narrative.",
+    "Objective, non-partisan analysis of the 'New Era' of cinema/media influence on national identity (beyond just Bollywood/Indian context).",
+    "Historical analysis of logistics and supply chain failures in famous past battles, rather than just the 'heroic' narrative."
   ],
   "saturated": [
-    "General AI-narrated history overviews without primary source footage",
-    "Overly sensationalized 'sex scandal' recaps that lack historical context",
-    "Generic prehistoric documentaries that do not provide specific, actionable scientific takeaways"
+    "Misleading clickbait titles regarding 'terrifying' or 'secret' discoveries that lack substance.",
+    "General 'History of [Country]' overviews that lack a specific, unique thematic angle.",
+    "Speculative 'What if' scenarios involving popular figures that feel like fan-fiction rather than historical analysis."
   ],
   "title_patterns": [
-    "The TRAGEDY of [Place]: The [Subject] [Action] in [Timeframe]",
-    "Inside [Location]'s Deadliest [Topic]",
-    "[Name]'s [Subject]: [Category/Keywords] in the White House"
+    "The Real Reason [Subject]: [Specific Counter-Intuitive Angle]",
+    "Ukrainians/Russians [Action]: Here's What They Found",
+    "Operation [Name]: [Country]'s Most Daring [Mission Type]",
+    "How [Person A] & [Person B] Changed [Industry/History]: The Rise of [Trend]"
   ]
 }
