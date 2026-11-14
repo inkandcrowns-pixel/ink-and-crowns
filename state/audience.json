@@ -1,48 +1,52 @@
 {
-  "at": "2026-11-12T02:19:36.871Z",
+  "at": "2026-11-14T02:12:28.074Z",
   "channels": [
-    "San English",
-    "AniHis Hindi",
-    "Markets of the Past",
-    "Nils History",
-    "Real Time History"
+    "Landfall",
+    "NEW Unsolved Mysteries",
+    "Ambrose Discovery",
+    "Ziro History",
+    "Hidden Ops India"
   ],
   "wants": [
     {
-      "topic": "Human-centric, boots-on-the-ground military perspectives",
-      "evidence": "High vsNormal for 'Ukrainians Dug Under a Russian Howitzer' and 'Russian Female Soldier' videos; comments praising authentic, non-musical, frontline footage.",
+      "topic": "Real historical survival stories highlighting human fortitude, faith, and moral cooperation against extreme odds",
+      "evidence": "Landfall's video '6 Boys Vanished at Sea, 15 Months Later They Were Found Alive' achieved 73.74x normal views; top comments heavily focus on Tongan cultural values, prayer, and contrasts to 'Lord of the Flies'.",
       "strength": 10
     },
     {
-      "topic": "Intelligence, Espionage, and Covert Operations",
-      "evidence": "AniHis Hindi's 'Operation Hornet' and Markets of the Past's 'Admiral Yamamoto' (intelligence-focused) both significantly outperformed channel medians.",
+      "topic": "Wilderness, hiking trail, and isolated natural setting cold cases / crimes",
+      "evidence": "NEW Unsolved Mysteries' video 'Mother & Daughter Murdered: Who Hunted Them?' hit 166.78x normal views; comments reflect strong audience engagement around backcountry safety and local trail fear.",
       "strength": 9
     },
     {
-      "topic": "Geopolitical 'Why' analysis (Economic/Strategic)",
-      "evidence": "Markets of the Past's 'Why America Became Richer Than Latin America' video and AniHis Hindi's 'Jio/Starlink' analysis.",
+      "topic": "Isolated maritime mysteries involving missing families or predatory boat captains",
+      "evidence": "NEW Unsolved Mysteries' video 'What Does the Captain Know? The Search for the Bernstein Family' got 155.41x normal views; comments analyze the boat setting as a 'predator's perfect lair'.",
+      "strength": 9
+    },
+    {
+      "topic": "Paradigm-shifting subterranean and architectural discoveries beneath famous ancient monuments",
+      "evidence": "Ambrose Discovery's 'What They Found Beneath the Pyramid of Cholula Could Change the World...' performed at 27.53x normal views with over 1.1M total views.",
       "strength": 8
     },
     {
-      "topic": "2D Animation explainers for complex history",
-      "evidence": "AniHis Hindi's consistent use of animation for historical storytelling correlates with high performance.",
-      "strength": 7
+      "topic": "Rural mysterious deaths exposed by botched local police investigations and family disputes",
+      "evidence": "NEW Unsolved Mysteries' 'Found Dead on a Tractor' reached 87.11x normal views; top comments express strong outrage at police incompetence and debate suspect family members.",
+      "strength": 8
     }
   ],
   "gaps": [
-    "Deep-dive analysis of specific military hardware/tech used in current conflicts without the 'clickbait' narrative.",
-    "Objective, non-partisan analysis of the 'New Era' of cinema/media influence on national identity (beyond just Bollywood/Indian context).",
-    "Historical analysis of logistics and supply chain failures in famous past battles, rather than just the 'heroic' narrative."
+    "Nostalgic, authoritative host narration (like Robert Stack's style in classic Unsolved Mysteries) paired with deep archival research rather than un-narrated docuseries.",
+    "Rigorous, documented historical survival analysis backed by contemporary archival records and primary sources rather than repeating generic stock footage or sensationalized fabrications.",
+    "Prominent 'UPDATE' callouts and follow-up coverage when primary sources/books (e.g., memoirs, newly published archival records) release new details on cold survival/crime cases."
   ],
   "saturated": [
-    "Misleading clickbait titles regarding 'terrifying' or 'secret' discoveries that lack substance.",
-    "General 'History of [Country]' overviews that lack a specific, unique thematic angle.",
-    "Speculative 'What if' scenarios involving popular figures that feel like fan-fiction rather than historical analysis."
+    "Generic, vague crime/thriller titles without specific names, stakes, or unique hooks (e.g., 'A Killer Comes Knocking' and 'Dead by Dawn' both got 0x vs normal views).",
+    "Standard overviews of well-known historical voyages lacking a distinct human survival pivot (e.g., 'The Brutal First Voyage Around the World' underperformed at 0.6x vs normal)."
   ],
   "title_patterns": [
-    "The Real Reason [Subject]: [Specific Counter-Intuitive Angle]",
-    "Ukrainians/Russians [Action]: Here's What They Found",
-    "Operation [Name]: [Country]'s Most Daring [Mission Type]",
-    "How [Person A] & [Person B] Changed [Industry/History]: The Rise of [Trend]"
+    "[Number] [Group] Vanished/Survived at [Location], [Timeframe] Later They Were Found [Status]",
+    "What They Found Beneath [Famous Ancient Landmark/Monument] Could Change [The World/History]...",
+    "What Does [Authority Figure] Know? The Search for [Victim/Family]",
+    "[Victim/Status] Murdered/Found Dead: Who [Action] Them?"
   ]
 }

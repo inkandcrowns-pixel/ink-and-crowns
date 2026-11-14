@@ -4,7 +4,7 @@
       "title": "Ambrose Discovery",
       "hits": 5,
       "outlierSum": 214.63,
-      "scannedAt": "2026-11-06T14:27:15.440Z",
+      "scannedAt": "2026-11-14T02:12:14.891Z",
       "subs": 100000,
       "lastSeen": "2026-11-07T14:00:19.373Z"
     },
@@ -20,7 +20,7 @@
       "title": "Hidden Ops India",
       "hits": 1,
       "outlierSum": 8.79,
-      "scannedAt": "2026-11-06T14:27:17.652Z",
+      "scannedAt": "2026-11-14T02:12:16.845Z",
       "subs": 105000,
       "lastSeen": "2026-11-03T14:27:02.101Z"
     },
@@ -34,11 +34,11 @@
     },
     "UCpVm7bg6pXKo1Pr6k5kxG9A": {
       "title": "National Geographic",
-      "hits": 17,
-      "outlierSum": 1.28,
+      "hits": 20,
+      "outlierSum": 1.51,
       "scannedAt": null,
       "subs": 26600000,
-      "lastSeen": "2026-11-12T02:19:16.349Z"
+      "lastSeen": "2026-11-14T02:12:12.170Z"
     },
     "UC5Axef4J11DIu17y2RKVqNQ": {
       "title": "The Present Past",
@@ -60,7 +60,7 @@
       "title": "Ziro History",
       "hits": 5,
       "outlierSum": 36.49,
-      "scannedAt": "2026-11-06T14:27:16.186Z",
+      "scannedAt": "2026-11-14T02:12:15.579Z",
       "subs": 21700,
       "lastSeen": "2026-11-05T15:06:49.451Z"
     },
@@ -74,11 +74,11 @@
     },
     "UCNye-wNBqNL5ZzHSJj3l8Bg": {
       "title": "Al Jazeera English",
-      "hits": 7,
-      "outlierSum": 0.43000000000000005,
+      "hits": 8,
+      "outlierSum": 0.51,
       "scannedAt": null,
       "subs": 18400000,
-      "lastSeen": "2026-11-12T02:19:16.349Z"
+      "lastSeen": "2026-11-14T02:12:12.170Z"
     },
     "UCupvZG-5ko_eiXAupbDfxWw": {
       "title": "CNN",
@@ -298,11 +298,11 @@
     },
     "UC3ScyryU9Oy9Wse3a8OAmYQ": {
       "title": "FRONTLINE PBS | Official",
-      "hits": 2,
-      "outlierSum": 0.25,
+      "hits": 3,
+      "outlierSum": 0.38,
       "scannedAt": null,
-      "subs": 4860000,
-      "lastSeen": "2026-11-10T02:14:02.750Z"
+      "subs": 4870000,
+      "lastSeen": "2026-11-14T02:12:12.170Z"
     },
     "UCKUuzWMeilXB_wgsicrLwNw": {
       "title": "Money Matters",
@@ -498,11 +498,11 @@
     },
     "UCB1eDEd1AYG3YrRIJSZzMOQ": {
       "title": "Real Time History",
-      "hits": 2,
-      "outlierSum": 3.9,
+      "hits": 3,
+      "outlierSum": 5.93,
       "scannedAt": "2026-11-12T02:19:20.559Z",
-      "subs": 768000,
-      "lastSeen": "2026-11-10T02:14:02.750Z"
+      "subs": 769000,
+      "lastSeen": "2026-11-14T02:12:12.169Z"
     },
     "UCyKoMruI8B8QW-JzG4lehbQ": {
       "title": "Armor Verdict",
@@ -546,11 +546,11 @@
     },
     "UCvPXiKxH-eH9xq-80vpgmKQ": {
       "title": "Epic History",
-      "hits": 3,
-      "outlierSum": 0.71,
+      "hits": 4,
+      "outlierSum": 0.97,
       "scannedAt": null,
       "subs": 3200000,
-      "lastSeen": "2026-11-12T02:19:16.349Z"
+      "lastSeen": "2026-11-14T02:12:12.170Z"
     },
     "UCJP9GiWWRTKVGptOtj102_A": {
       "title": "Cine Recaps Hindi",
@@ -1114,27 +1114,27 @@
     },
     "UCcK9yDz5INb1Q9Tw82ICeVQ": {
       "title": "Um Documentário",
-      "hits": 2,
-      "outlierSum": 35.89,
+      "hits": 3,
+      "outlierSum": 54.11,
       "scannedAt": "2026-11-10T02:14:03.973Z",
-      "subs": 128000,
-      "lastSeen": "2026-11-12T02:19:16.349Z"
+      "subs": 130000,
+      "lastSeen": "2026-11-14T02:12:12.169Z"
     },
     "UCNDM0eq9WmBDr5UwMQFeFew": {
       "title": "World View - Documentary",
-      "hits": 2,
-      "outlierSum": 37.07,
+      "hits": 3,
+      "outlierSum": 57.72,
       "scannedAt": "2026-11-10T02:14:04.648Z",
-      "subs": 45800,
-      "lastSeen": "2026-11-12T02:19:16.349Z"
+      "subs": 46100,
+      "lastSeen": "2026-11-14T02:12:12.169Z"
     },
     "UCRgMIwmmh1-2k5HeTQ2cdkQ": {
       "title": "Gaurav Thakur",
-      "hits": 2,
-      "outlierSum": 0.81,
+      "hits": 3,
+      "outlierSum": 1.24,
       "scannedAt": null,
       "subs": 7410000,
-      "lastSeen": "2026-11-12T02:19:16.349Z"
+      "lastSeen": "2026-11-14T02:12:12.169Z"
     },
     "UC2Nwwobsd0ctkzVieXZvyQA": {
       "title": "Ankit Inspires India",
@@ -1146,19 +1146,19 @@
     },
     "UC2TsKs8KgTLPZf5d0hcJcGQ": {
       "title": "Chat History Compilations",
-      "hits": 1,
-      "outlierSum": 3.4,
+      "hits": 2,
+      "outlierSum": 7.16,
       "scannedAt": "2026-11-10T02:14:05.458Z",
-      "subs": 238000,
-      "lastSeen": "2026-11-10T02:14:02.750Z"
+      "subs": 240000,
+      "lastSeen": "2026-11-14T02:12:12.169Z"
     },
     "UCW39zufHfsuGgpLviKh297Q": {
       "title": "DW Documentary",
-      "hits": 3,
-      "outlierSum": 0.6,
+      "hits": 5,
+      "outlierSum": 1.0799999999999998,
       "scannedAt": null,
       "subs": 6530000,
-      "lastSeen": "2026-11-12T02:19:16.349Z"
+      "lastSeen": "2026-11-14T02:12:12.169Z"
     },
     "UCNdLg5u-Ed5w2apVfFsCiDg": {
       "title": "Things I Care About",
@@ -1306,11 +1306,11 @@
     },
     "UCKMnl27hDMKvch--noWe5CA": {
       "title": "Cogito",
-      "hits": 1,
-      "outlierSum": 1.72,
+      "hits": 2,
+      "outlierSum": 3.49,
       "scannedAt": null,
       "subs": 812000,
-      "lastSeen": "2026-11-12T02:19:16.349Z"
+      "lastSeen": "2026-11-14T02:12:12.169Z"
     },
     "UCvxKQMAJiWb3YUIKMVf44kQ": {
       "title": "AniHis Hindi",
@@ -1394,11 +1394,11 @@
     },
     "UC9MAhZQQd9egwWCxrwSIsJQ": {
       "title": "HISTORY",
-      "hits": 1,
-      "outlierSum": 0.04,
+      "hits": 3,
+      "outlierSum": 0.11,
       "scannedAt": null,
       "subs": 15500000,
-      "lastSeen": "2026-11-12T02:19:16.349Z"
+      "lastSeen": "2026-11-14T02:12:12.170Z"
     },
     "UCFp0Rk-ad8JD78Qw9nEJ29w": {
       "title": "Archive in Minutes",
@@ -1495,6 +1495,190 @@
       "scannedAt": null,
       "subs": 22,
       "lastSeen": "2026-11-12T02:19:16.349Z"
+    },
+    "UCoEA4206emT0YghI8vnyG1A": {
+      "title": "AllThingsAfro",
+      "hits": 1,
+      "outlierSum": 50,
+      "scannedAt": null,
+      "subs": 8910,
+      "lastSeen": "2026-11-14T02:12:12.169Z"
+    },
+    "UCy2hpI6ib2VHlAVCA1bSifA": {
+      "title": "Landfall",
+      "hits": 1,
+      "outlierSum": 50,
+      "scannedAt": "2026-11-14T02:12:13.128Z",
+      "subs": 12300,
+      "lastSeen": "2026-11-14T02:12:12.169Z"
+    },
+    "UCIXccIKvDXeCiotkUV_vKZw": {
+      "title": "NEW Unsolved Mysteries",
+      "hits": 1,
+      "outlierSum": 9.97,
+      "scannedAt": "2026-11-14T02:12:14.135Z",
+      "subs": 52500,
+      "lastSeen": "2026-11-14T02:12:12.169Z"
+    },
+    "UCSbpymrTSgO1Y0uIfk_gpgA": {
+      "title": "Phantom Expedition",
+      "hits": 1,
+      "outlierSum": 5.13,
+      "scannedAt": null,
+      "subs": 42300,
+      "lastSeen": "2026-11-14T02:12:12.169Z"
+    },
+    "UC5pEueTEbkzRSWnbDgheEJw": {
+      "title": "Supertalks by themovingship ",
+      "hits": 1,
+      "outlierSum": 0.55,
+      "scannedAt": null,
+      "subs": 1900000,
+      "lastSeen": "2026-11-14T02:12:12.170Z"
+    },
+    "UCicVSNyM7PMXEzdoAsTB02w": {
+      "title": "Chat History",
+      "hits": 1,
+      "outlierSum": 0.8,
+      "scannedAt": null,
+      "subs": 1140000,
+      "lastSeen": "2026-11-14T02:12:12.170Z"
+    },
+    "UCSILOCUJTQM6lqD6Kz-UkwA": {
+      "title": "Vanished Times",
+      "hits": 1,
+      "outlierSum": 34.59,
+      "scannedAt": null,
+      "subs": 594,
+      "lastSeen": "2026-11-14T02:12:12.170Z"
+    },
+    "UC_JRvXSHNoVTl1I7mqzYWDg": {
+      "title": "Kaushik STORIES",
+      "hits": 1,
+      "outlierSum": 0.55,
+      "scannedAt": null,
+      "subs": 678000,
+      "lastSeen": "2026-11-14T02:12:12.170Z"
+    },
+    "UCaWd5_7JhbQBe4dknZhsHJg": {
+      "title": "WatchMojo.com",
+      "hits": 1,
+      "outlierSum": 1,
+      "scannedAt": null,
+      "subs": 25800000,
+      "lastSeen": "2026-11-14T02:12:12.170Z"
+    },
+    "UCAAZoMSSJ4qCDKRkyH4iRZw": {
+      "title": "Optic Explorer",
+      "hits": 1,
+      "outlierSum": 10.64,
+      "scannedAt": null,
+      "subs": 346,
+      "lastSeen": "2026-11-14T02:12:12.170Z"
+    },
+    "UC23C7y9RDTpyt3wwH9qcRlA": {
+      "title": "Osama Tayyab Podcast ",
+      "hits": 1,
+      "outlierSum": 0.31,
+      "scannedAt": null,
+      "subs": 243000,
+      "lastSeen": "2026-11-14T02:12:12.170Z"
+    },
+    "UCb1SbSFCp8wzSKHt5KpOq3Q": {
+      "title": "Traveling Through History",
+      "hits": 1,
+      "outlierSum": 1.12,
+      "scannedAt": null,
+      "subs": 27000,
+      "lastSeen": "2026-11-14T02:12:12.170Z"
+    },
+    "UC00gZeXQWogD_N4XdY2gGRg": {
+      "title": "Lazy Chill Zone",
+      "hits": 2,
+      "outlierSum": 1.38,
+      "scannedAt": null,
+      "subs": 58300,
+      "lastSeen": "2026-11-14T02:12:12.170Z"
+    },
+    "UCBINYCmwE29fBXCpUI8DgTA": {
+      "title": "MostAmazingTop10",
+      "hits": 1,
+      "outlierSum": 1,
+      "scannedAt": null,
+      "subs": 7850000,
+      "lastSeen": "2026-11-14T02:12:12.170Z"
+    },
+    "UCn87yhmEcgnI4PGIvhM4DFg": {
+      "title": "Chill Dude Plus",
+      "hits": 1,
+      "outlierSum": 5.49,
+      "scannedAt": null,
+      "subs": 314,
+      "lastSeen": "2026-11-14T02:12:12.170Z"
+    },
+    "UC_0r3EheCnp-wVvndYDGviQ": {
+      "title": "Banijay Crime - Crime Documentary",
+      "hits": 1,
+      "outlierSum": 0.04,
+      "scannedAt": null,
+      "subs": 1030000,
+      "lastSeen": "2026-11-14T02:12:12.170Z"
+    },
+    "UCIczOFxwgv27AlTkZZMj8yw": {
+      "title": "Unexplained Mysteries",
+      "hits": 1,
+      "outlierSum": 0.01,
+      "scannedAt": null,
+      "subs": 2010000,
+      "lastSeen": "2026-11-14T02:12:12.170Z"
+    },
+    "UCKXxkIe43JKRClOgLQPD88Q": {
+      "title": "Tennessee Insider",
+      "hits": 1,
+      "outlierSum": 4.94,
+      "scannedAt": null,
+      "subs": 1490,
+      "lastSeen": "2026-11-14T02:12:12.170Z"
+    },
+    "UCy_SmKxe-Q39WcuHyWxb6Ww": {
+      "title": "Explorer Vault",
+      "hits": 1,
+      "outlierSum": 0.49,
+      "scannedAt": null,
+      "subs": 14300,
+      "lastSeen": "2026-11-14T02:12:12.170Z"
+    },
+    "UCkLqtjcIVYFPhAmfVh4-hZw": {
+      "title": "Dalton Discovery",
+      "hits": 1,
+      "outlierSum": 2.9,
+      "scannedAt": null,
+      "subs": 2020,
+      "lastSeen": "2026-11-14T02:12:12.170Z"
+    },
+    "UCivsI-JpV6k2g5ouRCH-G_A": {
+      "title": "Existence Unknown",
+      "hits": 1,
+      "outlierSum": 0.24,
+      "scannedAt": null,
+      "subs": 11100,
+      "lastSeen": "2026-11-14T02:12:12.170Z"
+    },
+    "UCWvzwsZ0sosC8nm0kM4BqvA": {
+      "title": "The Unanswered Hub",
+      "hits": 1,
+      "outlierSum": 1.13,
+      "scannedAt": null,
+      "subs": 140,
+      "lastSeen": "2026-11-14T02:12:12.170Z"
+    },
+    "UC8Dcjf_Zegvtv3xVfMktocw": {
+      "title": "Quest Archive",
+      "hits": 1,
+      "outlierSum": 0.65,
+      "scannedAt": null,
+      "subs": 34,
+      "lastSeen": "2026-11-14T02:12:12.170Z"
     }
   }
 }
