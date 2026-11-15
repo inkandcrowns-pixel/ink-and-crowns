@@ -1,12 +1,12 @@
 {
-  "at": "2026-11-08T02:12:35.710Z",
-  "medViewsPerDay": 2.8343568504773935,
+  "at": "2026-11-15T02:17:16.574Z",
+  "medViewsPerDay": 0.5312398706597454,
   "summary": [
-    "Prioritize WWII military rescue topics over 19th-century treasure legends.",
-    "Use concrete, action-oriented titles instead of abstract phrasing like 'Fever Dreams'.",
-    "Focus script outlines on high-stakes missions to keep retention above 30%.",
-    "Strengthen opening hooks for mystery topics to fix severe early drop-offs (below 18%).",
-    "Structure narratives to push average watch duration past 250 seconds.",
-    "Utilize a 'Topic: Specific Mission' title structure to set clear viewer expectations."
+    "Focus on 20th-century US history; pre-modern topics show zero traction.",
+    "Avoid abstract or vague titles; use specific, high-stakes narrative hooks.",
+    "Ensure retention by front-loading the 'why it matters' hook in the first 30 seconds.",
+    "Target 300+ second average duration; under 200 seconds signals poor pacing.",
+    "Prioritize rescue, mystery, or conflict-driven narratives over general history.",
+    "If a video has 0 views after 3 days, pivot the topic immediately."
   ]
 }

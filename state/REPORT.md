@@ -1,13 +1,6 @@
-# Ink & Crowns weekly report (2026-11-08)
+# Ink & Crowns weekly report (2026-11-15)
 
-Early channel data shows distinct performance trends between WWII narrative history and 19th-century legend topics.
-'Operation Cowboy' (1945 WWII) achieved a strong 32.2% retention rate and 263 seconds average watch duration.
-This military mission video also converted the channel's first subscriber despite having only 7 views in 6 days.
-'The Dutchman's Gold' accumulated 9 views in 3 days but suffered a sharp drop in retention to 17.51%.
-Watch time for the treasure legend dropped to 174 seconds, failing to convert any new subscribers.
-Action-focused titles detailing specific historical missions clearly outperform thematic titles like 'Arizona Fever Dreams'.
-To improve performance, scriptwriting must address early viewer drop-off on legend and folklore topics.
-Prioritizing mid-20th-century events with clear objectives will better drive subscriber conversion and watch time.
+Our data indicates a strong preference for 20th-century narratives, particularly those involving military or rescue operations. The 'Operation Cowboy' video is our clear benchmark for success, showing that specific, character-driven history holds attention better than broad geopolitical overviews. Conversely, the 'Space Race' video suffered from poor retention, likely due to a lack of a concrete hook. We are currently failing to reach an audience with non-US topics like the Siege of Baghdad. To grow, we must shift away from general history and focus on specific, high-stakes US-centric stories while tightening our scripting to prevent early viewer drop-off.
 
 Rules for next videos:
-Prioritize WWII military rescue topics over 19th-century treasure legends.,Use concrete, action-oriented titles instead of abstract phrasing like 'Fever Dreams'.,Focus script outlines on high-stakes missions to keep retention above 30%.,Strengthen opening hooks for mystery topics to fix severe early drop-offs (below 18%).,Structure narratives to push average watch duration past 250 seconds.,Utilize a 'Topic: Specific Mission' title structure to set clear viewer expectations.
+Focus on 20th-century US history; pre-modern topics show zero traction.,Avoid abstract or vague titles; use specific, high-stakes narrative hooks.,Ensure retention by front-loading the 'why it matters' hook in the first 30 seconds.,Target 300+ second average duration; under 200 seconds signals poor pacing.,Prioritize rescue, mystery, or conflict-driven narratives over general history.,If a video has 0 views after 3 days, pivot the topic immediately.
