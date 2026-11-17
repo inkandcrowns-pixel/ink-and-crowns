@@ -1,52 +1,46 @@
 {
-  "at": "2026-11-14T02:12:28.074Z",
+  "at": "2026-11-17T02:23:35.386Z",
   "channels": [
-    "Landfall",
-    "NEW Unsolved Mysteries",
-    "Ambrose Discovery",
-    "Ziro History",
-    "Hidden Ops India"
+    "The Present Past",
+    "World at War",
+    "World Files | Nizam Nazeer",
+    "Um Documentário",
+    "World View - Documentary"
   ],
   "wants": [
     {
-      "topic": "Real historical survival stories highlighting human fortitude, faith, and moral cooperation against extreme odds",
-      "evidence": "Landfall's video '6 Boys Vanished at Sea, 15 Months Later They Were Found Alive' achieved 73.74x normal views; top comments heavily focus on Tongan cultural values, prayer, and contrasts to 'Lord of the Flies'.",
+      "topic": "Economic realities and sociopolitical coercion behind soldier enlistment in modern authoritarian regimes",
+      "evidence": "The Present Past video 'Why Russians Still Sign Up to Die' performed 31.23x above channel normal with comments heavily discussing local village wages vs. military pay ($2500/mo) and police coercion tactics.",
       "strength": 10
     },
     {
-      "topic": "Wilderness, hiking trail, and isolated natural setting cold cases / crimes",
-      "evidence": "NEW Unsolved Mysteries' video 'Mother & Daughter Murdered: Who Hunted Them?' hit 166.78x normal views; comments reflect strong audience engagement around backcountry safety and local trail fear.",
+      "topic": "Covert state intelligence scandals, black ops, and military cover-ups involving civilian infrastructure",
+      "evidence": "The Present Past video 'The Israeli Plane Crash Conspiracy' performed 10.65x above normal, with top comments highlighting missing black boxes, Mossad secrecy, and covert arms transport on civilian flights.",
       "strength": 9
     },
     {
-      "topic": "Isolated maritime mysteries involving missing families or predatory boat captains",
-      "evidence": "NEW Unsolved Mysteries' video 'What Does the Captain Know? The Search for the Bernstein Family' got 155.41x normal views; comments analyze the boat setting as a 'predator's perfect lair'.",
-      "strength": 9
-    },
-    {
-      "topic": "Paradigm-shifting subterranean and architectural discoveries beneath famous ancient monuments",
-      "evidence": "Ambrose Discovery's 'What They Found Beneath the Pyramid of Cholula Could Change the World...' performed at 27.53x normal views with over 1.1M total views.",
+      "topic": "Systemic failures of international peacekeeping bodies (UN) during modern ethnic conflicts",
+      "evidence": "The Present Past video 'When a Genocide Was Broadcast Live on TV' generated 8.7k comments focusing on UN incompetence, peacekeeper helplessness, and international inaction in Srebrenica and Rwanda.",
       "strength": 8
     },
     {
-      "topic": "Rural mysterious deaths exposed by botched local police investigations and family disputes",
-      "evidence": "NEW Unsolved Mysteries' 'Found Dead on a Tractor' reached 87.11x normal views; top comments express strong outrage at police incompetence and debate suspect family members.",
+      "topic": "Tactical combat mechanics, command insubordination, and stimulant/drug use in WWII blitzkriegs",
+      "evidence": "World at War video '1940: The Fall of France (UNCENSORED)' performed 5.72x above normal, with viewers discussing Guderian disobeying Hitler and the use of Pervitin.",
       "strength": 8
     }
   ],
   "gaps": [
-    "Nostalgic, authoritative host narration (like Robert Stack's style in classic Unsolved Mysteries) paired with deep archival research rather than un-narrated docuseries.",
-    "Rigorous, documented historical survival analysis backed by contemporary archival records and primary sources rather than repeating generic stock footage or sensationalized fabrications.",
-    "Prominent 'UPDATE' callouts and follow-up coverage when primary sources/books (e.g., memoirs, newly published archival records) release new details on cold survival/crime cases."
+    "Deep-dive investigations into international intelligence cover-ups involving civilian air transit and declassified arms transfers.",
+    "Granular economic analyses of draft incentives vs local poverty in non-Western militaries.",
+    "Unfiltered historical breakdowns of UN peacekeeper rules of engagement failures during 1990s genocides."
   ],
   "saturated": [
-    "Generic, vague crime/thriller titles without specific names, stakes, or unique hooks (e.g., 'A Killer Comes Knocking' and 'Dead by Dawn' both got 0x vs normal views).",
-    "Standard overviews of well-known historical voyages lacking a distinct human survival pivot (e.g., 'The Brutal First Voyage Around the World' underperformed at 0.6x vs normal)."
+    "Standard political figure biographies lacking a sharp geopolitical crisis angle (e.g., generic Cheney/politician overviews).",
+    "Broad, high-level summaries of well-known wars like Vietnam without a distinct local perspective or new archival focus."
   ],
   "title_patterns": [
-    "[Number] [Group] Vanished/Survived at [Location], [Timeframe] Later They Were Found [Status]",
-    "What They Found Beneath [Famous Ancient Landmark/Monument] Could Change [The World/History]...",
-    "What Does [Authority Figure] Know? The Search for [Victim/Family]",
-    "[Victim/Status] Murdered/Found Dead: Who [Action] Them?"
+    "Why [Group/Nation] Still [Shocking Action/Behavior]",
+    "The [Entity/Country] [Disaster/Event] Conspiracy",
+    "When [Historical Tragedy] Was [Unusual Medium/Circumstance]"
   ]
 }

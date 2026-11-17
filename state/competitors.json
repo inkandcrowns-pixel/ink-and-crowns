@@ -12,7 +12,7 @@
       "title": "World at War",
       "hits": 5,
       "outlierSum": 9.6,
-      "scannedAt": "2026-11-07T14:00:23.485Z",
+      "scannedAt": "2026-11-17T02:23:16.104Z",
       "subs": 1330000,
       "lastSeen": "2026-11-07T14:00:19.373Z"
     },
@@ -34,17 +34,17 @@
     },
     "UCpVm7bg6pXKo1Pr6k5kxG9A": {
       "title": "National Geographic",
-      "hits": 20,
-      "outlierSum": 1.51,
+      "hits": 22,
+      "outlierSum": 1.71,
       "scannedAt": null,
       "subs": 26600000,
-      "lastSeen": "2026-11-14T02:12:12.170Z"
+      "lastSeen": "2026-11-17T02:23:13.907Z"
     },
     "UC5Axef4J11DIu17y2RKVqNQ": {
       "title": "The Present Past",
       "hits": 5,
       "outlierSum": 10.91,
-      "scannedAt": "2026-11-07T14:00:22.381Z",
+      "scannedAt": "2026-11-17T02:23:15.249Z",
       "subs": 469000,
       "lastSeen": "2026-11-07T14:00:19.373Z"
     },
@@ -58,11 +58,11 @@
     },
     "UC0D2w4MJDTzx8ceT1YSbiTw": {
       "title": "Ziro History",
-      "hits": 5,
-      "outlierSum": 36.49,
+      "hits": 7,
+      "outlierSum": 44.42,
       "scannedAt": "2026-11-14T02:12:15.579Z",
-      "subs": 21700,
-      "lastSeen": "2026-11-05T15:06:49.451Z"
+      "subs": 28300,
+      "lastSeen": "2026-11-17T02:23:13.907Z"
     },
     "UCjJec0wv1EUomjrBNt1xCTA": {
       "title": "Tousi TV",
@@ -74,11 +74,11 @@
     },
     "UCNye-wNBqNL5ZzHSJj3l8Bg": {
       "title": "Al Jazeera English",
-      "hits": 8,
-      "outlierSum": 0.51,
+      "hits": 9,
+      "outlierSum": 0.59,
       "scannedAt": null,
       "subs": 18400000,
-      "lastSeen": "2026-11-14T02:12:12.170Z"
+      "lastSeen": "2026-11-17T02:23:13.907Z"
     },
     "UCupvZG-5ko_eiXAupbDfxWw": {
       "title": "CNN",
@@ -90,19 +90,19 @@
     },
     "UCugDb3auxoCmwAYXmVUBKtA": {
       "title": "Uncensored World",
-      "hits": 2,
-      "outlierSum": 0.24,
+      "hits": 3,
+      "outlierSum": 1.05,
       "scannedAt": null,
-      "subs": 121000,
-      "lastSeen": "2026-11-03T14:27:02.101Z"
+      "subs": 122000,
+      "lastSeen": "2026-11-17T02:23:13.907Z"
     },
     "UCrM8pwq4KX1MMGqyOqhNY5g": {
       "title": "Everything About South East Asia",
-      "hits": 1,
-      "outlierSum": 1.03,
+      "hits": 2,
+      "outlierSum": 1.8,
       "scannedAt": null,
-      "subs": 5490,
-      "lastSeen": "2026-11-03T14:27:02.101Z"
+      "subs": 7420,
+      "lastSeen": "2026-11-17T02:23:13.907Z"
     },
     "UCPcABVoFfCK5gDfX0PY1KGg": {
       "title": "Drew Durnil",
@@ -114,43 +114,43 @@
     },
     "UCdlfL2g13cMX0I6BTFTIAwA": {
       "title": "Coal Pot Days",
-      "hits": 1,
-      "outlierSum": 0.38,
+      "hits": 2,
+      "outlierSum": 0.77,
       "scannedAt": null,
       "subs": 2350,
-      "lastSeen": "2026-11-03T14:27:02.101Z"
+      "lastSeen": "2026-11-17T02:23:13.907Z"
     },
     "UCtynWpOu-AMYp8OKsfs3Jnw": {
       "title": "Rivo History",
-      "hits": 2,
-      "outlierSum": 1.9,
+      "hits": 3,
+      "outlierSum": 2.76,
       "scannedAt": null,
-      "subs": 107,
-      "lastSeen": "2026-11-04T14:28:06.633Z"
+      "subs": 1170,
+      "lastSeen": "2026-11-17T02:23:13.907Z"
     },
     "UCqXldhHYDYz6HU8uKqOrgXQ": {
       "title": "The History",
-      "hits": 1,
-      "outlierSum": 0.53,
+      "hits": 2,
+      "outlierSum": 1.1600000000000001,
       "scannedAt": null,
-      "subs": 15,
-      "lastSeen": "2026-11-03T14:27:02.101Z"
+      "subs": 34,
+      "lastSeen": "2026-11-17T02:23:13.907Z"
     },
     "UC56_9v8aHiQ5wU17eCFBXuw": {
       "title": "Pipo History",
-      "hits": 3,
-      "outlierSum": 0.77,
+      "hits": 5,
+      "outlierSum": 1.46,
       "scannedAt": null,
-      "subs": 7,
-      "lastSeen": "2026-11-03T14:27:02.101Z"
+      "subs": 11,
+      "lastSeen": "2026-11-17T02:23:13.907Z"
     },
     "UCgWhw5xXjBDEvSnjvLVrZFg": {
       "title": "Wait, Why?",
-      "hits": 1,
-      "outlierSum": 0.18,
+      "hits": 3,
+      "outlierSum": 50.45,
       "scannedAt": null,
-      "subs": 14,
-      "lastSeen": "2026-11-03T14:27:02.101Z"
+      "subs": 844,
+      "lastSeen": "2026-11-17T02:23:13.907Z"
     },
     "UCyrZzVyfIK1zoKnXihs6f9A": {
       "title": "Zyro History ",
@@ -170,19 +170,19 @@
     },
     "UC55dNMFZtOV1WLHbF8Rncbg": {
       "title": "Mapsodic",
-      "hits": 1,
-      "outlierSum": 0.11,
+      "hits": 2,
+      "outlierSum": 0.24,
       "scannedAt": null,
-      "subs": 226,
-      "lastSeen": "2026-11-03T14:27:02.101Z"
+      "subs": 577,
+      "lastSeen": "2026-11-17T02:23:13.907Z"
     },
     "UCyfd1szrUCdnRjj8sT0AajQ": {
       "title": "Docucollage History ",
-      "hits": 1,
-      "outlierSum": 0.01,
+      "hits": 2,
+      "outlierSum": 0.22,
       "scannedAt": null,
-      "subs": 5,
-      "lastSeen": "2026-11-03T14:27:02.101Z"
+      "subs": 11,
+      "lastSeen": "2026-11-17T02:23:13.907Z"
     },
     "UCg1byVeHeHv8gsHisuVYNHg": {
       "title": "Untold Files",
@@ -194,11 +194,11 @@
     },
     "UCMNv4c0E8FNsurgt5tU-k0w": {
       "title": "OriginCipher",
-      "hits": 1,
-      "outlierSum": 0.06,
+      "hits": 2,
+      "outlierSum": 0.7,
       "scannedAt": null,
-      "subs": 65,
-      "lastSeen": "2026-11-03T14:27:02.101Z"
+      "subs": 660,
+      "lastSeen": "2026-11-17T02:23:13.907Z"
     },
     "UC2a7xNEbWrLZzt1iB5fDVeA": {
       "title": "Great Minds, Simply",
@@ -250,11 +250,11 @@
     },
     "UC55StYNWDxfIzOicu2CTp7g": {
       "title": "Old History ",
-      "hits": 1,
-      "outlierSum": 1,
+      "hits": 2,
+      "outlierSum": 1.73,
       "scannedAt": null,
-      "subs": 21,
-      "lastSeen": "2026-11-03T14:27:02.101Z"
+      "subs": 64,
+      "lastSeen": "2026-11-17T02:23:13.907Z"
     },
     "UCxee7fzc6PvX7OvL_oSzNUg": {
       "title": "Epoch Forge",
@@ -292,7 +292,7 @@
       "title": "World Files | Nizam Nazeer",
       "hits": 1,
       "outlierSum": 10.05,
-      "scannedAt": "2026-11-07T14:00:24.596Z",
+      "scannedAt": "2026-11-17T02:23:17.212Z",
       "subs": 18900,
       "lastSeen": "2026-11-04T14:28:06.633Z"
     },
@@ -514,11 +514,11 @@
     },
     "UCvhPRRiwI1_p4OBsY0yz6mg": {
       "title": "BBC News Africa",
-      "hits": 3,
-      "outlierSum": 2.52,
+      "hits": 4,
+      "outlierSum": 3.36,
       "scannedAt": "2026-11-05T15:06:52.705Z",
-      "subs": 1980000,
-      "lastSeen": "2026-11-07T14:00:19.373Z"
+      "subs": 1990000,
+      "lastSeen": "2026-11-17T02:23:13.907Z"
     },
     "UC850JkAjgLpH4MuPzd2yawQ": {
       "title": "Atlas Unfolded",
@@ -546,11 +546,11 @@
     },
     "UCvPXiKxH-eH9xq-80vpgmKQ": {
       "title": "Epic History",
-      "hits": 4,
-      "outlierSum": 0.97,
+      "hits": 5,
+      "outlierSum": 1.25,
       "scannedAt": null,
-      "subs": 3200000,
-      "lastSeen": "2026-11-14T02:12:12.170Z"
+      "subs": 3210000,
+      "lastSeen": "2026-11-17T02:23:13.907Z"
     },
     "UCJP9GiWWRTKVGptOtj102_A": {
       "title": "Cine Recaps Hindi",
@@ -562,11 +562,11 @@
     },
     "UCnx-XVHJElrvcTRdiB3z5bw": {
       "title": "WarVerse",
-      "hits": 1,
-      "outlierSum": 11.76,
+      "hits": 2,
+      "outlierSum": 61.76,
       "scannedAt": null,
-      "subs": 6390,
-      "lastSeen": "2026-11-05T15:06:49.451Z"
+      "subs": 8430,
+      "lastSeen": "2026-11-17T02:23:13.907Z"
     },
     "UC7t63g5TYdhbE8t1Ti-Wa6g": {
       "title": "War Machine Anatomy",
@@ -890,11 +890,11 @@
     },
     "UCmGSJVG3mCRXVOP4yZrU1Dw": {
       "title": "Johnny Harris",
-      "hits": 1,
-      "outlierSum": 0.72,
+      "hits": 2,
+      "outlierSum": 1.06,
       "scannedAt": null,
-      "subs": 8010000,
-      "lastSeen": "2026-11-07T14:00:19.373Z"
+      "subs": 8020000,
+      "lastSeen": "2026-11-17T02:23:13.907Z"
     },
     "UCmC5Q2nJE_xnMchG_UR1elw": {
       "title": "State Dossiers",
@@ -1116,17 +1116,17 @@
       "title": "Um Documentário",
       "hits": 3,
       "outlierSum": 54.11,
-      "scannedAt": "2026-11-10T02:14:03.973Z",
+      "scannedAt": "2026-11-17T02:23:18.724Z",
       "subs": 130000,
       "lastSeen": "2026-11-14T02:12:12.169Z"
     },
     "UCNDM0eq9WmBDr5UwMQFeFew": {
       "title": "World View - Documentary",
-      "hits": 3,
-      "outlierSum": 57.72,
-      "scannedAt": "2026-11-10T02:14:04.648Z",
-      "subs": 46100,
-      "lastSeen": "2026-11-14T02:12:12.169Z"
+      "hits": 4,
+      "outlierSum": 80.23,
+      "scannedAt": "2026-11-17T02:23:19.426Z",
+      "subs": 46700,
+      "lastSeen": "2026-11-17T02:23:13.907Z"
     },
     "UCRgMIwmmh1-2k5HeTQ2cdkQ": {
       "title": "Gaurav Thakur",
@@ -1146,19 +1146,19 @@
     },
     "UC2TsKs8KgTLPZf5d0hcJcGQ": {
       "title": "Chat History Compilations",
-      "hits": 2,
-      "outlierSum": 7.16,
+      "hits": 3,
+      "outlierSum": 11.17,
       "scannedAt": "2026-11-10T02:14:05.458Z",
-      "subs": 240000,
-      "lastSeen": "2026-11-14T02:12:12.169Z"
+      "subs": 241000,
+      "lastSeen": "2026-11-17T02:23:13.907Z"
     },
     "UCW39zufHfsuGgpLviKh297Q": {
       "title": "DW Documentary",
-      "hits": 5,
-      "outlierSum": 1.0799999999999998,
+      "hits": 7,
+      "outlierSum": 1.64,
       "scannedAt": null,
       "subs": 6530000,
-      "lastSeen": "2026-11-14T02:12:12.169Z"
+      "lastSeen": "2026-11-17T02:23:13.907Z"
     },
     "UCNdLg5u-Ed5w2apVfFsCiDg": {
       "title": "Things I Care About",
@@ -1234,11 +1234,11 @@
     },
     "UC16niRr50-MSBwiO3YDb3RA": {
       "title": "BBC News",
-      "hits": 1,
-      "outlierSum": 0.01,
+      "hits": 2,
+      "outlierSum": 0.11,
       "scannedAt": null,
       "subs": 20300000,
-      "lastSeen": "2026-11-10T02:14:02.750Z"
+      "lastSeen": "2026-11-17T02:23:13.907Z"
     },
     "UChzVhAwzGR7hV-4O8ZmBLHg": {
       "title": "Glenn Greenwald",
@@ -1306,11 +1306,11 @@
     },
     "UCKMnl27hDMKvch--noWe5CA": {
       "title": "Cogito",
-      "hits": 2,
-      "outlierSum": 3.49,
+      "hits": 3,
+      "outlierSum": 5.36,
       "scannedAt": null,
-      "subs": 812000,
-      "lastSeen": "2026-11-14T02:12:12.169Z"
+      "subs": 813000,
+      "lastSeen": "2026-11-17T02:23:13.907Z"
     },
     "UCvxKQMAJiWb3YUIKMVf44kQ": {
       "title": "AniHis Hindi",
@@ -1394,11 +1394,11 @@
     },
     "UC9MAhZQQd9egwWCxrwSIsJQ": {
       "title": "HISTORY",
-      "hits": 3,
-      "outlierSum": 0.11,
+      "hits": 4,
+      "outlierSum": 0.18,
       "scannedAt": null,
       "subs": 15500000,
-      "lastSeen": "2026-11-14T02:12:12.170Z"
+      "lastSeen": "2026-11-17T02:23:13.907Z"
     },
     "UCFp0Rk-ad8JD78Qw9nEJ29w": {
       "title": "Archive in Minutes",
@@ -1498,11 +1498,11 @@
     },
     "UCoEA4206emT0YghI8vnyG1A": {
       "title": "AllThingsAfro",
-      "hits": 1,
-      "outlierSum": 50,
+      "hits": 2,
+      "outlierSum": 100,
       "scannedAt": null,
-      "subs": 8910,
-      "lastSeen": "2026-11-14T02:12:12.169Z"
+      "subs": 9490,
+      "lastSeen": "2026-11-17T02:23:13.907Z"
     },
     "UCy2hpI6ib2VHlAVCA1bSifA": {
       "title": "Landfall",
@@ -1679,6 +1679,86 @@
       "scannedAt": null,
       "subs": 34,
       "lastSeen": "2026-11-14T02:12:12.170Z"
+    },
+    "UCac1MisHGa0qtzf0oWlU8Zw": {
+      "title": "Unpredictable",
+      "hits": 1,
+      "outlierSum": 4.21,
+      "scannedAt": null,
+      "subs": 551000,
+      "lastSeen": "2026-11-17T02:23:13.907Z"
+    },
+    "UCLgEVx4mzk3T3mzgbKG54Eg": {
+      "title": "Hagerty",
+      "hits": 1,
+      "outlierSum": 0.54,
+      "scannedAt": null,
+      "subs": 3890000,
+      "lastSeen": "2026-11-17T02:23:13.907Z"
+    },
+    "UCd078nQiev61h5iRdBE4m5w": {
+      "title": "A & E",
+      "hits": 1,
+      "outlierSum": 50,
+      "scannedAt": null,
+      "subs": 695,
+      "lastSeen": "2026-11-17T02:23:13.907Z"
+    },
+    "UCo4bDsRZPS_Nyljf7MR1ugg": {
+      "title": "Free To Choose Network",
+      "hits": 1,
+      "outlierSum": 0.18,
+      "scannedAt": null,
+      "subs": 220000,
+      "lastSeen": "2026-11-17T02:23:13.907Z"
+    },
+    "UCvqCw1iYzMEk4Q1WFGPHZ1g": {
+      "title": "Skyline Fortune",
+      "hits": 1,
+      "outlierSum": 5.65,
+      "scannedAt": null,
+      "subs": 982,
+      "lastSeen": "2026-11-17T02:23:13.907Z"
+    },
+    "UCv7kDDxcioGNcKwV5hy5Fxw": {
+      "title": "History With TIKO",
+      "hits": 1,
+      "outlierSum": 0.58,
+      "scannedAt": null,
+      "subs": 5,
+      "lastSeen": "2026-11-17T02:23:13.907Z"
+    },
+    "UCJb8mExA8jjsA3djbzjKioQ": {
+      "title": "Antiq History",
+      "hits": 1,
+      "outlierSum": 0.53,
+      "scannedAt": null,
+      "subs": 22,
+      "lastSeen": "2026-11-17T02:23:13.907Z"
+    },
+    "UCUvzk4qGP0l-6SWJsoOMiWA": {
+      "title": "Enzi",
+      "hits": 1,
+      "outlierSum": 0.39,
+      "scannedAt": null,
+      "subs": 4,
+      "lastSeen": "2026-11-17T02:23:13.907Z"
+    },
+    "UCPzkKt0L4l7MskiOxieQ6bg": {
+      "title": "History in Loop",
+      "hits": 1,
+      "outlierSum": 0.2,
+      "scannedAt": null,
+      "subs": 3,
+      "lastSeen": "2026-11-17T02:23:13.907Z"
+    },
+    "UCDskbiIowpvx-t0ZhGQc0SA": {
+      "title": "Empires & Eras",
+      "hits": 1,
+      "outlierSum": 0.1,
+      "scannedAt": null,
+      "subs": 136,
+      "lastSeen": "2026-11-17T02:23:13.907Z"
     }
   }
 }
