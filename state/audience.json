@@ -1,46 +1,48 @@
 {
-  "at": "2026-11-17T02:23:35.386Z",
+  "at": "2026-11-19T02:22:34.079Z",
   "channels": [
-    "The Present Past",
-    "World at War",
-    "World Files | Nizam Nazeer",
-    "Um Documentário",
-    "World View - Documentary"
+    "AllThingsAfro",
+    "Ethos",
+    "Unpredictable",
+    "Chat History Compilations",
+    "San English"
   ],
   "wants": [
     {
-      "topic": "Economic realities and sociopolitical coercion behind soldier enlistment in modern authoritarian regimes",
-      "evidence": "The Present Past video 'Why Russians Still Sign Up to Die' performed 31.23x above channel normal with comments heavily discussing local village wages vs. military pay ($2500/mo) and police coercion tactics.",
+      "topic": "The 'Untold' or 'Hidden' Truths of Civil Rights Leaders",
+      "evidence": "AllThingsAfro's best performing videos (Malcolm X, Fred Hampton) focus on correcting mainstream narratives and exposing FBI/government interference.",
       "strength": 10
     },
     {
-      "topic": "Covert state intelligence scandals, black ops, and military cover-ups involving civilian infrastructure",
-      "evidence": "The Present Past video 'The Israeli Plane Crash Conspiracy' performed 10.65x above normal, with top comments highlighting missing black boxes, Mossad secrecy, and covert arms transport on civilian flights.",
+      "topic": "Long-form 'Entire History' explainers (50+ minutes)",
+      "evidence": "Ethos's best performing content is consistently the 50-minute historical deep-dives (Crusades, Jerusalem, Vikings).",
       "strength": 9
     },
     {
-      "topic": "Systemic failures of international peacekeeping bodies (UN) during modern ethnic conflicts",
-      "evidence": "The Present Past video 'When a Genocide Was Broadcast Live on TV' generated 8.7k comments focusing on UN incompetence, peacekeeper helplessness, and international inaction in Srebrenica and Rwanda.",
+      "topic": "Humanizing historical figures beyond their stereotypes",
+      "evidence": "Comments on AllThingsAfro videos show high engagement with the 'real' Malcolm X vs the 'violent' stereotype.",
       "strength": 8
     },
     {
-      "topic": "Tactical combat mechanics, command insubordination, and stimulant/drug use in WWII blitzkriegs",
-      "evidence": "World at War video '1940: The Fall of France (UNCENSORED)' performed 5.72x above normal, with viewers discussing Guderian disobeying Hitler and the use of Pervitin.",
-      "strength": 8
+      "topic": "Geopolitical context of religious conflicts",
+      "evidence": "Ethos's Jerusalem video comments show high interest in the intersection of faith, trade, and political power.",
+      "strength": 7
     }
   ],
   "gaps": [
-    "Deep-dive investigations into international intelligence cover-ups involving civilian air transit and declassified arms transfers.",
-    "Granular economic analyses of draft incentives vs local poverty in non-Western militaries.",
-    "Unfiltered historical breakdowns of UN peacekeeper rules of engagement failures during 1990s genocides."
+    "Nuanced, non-biased accounts of the Crusades that acknowledge both Western and Eastern perspectives without 'baby music' or distracting production choices.",
+    "Accurate timelines and scrolling visual aids in long-form historical documentaries.",
+    "Detailed analysis of how modern government institutions (FBI/CIA) specifically dismantled grassroots movements in the 1960s."
   ],
   "saturated": [
-    "Standard political figure biographies lacking a sharp geopolitical crisis angle (e.g., generic Cheney/politician overviews).",
-    "Broad, high-level summaries of well-known wars like Vietnam without a distinct local perspective or new archival focus."
+    "Surface-level, generic 'Viking' raider content.",
+    "Biased, one-sided portrayals of religious wars.",
+    "High-level summaries of MLK that stick to the standard 'I Have a Dream' school-textbook narrative."
   ],
   "title_patterns": [
-    "Why [Group/Nation] Still [Shocking Action/Behavior]",
-    "The [Entity/Country] [Disaster/Event] Conspiracy",
-    "When [Historical Tragedy] Was [Unusual Medium/Circumstance]"
+    "The ENTIRE History of [Subject] in [Time] minutes",
+    "You Were LIED To About [Historical Figure/Event]",
+    "The [Title/Role] Who TERRIFIED The [Government Agency]",
+    "Why [Group/Nation] Feared [Historical Figure]"
   ]
 }
