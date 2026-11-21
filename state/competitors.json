@@ -4,7 +4,7 @@
       "title": "Ambrose Discovery",
       "hits": 5,
       "outlierSum": 214.63,
-      "scannedAt": "2026-11-14T02:12:14.891Z",
+      "scannedAt": "2026-11-21T02:18:29.298Z",
       "subs": 100000,
       "lastSeen": "2026-11-07T14:00:19.373Z"
     },
@@ -34,11 +34,11 @@
     },
     "UCpVm7bg6pXKo1Pr6k5kxG9A": {
       "title": "National Geographic",
-      "hits": 24,
-      "outlierSum": 1.79,
+      "hits": 26,
+      "outlierSum": 1.87,
       "scannedAt": null,
       "subs": 26600000,
-      "lastSeen": "2026-11-19T02:20:31.579Z"
+      "lastSeen": "2026-11-21T02:18:25.233Z"
     },
     "UC5Axef4J11DIu17y2RKVqNQ": {
       "title": "The Present Past",
@@ -298,11 +298,11 @@
     },
     "UC3ScyryU9Oy9Wse3a8OAmYQ": {
       "title": "FRONTLINE PBS | Official",
-      "hits": 3,
-      "outlierSum": 0.38,
+      "hits": 4,
+      "outlierSum": 0.51,
       "scannedAt": null,
-      "subs": 4870000,
-      "lastSeen": "2026-11-14T02:12:12.170Z"
+      "subs": 4900000,
+      "lastSeen": "2026-11-21T02:18:25.233Z"
     },
     "UCKUuzWMeilXB_wgsicrLwNw": {
       "title": "Money Matters",
@@ -492,7 +492,7 @@
       "title": "Nils History",
       "hits": 4,
       "outlierSum": 90.62,
-      "scannedAt": "2026-11-12T02:19:19.804Z",
+      "scannedAt": "2026-11-21T02:18:27.334Z",
       "subs": 88200,
       "lastSeen": "2026-11-10T02:14:02.750Z"
     },
@@ -514,11 +514,11 @@
     },
     "UCvhPRRiwI1_p4OBsY0yz6mg": {
       "title": "BBC News Africa",
-      "hits": 4,
-      "outlierSum": 3.36,
+      "hits": 5,
+      "outlierSum": 4.32,
       "scannedAt": "2026-11-05T15:06:52.705Z",
       "subs": 1990000,
-      "lastSeen": "2026-11-17T02:23:13.907Z"
+      "lastSeen": "2026-11-21T02:18:25.233Z"
     },
     "UC850JkAjgLpH4MuPzd2yawQ": {
       "title": "Atlas Unfolded",
@@ -530,27 +530,27 @@
     },
     "UCmswCtt5aDnRq48rzwowrdg": {
       "title": "Sauron The White",
-      "hits": 1,
-      "outlierSum": 19.83,
+      "hits": 2,
+      "outlierSum": 47.67,
       "scannedAt": null,
-      "subs": 5090,
-      "lastSeen": "2026-11-05T15:06:49.451Z"
+      "subs": 7280,
+      "lastSeen": "2026-11-21T02:18:25.233Z"
     },
     "UCPNro6-pzlC4koUqQB7r6uw": {
       "title": "Blitzkrieg",
-      "hits": 1,
-      "outlierSum": 12.93,
+      "hits": 2,
+      "outlierSum": 36.41,
       "scannedAt": null,
-      "subs": 6120,
-      "lastSeen": "2026-11-05T15:06:49.451Z"
+      "subs": 7200,
+      "lastSeen": "2026-11-21T02:18:25.233Z"
     },
     "UCvPXiKxH-eH9xq-80vpgmKQ": {
       "title": "Epic History",
-      "hits": 6,
-      "outlierSum": 1.55,
+      "hits": 7,
+      "outlierSum": 1.86,
       "scannedAt": null,
       "subs": 3210000,
-      "lastSeen": "2026-11-19T02:20:31.579Z"
+      "lastSeen": "2026-11-21T02:18:25.233Z"
     },
     "UCJP9GiWWRTKVGptOtj102_A": {
       "title": "Cine Recaps Hindi",
@@ -578,11 +578,11 @@
     },
     "UC2YHYn047fkAob8Od3leQjw": {
       "title": "Ethos",
-      "hits": 2,
-      "outlierSum": 13.95,
+      "hits": 3,
+      "outlierSum": 16.619999999999997,
       "scannedAt": "2026-11-19T02:20:32.897Z",
-      "subs": 22600,
-      "lastSeen": "2026-11-19T02:20:31.579Z"
+      "subs": 23500,
+      "lastSeen": "2026-11-21T02:18:25.233Z"
     },
     "UC6GJSRKam_2BnNblvoguKiA": {
       "title": "War Archive",
@@ -594,27 +594,27 @@
     },
     "UCcYlQVzWCQDBQfvnSonGITQ": {
       "title": "AREMACIELO",
-      "hits": 1,
-      "outlierSum": 6.85,
+      "hits": 2,
+      "outlierSum": 14.05,
       "scannedAt": null,
-      "subs": 7110,
-      "lastSeen": "2026-11-05T15:06:49.451Z"
+      "subs": 8420,
+      "lastSeen": "2026-11-21T02:18:25.233Z"
     },
     "UCQd7G7YM9wyKbE_HuGeKsTQ": {
       "title": "COULD THEY WIN?",
-      "hits": 1,
-      "outlierSum": 10.51,
+      "hits": 2,
+      "outlierSum": 27.1,
       "scannedAt": null,
-      "subs": 322,
-      "lastSeen": "2026-11-05T15:06:49.451Z"
+      "subs": 403,
+      "lastSeen": "2026-11-21T02:18:25.233Z"
     },
     "UCAZMbGUSxw_cF7CPPe-tbdg": {
       "title": "Filmy Airline",
-      "hits": 1,
-      "outlierSum": 12.25,
+      "hits": 2,
+      "outlierSum": 62.25,
       "scannedAt": null,
-      "subs": 538,
-      "lastSeen": "2026-11-05T15:06:49.451Z"
+      "subs": 1290,
+      "lastSeen": "2026-11-21T02:18:25.233Z"
     },
     "UCMmaBzfCCwZ2KqaBJjkj0fw": {
       "title": "Kings and Generals",
@@ -898,11 +898,11 @@
     },
     "UCmC5Q2nJE_xnMchG_UR1elw": {
       "title": "State Dossiers",
-      "hits": 1,
-      "outlierSum": 40.72,
+      "hits": 2,
+      "outlierSum": 90.72,
       "scannedAt": null,
-      "subs": 701,
-      "lastSeen": "2026-11-07T14:00:19.373Z"
+      "subs": 8510,
+      "lastSeen": "2026-11-21T02:18:25.233Z"
     },
     "UC3uJIdRFTGgLWrUziaHbzrg": {
       "title": "NDTV Profit",
@@ -1050,11 +1050,11 @@
     },
     "UCEsb82yzTXmogkwOoDGe1Qw": {
       "title": "Iron Chronicle",
-      "hits": 1,
-      "outlierSum": 0.19,
+      "hits": 2,
+      "outlierSum": 50.19,
       "scannedAt": null,
-      "subs": 183,
-      "lastSeen": "2026-11-07T14:00:19.374Z"
+      "subs": 907,
+      "lastSeen": "2026-11-21T02:18:25.233Z"
     },
     "UCutVLfw0uDq7Q2gvY9c002g": {
       "title": "Mind Over Time",
@@ -1122,11 +1122,11 @@
     },
     "UCNDM0eq9WmBDr5UwMQFeFew": {
       "title": "World View - Documentary",
-      "hits": 5,
-      "outlierSum": 104.21000000000001,
+      "hits": 6,
+      "outlierSum": 128.89000000000001,
       "scannedAt": "2026-11-17T02:23:19.426Z",
-      "subs": 47000,
-      "lastSeen": "2026-11-19T02:20:31.579Z"
+      "subs": 47200,
+      "lastSeen": "2026-11-21T02:18:25.233Z"
     },
     "UCRgMIwmmh1-2k5HeTQ2cdkQ": {
       "title": "Gaurav Thakur",
@@ -1234,11 +1234,11 @@
     },
     "UC16niRr50-MSBwiO3YDb3RA": {
       "title": "BBC News",
-      "hits": 3,
-      "outlierSum": 0.21000000000000002,
+      "hits": 4,
+      "outlierSum": 0.32,
       "scannedAt": null,
       "subs": 20300000,
-      "lastSeen": "2026-11-19T02:20:31.579Z"
+      "lastSeen": "2026-11-21T02:18:25.233Z"
     },
     "UChzVhAwzGR7hV-4O8ZmBLHg": {
       "title": "Glenn Greenwald",
@@ -1338,11 +1338,11 @@
     },
     "UC50uCdUubc04xXZz7bqv5ng": {
       "title": "Investigation",
-      "hits": 1,
-      "outlierSum": 0.19,
+      "hits": 2,
+      "outlierSum": 0.44,
       "scannedAt": null,
-      "subs": 5390000,
-      "lastSeen": "2026-11-12T02:19:16.349Z"
+      "subs": 5410000,
+      "lastSeen": "2026-11-21T02:18:25.233Z"
     },
     "UC6qxjzt29v9lDMUMh1jkCkA": {
       "title": "WORLD UNFOLDED HINDI",
@@ -1394,11 +1394,11 @@
     },
     "UC9MAhZQQd9egwWCxrwSIsJQ": {
       "title": "HISTORY",
-      "hits": 6,
-      "outlierSum": 0.29000000000000004,
+      "hits": 9,
+      "outlierSum": 0.46,
       "scannedAt": null,
-      "subs": 15500000,
-      "lastSeen": "2026-11-19T02:20:31.579Z"
+      "subs": 15600000,
+      "lastSeen": "2026-11-21T02:18:25.233Z"
     },
     "UCFp0Rk-ad8JD78Qw9nEJ29w": {
       "title": "Archive in Minutes",
@@ -1508,7 +1508,7 @@
       "title": "Landfall",
       "hits": 1,
       "outlierSum": 50,
-      "scannedAt": "2026-11-14T02:12:13.128Z",
+      "scannedAt": "2026-11-21T02:18:27.867Z",
       "subs": 12300,
       "lastSeen": "2026-11-14T02:12:12.169Z"
     },
@@ -1516,7 +1516,7 @@
       "title": "NEW Unsolved Mysteries",
       "hits": 1,
       "outlierSum": 9.97,
-      "scannedAt": "2026-11-14T02:12:14.135Z",
+      "scannedAt": "2026-11-21T02:18:28.719Z",
       "subs": 52500,
       "lastSeen": "2026-11-14T02:12:12.169Z"
     },
@@ -1682,11 +1682,11 @@
     },
     "UCac1MisHGa0qtzf0oWlU8Zw": {
       "title": "Unpredictable",
-      "hits": 2,
-      "outlierSum": 8.879999999999999,
+      "hits": 3,
+      "outlierSum": 14.099999999999998,
       "scannedAt": "2026-11-19T02:20:33.901Z",
-      "subs": 552000,
-      "lastSeen": "2026-11-19T02:20:31.579Z"
+      "subs": 554000,
+      "lastSeen": "2026-11-21T02:18:25.233Z"
     },
     "UCLgEVx4mzk3T3mzgbKG54Eg": {
       "title": "Hagerty",
@@ -1770,11 +1770,11 @@
     },
     "UCfi5WDLF5paBigZnKSsPiEw": {
       "title": "VICE Vault",
-      "hits": 1,
-      "outlierSum": 5.25,
-      "scannedAt": null,
+      "hits": 2,
+      "outlierSum": 10.620000000000001,
+      "scannedAt": "2026-11-21T02:18:25.980Z",
       "subs": 140000,
-      "lastSeen": "2026-11-19T02:20:31.579Z"
+      "lastSeen": "2026-11-21T02:18:25.233Z"
     },
     "UC01lusyy6kY3J2C6Gqzp1RQ": {
       "title": "Beyond The Book",
@@ -1855,6 +1855,142 @@
       "scannedAt": null,
       "subs": 4,
       "lastSeen": "2026-11-19T02:20:31.579Z"
+    },
+    "UClpWHqLwng7_XdsGJvFxcbw": {
+      "title": "The Merciless",
+      "hits": 1,
+      "outlierSum": 50,
+      "scannedAt": null,
+      "subs": 9290,
+      "lastSeen": "2026-11-21T02:18:25.233Z"
+    },
+    "UCH695R3ryZ0UP_YIOl6A51g": {
+      "title": "Beyond The History",
+      "hits": 1,
+      "outlierSum": 50,
+      "scannedAt": null,
+      "subs": 3770,
+      "lastSeen": "2026-11-21T02:18:25.233Z"
+    },
+    "UC6Xqc_2x1ILpEVySqOFhC0Q": {
+      "title": "Puranic Codex",
+      "hits": 1,
+      "outlierSum": 50,
+      "scannedAt": null,
+      "subs": 8370,
+      "lastSeen": "2026-11-21T02:18:25.233Z"
+    },
+    "UCPlH2h2Ckq1T-DKqw0latYA": {
+      "title": "Sergeant Curtis",
+      "hits": 1,
+      "outlierSum": 1.69,
+      "scannedAt": null,
+      "subs": 855000,
+      "lastSeen": "2026-11-21T02:18:25.233Z"
+    },
+    "UCvH7rHxtorW8mfMeS94yaYQ": {
+      "title": "HipHop History",
+      "hits": 1,
+      "outlierSum": 3.86,
+      "scannedAt": null,
+      "subs": 51100,
+      "lastSeen": "2026-11-21T02:18:25.233Z"
+    },
+    "UCNfDUcTGB1WWQlBEkxkGiNQ": {
+      "title": "Map & Sword",
+      "hits": 1,
+      "outlierSum": 50,
+      "scannedAt": null,
+      "subs": 979,
+      "lastSeen": "2026-11-21T02:18:25.233Z"
+    },
+    "UCyAMoOTlfSGPxrtvh6M6wig": {
+      "title": "Shyam Meera Singh ",
+      "hits": 1,
+      "outlierSum": 0.6,
+      "scannedAt": null,
+      "subs": 1900000,
+      "lastSeen": "2026-11-21T02:18:25.233Z"
+    },
+    "UC5CbB7rMn1GTYWssomu5Nuw": {
+      "title": "Mystery explainer kannada",
+      "hits": 1,
+      "outlierSum": 0.65,
+      "scannedAt": null,
+      "subs": 355000,
+      "lastSeen": "2026-11-21T02:18:25.233Z"
+    },
+    "UCws1gUMrOTFkqg-Bf50qsXg": {
+      "title": "Battle Logic",
+      "hits": 1,
+      "outlierSum": 11.32,
+      "scannedAt": null,
+      "subs": 6740,
+      "lastSeen": "2026-11-21T02:18:25.233Z"
+    },
+    "UCeJ1l-m_Xg_-5XHUCvgeDiQ": {
+      "title": "King of Battles",
+      "hits": 2,
+      "outlierSum": 13.18,
+      "scannedAt": null,
+      "subs": 2550,
+      "lastSeen": "2026-11-21T02:18:25.233Z"
+    },
+    "UCst4-wcQ9oVYYEBDQjSC0sg": {
+      "title": "834 Productions",
+      "hits": 1,
+      "outlierSum": 1.55,
+      "scannedAt": null,
+      "subs": 51100,
+      "lastSeen": "2026-11-21T02:18:25.233Z"
+    },
+    "UCwe0m9hzksDc23d7AyuBpVA": {
+      "title": "AlbhinoRhino",
+      "hits": 1,
+      "outlierSum": 10.57,
+      "scannedAt": null,
+      "subs": 6640,
+      "lastSeen": "2026-11-21T02:18:25.233Z"
+    },
+    "UC_gzVSoLuneYS6tg-mLvO4A": {
+      "title": "The Entire War",
+      "hits": 2,
+      "outlierSum": 3.42,
+      "scannedAt": null,
+      "subs": 7740,
+      "lastSeen": "2026-11-21T02:18:25.233Z"
+    },
+    "UCze0bAv4-DdM04tWn-DMhqQ": {
+      "title": "Pax Americana",
+      "hits": 1,
+      "outlierSum": 1.47,
+      "scannedAt": null,
+      "subs": 48600,
+      "lastSeen": "2026-11-21T02:18:25.233Z"
+    },
+    "UCru4Q3LNyNB5t_uIONV8J-Q": {
+      "title": "As Japan Recorded It",
+      "hits": 1,
+      "outlierSum": 7.04,
+      "scannedAt": null,
+      "subs": 2980,
+      "lastSeen": "2026-11-21T02:18:25.233Z"
+    },
+    "UC483L4SuemzQWgvArrFrXqw": {
+      "title": "History Suitcase",
+      "hits": 1,
+      "outlierSum": 7.5,
+      "scannedAt": null,
+      "subs": 2560,
+      "lastSeen": "2026-11-21T02:18:25.233Z"
+    },
+    "UCbwXJDdBZtyXyS2zhEJBnRg": {
+      "title": "Danish Guy Reacts",
+      "hits": 1,
+      "outlierSum": 2.1,
+      "scannedAt": null,
+      "subs": 15500,
+      "lastSeen": "2026-11-21T02:18:25.233Z"
     }
   }
 }

@@ -1,48 +1,48 @@
 {
-  "at": "2026-11-19T02:22:34.079Z",
+  "at": "2026-11-21T02:18:52.867Z",
   "channels": [
-    "AllThingsAfro",
-    "Ethos",
-    "Unpredictable",
-    "Chat History Compilations",
-    "San English"
+    "VICE Vault",
+    "Nils History",
+    "Landfall",
+    "NEW Unsolved Mysteries",
+    "Ambrose Discovery"
   ],
   "wants": [
     {
-      "topic": "The 'Untold' or 'Hidden' Truths of Civil Rights Leaders",
-      "evidence": "AllThingsAfro's best performing videos (Malcolm X, Fred Hampton) focus on correcting mainstream narratives and exposing FBI/government interference.",
+      "topic": "Absurd and strangely human daily life in ancient civilizations",
+      "evidence": "Nils History's 'Ancient Babylon Was Weirder Than You Think' (vsNormal 2.74) and 'The First Civilization in the World Was Rather Strange' (vsNormal 1.63), where top comments focus heavily on ancient gas station equivalents, quirky omens, and human pit burials.",
       "strength": 10
     },
     {
-      "topic": "Long-form 'Entire History' explainers (50+ minutes)",
-      "evidence": "Ethos's best performing content is consistently the 50-minute historical deep-dives (Crusades, Jerusalem, Vikings).",
+      "topic": "Authentic human-narrated history as an alternative to AI voiceovers",
+      "evidence": "Nils History including '(No AI)' in titles and comments like 'Dude, awesome narration... in the age of AI slop, this kind of quality is pure gold' and praise for human storytelling.",
       "strength": 9
     },
     {
-      "topic": "Humanizing historical figures beyond their stereotypes",
-      "evidence": "Comments on AllThingsAfro videos show high engagement with the 'real' Malcolm X vs the 'violent' stereotype.",
+      "topic": "Behind-the-scenes institutional scandals, terrible ideas, and cover-ups",
+      "evidence": "VICE Vault's 'Wrestling's Worst Idea Ever: Brawl For All' (vsNormal 2.47) and 'Jimmy Snuka & The Death of Nancy Argentino' (vsNormal 1.89) generating massive engagement around corrupt authority figures and disastrous administrative decisions.",
       "strength": 8
     },
     {
-      "topic": "Geopolitical context of religious conflicts",
-      "evidence": "Ethos's Jerusalem video comments show high interest in the intersection of faith, trade, and political power.",
-      "strength": 7
+      "topic": "Origins and lesser-known details of Ancient World Wonders and lost sites",
+      "evidence": "Nils History's 'The First Wonders of the World Were Rather Strange' (vsNormal 1.98) with comments explicitly asking for Part 2 and requesting coverage of the Great Library of Alexandria.",
+      "strength": 8
     }
   ],
   "gaps": [
-    "Nuanced, non-biased accounts of the Crusades that acknowledge both Western and Eastern perspectives without 'baby music' or distracting production choices.",
-    "Accurate timelines and scrolling visual aids in long-form historical documentaries.",
-    "Detailed analysis of how modern government institutions (FBI/CIA) specifically dismantled grassroots movements in the 1960s."
+    "High-quality human narrative explainers on ancient daily life and weird laws without relying on AI voiceovers or stock footage slop.",
+    "Detailed breakdowns of forgotten ancient monuments and intellectual hubs (e.g., Library of Alexandria) beyond the standard Seven Wonders list.",
+    "Geopolitical and historical breakdown of how systemic institutional cover-ups were executed in real time."
   ],
   "saturated": [
-    "Surface-level, generic 'Viking' raider content.",
-    "Biased, one-sided portrayals of religious wars.",
-    "High-level summaries of MLK that stick to the standard 'I Have a Dream' school-textbook narrative."
+    "Generic AI-generated voiceover history summaries with visual stock footage.",
+    "Superficial celebrity-focused tech or luxury showcases without deep narrative friction.",
+    "Dry, textbook-style chronological lists of battles and royal successions devoid of human quirks or strangeness."
   ],
   "title_patterns": [
-    "The ENTIRE History of [Subject] in [Time] minutes",
-    "You Were LIED To About [Historical Figure/Event]",
-    "The [Title/Role] Who TERRIFIED The [Government Agency]",
-    "Why [Group/Nation] Feared [Historical Figure]"
+    "[Ancient Topic/Civilization] Was Weirder Than You Think (No AI)",
+    "The First [Monuments/Civilizations] Were Rather Strange",
+    "[Subject]'s Worst Idea Ever: [Specific Historic Disaster]",
+    "[Historical Figure/Event] & The Death of [Subject] | Dark Side of [Topic]"
   ]
 }
