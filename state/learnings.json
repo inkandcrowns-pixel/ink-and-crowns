@@ -1,12 +1,12 @@
 {
-  "at": "2026-11-15T02:17:16.574Z",
-  "medViewsPerDay": 0.5312398706597454,
+  "at": "2026-11-22T02:18:21.668Z",
+  "medViewsPerDay": 1.1003432265703197,
   "summary": [
-    "Focus on 20th-century US history; pre-modern topics show zero traction.",
-    "Avoid abstract or vague titles; use specific, high-stakes narrative hooks.",
-    "Ensure retention by front-loading the 'why it matters' hook in the first 30 seconds.",
-    "Target 300+ second average duration; under 200 seconds signals poor pacing.",
-    "Prioritize rescue, mystery, or conflict-driven narratives over general history.",
-    "If a video has 0 views after 3 days, pivot the topic immediately."
+    "Stick strictly to US history and US-adjacent lore (Wild West, WWII US military); non-US topics perform disastrously.",
+    "Prioritize storytelling with clear narrative stakes (e.g., lost treasure, daring rescue missions) to sustain 3+ minute watch times.",
+    "Avoid vague clickbait titles; ensure titles clearly state the historical subject to prevent high early drop-off.",
+    "Deliver on the title premise within the first 10 seconds of the video to fix zero-retention bounces.",
+    "Target 19th and 20th century American historical events where viewer demand and retention peak.",
+    "Discontinue modern geopolitics and foreign medieval history until a core US history audience is established."
   ]
 }
